@@ -1,0 +1,7 @@
+{
+  "name": "Quebracho",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

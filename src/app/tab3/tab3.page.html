@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>   
+    <ion-buttons slot="start">     
+      <ion-button (click)="myBackButton()">
+        <ion-icon name="arrow-back-sharp" style="font-size: 22px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">     
+      <ion-button (click)="getOrdenes()">
+        <ion-icon name="refresh-sharp" style="font-size: 22px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid *ngIf="nomostrar" >   
+  <ion-card *ngFor="let item of consulta">    
+      <ion-card-header>
+        <ion-card-title color="primary"><label style="font-weight: bold;">N° de Orden: </label>{{item.idOrden}}</ion-card-title>
+        <ion-card-title color="primary"><label style="font-weight: bold;">Fecha: </label>  {{ item.fecha | date: 'dd/MM/yyyy HH:mm' }}</ion-card-title>
+        <ion-card-title><label style="font-weight: bold;">Total compra: </label>$ {{item.totalCompra}}</ion-card-title>        
+        <ion-card-title>
+          <label style="font-weight: bold;">Estado: </label>
+          <label [ngClass]="{'pendiente': item.procesaPago === 'pendiente', 'fallo': item.procesaPago === 'fallo', 'aprobado': item.procesaPago === 'aprobado'}">{{item.procesaPago}}</label></ion-card-title>        
+      </ion-card-header>      
+        <ion-card-content>
+        <ion-button fill="outline" class="tab1IonButton" 
+        (click)="modalMasInfo(
+          item.idOrden,
+          item.fecha,
+          item.totalCompra,
+          item.respuesta,
+          item.dataProductos,
+          item.procesaPago,item.metodoPago);">Ver orden</ion-button>       
+        </ion-card-content> 
+  </ion-card> 
+</ion-grid>
+</ion-content>

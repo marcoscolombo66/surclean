@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>    
+    
+
+    <ion-buttons slot="start">     
+      <ion-button (click)="copiarCbu()">
+        <ion-icon name="copy-sharp" style="font-size: 22px;"></ion-icon> Copiar CBU         
+      </ion-button>      
+    </ion-buttons>
+
+    <ion-buttons slot="end">     
+      <ion-button>
+        Total a pagar: $ {{totalSuma}}         
+      </ion-button>      
+    </ion-buttons>
+
+    <ion-buttons slot="end">     
+      <ion-button routerLink="/tab3" (click)="cancel()">
+        <ion-icon name="close-sharp" style="font-size: 22px;"></ion-icon>         
+      </ion-button>
+    </ion-buttons>
+     
+  </ion-toolbar>
+</ion-header>
+    
+
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-label style="margin-left:20px;margin-top:40px;font-weight: bold;">Comprobante transferencia</ion-label>
+    <ion-card-header class="etiqueta">
+       
+
+      <div *ngIf="!isSelected">
+
+        <input
+           type="file"
+           (change)="selectFileToUpload($event)">
+     </div>
+     <ion-row *ngIf="!ifGuardaImagen">
+      <ion-col></ion-col><ion-col></ion-col>           
+      <ion-col><ion-spinner name="lines"></ion-spinner></ion-col>          
+      <ion-col></ion-col><ion-col></ion-col>       
+    </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+
+      <div *ngIf="isSelected">        
+        <ion-button  shape="round" expand="block" fill="outline"
+           (click)="uploadFile()">Enviar</ion-button>
+
+           <!-- Display the selected image -->
+        <img [src]="image">
+     </div>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+
+
+
+
+
+
+ </ion-content>

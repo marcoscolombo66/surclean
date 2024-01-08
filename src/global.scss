@@ -1,0 +1,116 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+//#8C1B24 rojo oscuro
+//#150426 violeta oscuro
+//#F2CC0C amarillo
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+@font-face {
+  font-family: 'Blinker-semibold';
+    src: url('/assets/fonts/Blinker-Semibold.ttf');
+}
+
+@font-face {
+  font-family: 'alien_planet';
+    src: url('/assets/fonts/alien_planet.ttf');
+}
+@font-face {
+  font-family: 'roboto_regular';
+    src: url('/assets/fonts/roboto_regular.ttf');
+}
+@font-face {
+  font-family: 'Helvetica';
+    src: url('/assets/fonts/Helvetica.ttf');
+}
+.ionCard{margin-top:50px;margin-left:35px;max-width: 340px;}
+.ionCardLogin{margin-top:15px;margin-left:5px;max-width: 352px;}
+.etiqueta{
+  font-size: 12px; font-family: 'Helvetica';
+}
+
+.etiqueta_titulo{
+  font-weight: bolder;font-size: 12px; font-family: 'Helvetica';
+}
+.rotate-90{
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+.rotate-270{
+  display: inline-block;
+  transform: rotate(270deg);
+}
+
+.atencion{color:#8C1B24;}
+
+ion-toast.mensaje-toast {
+  --background: #115c2b;
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: #FFF;
+  font-weight: bold;
+  font-family: 'Helvetica';
+  margin-top:50px;
+
+}
+
+ion-toast.warning-toast {
+  --background: #ff480080;
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: #FFF;
+  font-weight: bold;
+  font-family: 'Helvetica';
+  margin-top:50px;
+
+}
+ion-toast.sucess-toast {
+  --background: #0abe61c2;
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: #FFF;
+  font-weight: bold;
+  font-family: 'Helvetica';
+  margin-top:50px;
+}
+
+ion-toast.light-toast {
+  --background: #4328f3a0;
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: #FFF;
+  font-weight: bold;
+  font-family: 'Helvetica';
+  margin-top:50px;
+}
+
+ion-toast.warning-toast::part(message) {
+  font-style: italic;
+}
+
+.nuevo_vuelo{min-width:250px;}
+.sc-ion-buttons-md-h {
+  color: #115c2b;
+}
+
+ 

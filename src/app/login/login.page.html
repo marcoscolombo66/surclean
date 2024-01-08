@@ -1,0 +1,64 @@
+
+<ion-content ><ion-grid>
+  <ion-row>
+    <ion-col ></ion-col>
+    <ion-col style="min-width:350px;">
+  
+  <ion-card class="ionCardLogin">
+      <ion-card-header>
+        <ion-card-title class="isCSS">
+          <img src='/assets/logo_top.png' style="padding-left:70px;text-align:right;width:100%;height:100%;"/>
+        </ion-card-title>
+      </ion-card-header>
+  
+        <form  [formGroup]="loginForm" (ngSubmit)="login3()">
+      <ion-card-content>
+  
+        <ion-card-header>
+        <ion-card-title class="etiqueta"><strong>USUARIO</strong></ion-card-title>
+        <ion-card-title class="etiqueta">
+          <ion-input formControlName="usuario"
+            placeholder="Ingresar usuario"
+            [ngClass]="{error:loginForm.get('usuario').hasError('required') && loginForm.get('usuario').dirty,warning:loginForm.get('usuario').hasError('minlength')&&
+            loginForm.get('usuario').dirty}"></ion-input>
+            <div *ngIf="loginForm.get('usuario').errors && loginForm.get('usuario').dirty">
+              <p *ngIf="loginForm.get('usuario').hasError('required')">El campo es obligatorio</p>
+              <p *ngIf="loginForm.get('usuario').hasError('email')">Debe ser un email valido</p>
+            </div>
+        </ion-card-title>
+  
+  
+  
+  
+  
+  
+        <ion-card-title class="etiqueta" ><strong>CONTRASEÑA</strong></ion-card-title>
+        <ion-card-title class="etiqueta">
+          <ion-input formControlName="password" type="password" placeholder="Ingresar Contraseña"></ion-input>
+            <div *ngIf="loginForm.get('password').errors && loginForm.get('password').dirty">
+              <p *ngIf="loginForm.get('password').hasError('required')">El campo es obligatorio</p>
+              <p *ngIf="loginForm.get('password').hasError('minlength')">La contraseña debe tener al menos 6 caracteres</p>
+            </div>
+        </ion-card-title>
+  
+        <ion-card-title style="text-align: center;"><ion-button type="submit" [disabled]="loginForm.invalid" fill="outline" >Iniciar sesión</ion-button></ion-card-title>
+        <ion-card-sub-title class="isCSS" routerLink="/registro">
+        <p>&nbsp;</p>
+        <p>  Si no tenes cuenta, podés <span style="text-decoration:underline;font-weight:solid;cursor: pointer;">registrarte</span></p>
+        </ion-card-sub-title>
+        <ion-card-sub-title class="isCSS" routerLink="/olvido">
+          <p>&nbsp;</p>
+          <p>  <span style="text-decoration:underline;font-weight:solid;cursor: pointer;"> ¿Olvidaste tu contraseña? </span></p>
+          </ion-card-sub-title>
+  
+  
+  
+  </ion-card-header>
+        </ion-card-content>
+    </form>
+      </ion-card>
+  </ion-col>
+  <ion-col></ion-col>
+  </ion-row></ion-grid>
+  </ion-content>
+  

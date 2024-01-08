@@ -1,0 +1,102 @@
+
+<ion-content><ion-grid>
+  <ion-row>
+    <ion-col ></ion-col>
+    <ion-col style="min-width:350px;">
+      <ion-card class="ionCardLogin">
+        <ion-card-header>
+          <ion-card-title class="isCSS">
+           <img src='/assets/logo_top.png' style="padding-left:70px;text-align:right;width:100%;height:100%;"/>
+          </ion-card-title>
+        </ion-card-header>
+
+
+
+      <form [formGroup]="registroForm" (ngSubmit)="registro()">
+        <ion-card-content>
+
+          <ion-card-header>
+          <ion-card-title class="etiqueta">EMAIL</ion-card-title>
+          <ion-card-title class="etiqueta"><ion-input formControlName="usuario"
+            placeholder="Ingresar email" style="background-color:white;"
+            [ngClass]="{error:registroForm.get('usuario').hasError('required') && registroForm.get('usuario').dirty,warning:registroForm.get('usuario').hasError('minlength')&&
+            registroForm.get('usuario').dirty}"></ion-input>
+            <div *ngIf="registroForm.get('usuario').errors && registroForm.get('usuario').dirty">
+              <p class="error" *ngIf="registroForm.get('usuario').hasError('required')">El campo es obligatorio</p>
+              <p class="error" *ngIf="registroForm.get('usuario').hasError('email')">Debe ser un email valido</p>
+            </div>
+          </ion-card-title>
+
+          <ion-card-title class="etiqueta">NOMBRE</ion-card-title>
+          <ion-card-title class="etiqueta"><ion-input formControlName="nombre"
+            placeholder="Ingresar nombre" style="background-color:white;"
+            [ngClass]="{error:registroForm.get('nombre').hasError('required') && registroForm.get('nombre').dirty,warning:registroForm.get('nombre').hasError('minlength')&&
+            registroForm.get('usuario').dirty}"></ion-input>
+            <div *ngIf="registroForm.get('nombre').errors && registroForm.get('nombre').dirty">
+              <p class="error" *ngIf="registroForm.get('nombre').hasError('required')">El campo es obligatorio</p>
+              <p class="error" *ngIf="registroForm.get('nombre').hasError('nombre')">Debe ser un nombre valido</p>
+            </div>
+          </ion-card-title>
+
+          <ion-card-title class="etiqueta">APELLIDO</ion-card-title>
+          <ion-card-title class="etiqueta"><ion-input formControlName="apellido"
+            placeholder="Ingresar apellido" style="background-color:white;"
+            [ngClass]="{error:registroForm.get('apellido').hasError('required') && registroForm.get('apellido').dirty,warning:registroForm.get('apellido').hasError('minlength')&&
+            registroForm.get('apellido').dirty}"></ion-input>
+            <div *ngIf="registroForm.get('apellido').errors && registroForm.get('apellido').dirty">
+              <p class="error" *ngIf="registroForm.get('apellido').hasError('required')">El campo es obligatorio</p>
+              <p class="error" *ngIf="registroForm.get('apellido').hasError('apellido')">Debe ser un apellido valido</p>
+            </div>
+          </ion-card-title>
+
+          <ion-card-title class="etiqueta">WHATSAPP [Ej: 542974235278]</ion-card-title>
+          <ion-card-title class="etiqueta">
+            <ion-input  style="background-color:white;" formControlName="whatsapp" placeholder="Ingresa tu numero celular cod.pais + area(sin 0) + nro (sin 15)"
+          value=""></ion-input>
+          <div *ngIf="registroForm.get('whatsapp').errors && registroForm.get('whatsapp').dirty">
+            <p class="error" *ngIf="registroForm.get('whatsapp').hasError('minlength')">Debe tener al menos 10 digitos</p>
+            <p class="error" *ngIf="registroForm.get('whatsapp').hasError('required')">El campo es obligatorio</p>
+            <p class="error" *ngIf="registroForm.get('whatsapp').hasError('pattern')">Debe ser un numero whatsapp valido [Ej: 542974235278]</p>
+          </div>
+          </ion-card-title>
+
+          <ion-card-title class="etiqueta">CONTRASEÑA</ion-card-title>
+          <ion-card-title class="etiqueta">
+            <ion-input style="background-color:white;" formControlName="password" type="password" placeholder="Ingresar Contraseña"></ion-input>
+            <div *ngIf="registroForm.get('password').errors && registroForm.get('password').dirty">
+              <p class="error" *ngIf="registroForm.get('password').hasError('required')">El campo es obligatorio</p>
+              <p class="error" *ngIf="registroForm.get('password').hasError('minlength')">La contraseña debe tener al menos 6 caracteres</p>
+            </div>
+          </ion-card-title>
+
+          <ion-card-title class="etiqueta">REPETIR CONTRASEÑA</ion-card-title>
+          <ion-card-title class="etiqueta">
+            <ion-input style="background-color:white;" formControlName="password2" type="password" placeholder="Repetir Contraseña"></ion-input>
+            <div *ngIf="registroForm.get('password2').errors && registroForm.get('password2').dirty">
+              <p class="error" *ngIf="registroForm.get('password2').hasError('required')">El campo es obligatorio</p>
+              <p class="error" *ngIf="registroForm.get('password2').hasError('minlength')">La contraseña debe tener al menos 6 caracteres</p>
+              <div *ngIf="registroForm.hasError('mismatch') && registroForm.get('password2').dirty">
+                <p class="error" >Las contraseñas no coinciden</p>
+              </div>
+            </div>
+          </ion-card-title>         
+
+          <ion-card-title style="text-align: center;">
+            <ion-button type="submit" fill="outline"  [disabled]="registroForm.invalid"  >Registrarme</ion-button>
+          </ion-card-title>
+          <ion-card-sub-title class="isCSS" routerLink="/login">
+          <p>&nbsp;</p>
+          <p>  Si ya estas registrado, podés <span style="text-decoration:underline;font-weight:solid;cursor: pointer;">Ingresar acá</span></p>
+          </ion-card-sub-title>
+
+    </ion-card-header>
+          </ion-card-content>
+
+
+
+    </form>
+  </ion-card>
+</ion-col>
+<ion-col></ion-col>
+</ion-row></ion-grid>
+</ion-content>

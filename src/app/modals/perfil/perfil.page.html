@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>   
+    <ion-buttons slot="start">     
+      <ion-button (click)="myBackButton()">
+        <ion-icon name="arrow-back-sharp" style="font-size: 22px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid> 
+      <ion-card >
+        <form [formGroup]="registroForm">
+          <ion-card-content>
+            <ion-card-header>
+              <ion-card-title >
+                  <strong>NOMBRE</strong>
+                  <ion-input formControlName="nombre" placeholder="Ingresar nombre"></ion-input>
+                </ion-card-title>
+                <ion-card-title >
+                  <strong>APELLIDO</strong>
+                  <ion-input formControlName="apellido" placeholder="Ingresar apellido"></ion-input>
+                </ion-card-title>
+                <ion-card-title >
+                  <strong>DNI</strong>
+                  <ion-input formControlName="dni" placeholder="Ingresar N° DNI sin puntos"></ion-input>
+                </ion-card-title>
+                <ion-card-title >
+                  <strong>DIRECCIÓN</strong>
+                 <ion-input formControlName="direccion" placeholder="Ingresar dirección"></ion-input>
+                </ion-card-title>
+                <ion-card-title >
+                 <strong>TELEFONO</strong>
+                 <ion-input formControlName="whatsapp" placeholder="Ingresar whatsapp"></ion-input>
+                </ion-card-title>
+
+                <ion-card-title >
+                  <ion-row>
+                    <ion-col></ion-col>
+                    <ion-col><ion-button (click)="guardar()">Actualizar</ion-button></ion-col>
+                    <ion-col></ion-col>
+                  </ion-row>           
+                </ion-card-title>
+          </ion-card-header>
+        </ion-card-content>
+      </form>
+    </ion-card>  
+</ion-grid>
+</ion-content>
