@@ -191,7 +191,7 @@ let TabsPage = class TabsPage {
     }
     whatsapp() {
         let mensaje = "Hola!%0AQuería%20consultarte%20por:%0A";
-        const urlWhataspp = `${"https://wa.me/542974235278?text="}${mensaje}`;
+        const urlWhataspp = `${"https://wa.me/542974235583?text="}${mensaje}`;
         window.open(urlWhataspp, '_system', 'location=yes');
     }
     cerrar() {

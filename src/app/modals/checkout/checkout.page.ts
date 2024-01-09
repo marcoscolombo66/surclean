@@ -321,7 +321,7 @@ export class CheckoutPage implements OnInit {
           let mensaje = "Hola!%0AQuería%20consultarte%20por:%0A"
           mensaje=mensaje+cadenaProductos.replace(/ /g, '%20');
           mensaje= mensaje + ".%0A%0AGracias!";
-          const urlWhataspp=`${"https://wa.me/542974235278?text="}${mensaje}`;
+          const urlWhataspp=`${"https://wa.me/542974235583?text="}${mensaje}`;
           
           window.open(urlWhataspp,'_system','location=yes'); 
           
