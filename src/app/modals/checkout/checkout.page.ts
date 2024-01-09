@@ -299,6 +299,35 @@ export class CheckoutPage implements OnInit {
       this.totalSuma += (item.precio * item.cant);
     }
   }
+
+  async whatsapp(){
+    {           
+            
+      this.itemsJson=this.arrayCarro.map(item => {
+        return {
+          "title": item.nombreProducto,  // Puedes personalizar esto según tus necesidades
+          "picture_url": `${this.urlRoot}/images/${item.fotoProducto}`,            
+          "quantity": item.cant,
+          "currency_id": "ARS",  // Puedes personalizar esto según tus necesidades
+          "unit_price": parseFloat(item.precio) 
+        };
+      }); 
+      let cadenaProductos = this.arrayCarro.map(item => item.nombreProducto.toString()).join(', ');
+      let total = this.arrayCarro.reduce((acc, item) => {
+        let subtotal = item.cant * parseFloat(item.precio);
+              return acc + subtotal;
+          }, 0);
+          this.totalSuma = total;        
+          let mensaje = "Hola!%0AQuería%20consultarte%20por:%0A"
+          mensaje=mensaje+cadenaProductos.replace(/ /g, '%20');
+          mensaje= mensaje + ".%0A%0AGracias!";
+          const urlWhataspp=`${"https://wa.me/542974235278?text="}${mensaje}`;
+          
+          window.open(urlWhataspp,'_system','location=yes'); 
+          
+          
+      }           
+    }
   
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 async transferencia(){

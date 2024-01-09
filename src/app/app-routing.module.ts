@@ -6,7 +6,7 @@ const routes: Routes = [
   //{path: '',redirectTo: 'home',pathMatch: 'full'},
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'tab1',
     pathMatch: 'full'
   },
   {path: '',loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)},  

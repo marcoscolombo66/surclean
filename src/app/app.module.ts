@@ -14,7 +14,7 @@ import { IniciarusuarioService } from './iniciarusuario.service';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     IonicStorageModule.forRoot({
-      name: 'quebracho',
+      name: 'AntiguoShop',
       driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
     }),],
   providers: [IniciarusuarioService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -133,7 +133,7 @@ noVerPorCat: any = false;
   }  
    
   ngOnInit() {    
-    this.inicia.verificar();
+    //this.inicia.verificar();
     this.getProductos();
     this.getProductosOferta();    
   }
@@ -227,8 +227,8 @@ noVerPorCat: any = false;
 }
   
   async modalMasInfo(idProducto,nombreProducto,descripcionProducto,fotoProducto,precioProducto) {
-    const user= await this.inicia.getUser();
-    const url_proyecto = user[0].url_proyecto
+    //const user= await this.inicia.getUser();
+    //const url_proyecto = user[0].url_proyecto
     const modal = await this.modalCtrl.create({
       component: MasinfoPage,
       //breakpoints: [0, 0.99],
@@ -240,7 +240,7 @@ noVerPorCat: any = false;
         mySubject3: descripcionProducto,
         mySubject4: fotoProducto,
         mySubject5: precioProducto,
-        url_proyecto: url_proyecto
+        url_proyecto: this.urlRoot
       },
       animated: true,
       canDismiss: true,
@@ -250,15 +250,15 @@ noVerPorCat: any = false;
   }
 
   async modalCheckout() {
-    const user= await this.inicia.getUser();
-    const url_proyecto = user[0].url_proyecto
+    //const user= await this.inicia.getUser();
+    //const url_proyecto = user[0].url_proyecto
     const modal = await this.modalCtrl.create({
       component: CheckoutPage,
       //breakpoints: [0, 0.99],
       //initialBreakpoint: 0.99,
       //handle: true,
       componentProps: {
-        url_proyecto: url_proyecto,
+        url_proyecto: this.urlRoot,
                 
       },
       animated: true,

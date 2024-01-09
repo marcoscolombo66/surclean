@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">quebracho</string>
-    <string name="title_activity_main">quebracho</string>
-    <string name="package_name">com.quebracho.app</string>
-    <string name="custom_url_scheme">com.quebracho.app</string>
-</resources>

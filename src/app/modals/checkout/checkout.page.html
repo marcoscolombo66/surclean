@@ -44,24 +44,30 @@
         </ion-card-content>
       </ion-card>    
 </ion-grid>
-<ion-row style="text-align: center;" *ngIf="totalSuma!==0">
+<ion-row style="text-align: center;display:none;" *ngIf="totalSuma!==0">
   <ion-col></ion-col> 
   <ion-col><label style="font-weight: bold;">PAGAR</label></ion-col>
   <ion-col></ion-col>
 </ion-row>
-<ion-row style="text-align: center;" *ngIf="totalSuma!==0">
+<ion-row style="text-align: center;display:none;" *ngIf="totalSuma!==0">
   <ion-col></ion-col>
   <ion-col><ion-button (click)="pagarUala()">Uala</ion-button></ion-col>
   <ion-col></ion-col>
 </ion-row>
-<ion-row style="text-align: center;" *ngIf="totalSuma!==0">
+<ion-row style="text-align: center;display:none;" *ngIf="totalSuma!==0">
   <ion-col></ion-col>
   <ion-col><ion-button (click)="pagarMercadopago()">Mercadopago</ion-button></ion-col>
   <ion-col></ion-col>
 </ion-row>
-<ion-row style="text-align: center;" *ngIf="totalSuma!==0">
+<ion-row style="text-align: center;display:none;" *ngIf="totalSuma!==0">
   <ion-col></ion-col>
   <ion-col><ion-button (click)="transferencia()">Transferencia</ion-button></ion-col>
+  <ion-col></ion-col>
+</ion-row>
+
+<ion-row style="text-align: center;">
+  <ion-col></ion-col>
+  <ion-col><ion-button (click)="whatsapp()"><ion-icon name="chatbubble-sharp"></ion-icon>&nbsp;&nbsp; Consultar</ion-button></ion-col>
   <ion-col></ion-col>
 </ion-row>
 </ion-content>

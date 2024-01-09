@@ -7,13 +7,7 @@
           {{totalCantidades}}
         </ion-badge>
         <ion-icon   name="cart-sharp" class="cartIcon"></ion-icon>
-       <!-- <ion-badge *ngIf="verCarro && totalCantidades !== 0; else recalculaTotal" color="danger" class="cartIcontxt">
-          {{totalCantidades}}
-        </ion-badge>  
-        <ng-template #recalculaTotal>
-          {{ recalcularTotalCantidades() }}
-        </ng-template>     
-        <ion-icon  *ngIf="verCarro" name="cart-sharp" class="cartIcon"></ion-icon>--> 
+       
       </ion-col>
       <ion-col style="text-align: left;">
         <ion-searchbar [debounce]="500" class="searchBar" showCancelButton="focus"  (ionInput)="buscarProductos($event)"></ion-searchbar>
@@ -88,7 +82,7 @@
               </ion-card-title>                    
             </ion-card-header>
             <ion-card-content>
-              <ion-row>
+              <ion-row style="display: none;">
                 <ion-col (click)="decrementar(consulta.idProducto)">
                   <ion-icon name="remove-circle-outline" style="font-size:24px;"></ion-icon>
                 </ion-col>

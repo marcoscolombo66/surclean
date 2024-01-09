@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "Quebracho",
-  "webDir": "public_html/pasajeros/",
+  "appId": "io.ionic.AntiguoShop",
+  "appName": "AntiguoShop",
+  "webDir": "public_html/",
   "bundledWebRuntime": false
 }
