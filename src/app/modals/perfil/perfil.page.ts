@@ -47,15 +47,17 @@ export class PerfilPage implements OnInit {
   }
    async ngOnInit() {
     this.inicia.verificar();
-    this.datosUsuario=  await this.inicia.getUser();
-
-    this.registroForm.controls.nombre.setValue(this.datosUsuario[0].nombre);
-    this.registroForm.controls.apellido.setValue(this.datosUsuario[0].apellido);
-    this.registroForm.controls.whatsapp.setValue(this.datosUsuario[0].telefono);
-    this.registroForm.controls.dni.setValue(this.datosUsuario[0].dni);    
-    this.registroForm.controls.direccion.setValue(this.datosUsuario[0].direccion);    
+    this.datosUsuario=  await this.inicia.getUser();    
+    this.datosUsuario=  await this.inicia.getUserProfile(this.datosUsuario[0].idUsuario);
+    this.datosUsuario.subscribe(data => {    
+    this.registroForm.controls.nombre.setValue(data[0].nombre);
+    this.registroForm.controls.apellido.setValue(data[0].apellido);
+    this.registroForm.controls.whatsapp.setValue(data[0].telefono);
+    this.registroForm.controls.dni.setValue(data[0].dni);    
+    this.registroForm.controls.direccion.setValue(data[0].direccion);
+    })         
       }
-
+      
       async guardar()
       {
 	  this.bandera='';

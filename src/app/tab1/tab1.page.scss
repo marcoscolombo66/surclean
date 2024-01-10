@@ -1,21 +1,23 @@
 
-  :root {
-    --ion-safe-area-top: 20px;
-    --ion-safe-area-bottom: 22px;
-  }
+:root {
+  --ion-safe-area-top: 20px;
+  --ion-safe-area-bottom: 22px;
+}
+.productosLista{
+  margin-left:15px;
+}
+/* *{font-family: 'arial';}*/
 
- /* *{font-family: 'arial';}*/
+.avatar{border-radius: 50%; width: 150px; height: 150px; margin-top:10px;}
 
-  .avatar{border-radius: 50%; width: 150px; height: 150px; margin-top:10px;}
-
-  /* DOES NOT WORK - not specific enough */
+/* DOES NOT WORK - not specific enough */
 .alert-wrapper {
-  background: #6742e0d5;
+background: #6742e0d5;
 }
 
 /* Works - pass "my-custom-class" in cssClass to increase specificity */
 .my-custom-class .alert-wrapper {
-  background: #6742e0d5;
+background: #6742e0d5;
 }
 .ion-card-content-class{
 text-align: justify;
@@ -23,142 +25,157 @@ text-align: justify;
 
 ///////////////////////////////////////////////////////////////// 
 .cartIcontxt{
-  margin-top: 10px;
-  padding-right:1px; 
-  width:27px;
-  max-width:27px;
-  height:20px;
-  color:#ffffff;
-  
+margin-top: 10px;
+padding-right:1px; 
+width:27px;
+max-width:27px;
+height:20px;
+color:#ffffff;
+
 }
 .cartIcon{
-  
-  padding-right:1px; 
-  width:27px;
-  max-width:27px;
-  height:20px;
-  color:#115c2b;
+
+padding-right:1px; 
+width:27px;
+max-width:27px;
+height:20px;
+color:#115c2b;
+}
+.filterIcon{
+margin-top: 20px;
+padding-right:1px; 
+width:25px;
+max-width:25px;
+height:20px;
+color:#115c2b;
+}
+.searchBar{
+max-width:220px;
+width:220px;
+border-radius: 5%;
+border-width: 1px;
+}
+.catBar{
+width:300px;
+max-width:300px;
+border-radius: 5%;
+border-width: 0px;
+}
+.catBarSelect{
+color:#115c2b;
+border-width: 0px;
+
+/* Si también quieres ajustar el padding a la derecha */
+}
+.catBarSelectOption{
+color:#115c2b;  
+border-width: 0px;
+//max-width:300px;
+//width:300px;
+}
+.filterRow{
+margin-left:1px;  
+}
+.tab1IonCard{
+width:300px;
+height:550px;
+border-radius: 5%;border-width: 1px;
+text-align: center;
+}
+
+.tab1ImgIonCard{
+width: 100%;
+}
+.tab1IonButton{
+border-radius: 5%;
+}
+.tab2IonCard{
+width:300px;
+height:300px;
+border-radius: 5%;border-width: 1px;
+text-align: center;
+}
+.tab2IonButton{
+border-radius: 5%;
+}
+.slides-custom {
+/* Agrega estilos personalizados aquí para sobrescribir los estilos predeterminados de ion-slides */
+/* Por ejemplo, para quitar el margen y el relleno predeterminados: */
+height: auto; width: auto; display: block; margin: 0; padding: 0; position: static;
+/* Otros estilos personalizados... */
+}
+ion-fab-button {
+--background: #ffffff;
+--background-activated: transparent;
+--background-hover: #115c2b;
+--border-radius: 10px;
+--border-width: 0px;
+--box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 0px rgba(0, 0, 0, 0.15);
+--color: #115c2b;
+width:30px;
+height:30px;
+}
+/* Ajuste de padding solo para pantallas más grandes (mayores a 768 píxeles) */
+@media screen and (min-width: 769px) {
+.slides-custom {
+  /* Agrega estilos personalizados aquí para sobrescribir los estilos predeterminados de ion-slides */
+  /* Por ejemplo, para quitar el margen y el relleno predeterminados: */
+  height: auto; width: auto; display: block; margin: 0; padding: 0; position: static;
+  /* Otros estilos personalizados... */
 }
 .filterIcon{
   margin-top: 20px;
-  padding-right:1px; 
-  width:25px;
-  max-width:25px;
+  padding-right:5px; 
+  width:30px;
   height:20px;
-  color:#115c2b;
+  color:#115c2b;       
 }
-.searchBar{
-  max-width:265px;
-  width:290px;
-  border-radius: 5%;
-  border-width: 1px;
+.searchBar {
+  max-width:350px;
+  width:350px;
+  border-radius: 5%;border-width: 1px;
+
+  /* Si también quieres ajustar el padding a la derecha */
 }
-.catBar{
- //width:300px;
-  max-width:300px;
-  border-radius: 5%;
-  border-width: 0px;
+.catBar {
+ // max-width:300px;
+  border-radius: 5%;border-width: 1px;
+
+  /* Si también quieres ajustar el padding a la derecha */
 }
 .catBarSelect{
   color:#115c2b;
   border-width: 0px;
-
+ // width:200px;
+  //max-width:200px;
   /* Si también quieres ajustar el padding a la derecha */
 }
 .catBarSelectOption{
-  color:#115c2b;  
+  color:#115c2b;
   border-width: 0px;
-  max-width:300px;
- // width:300px;
+  //width:200px;
+  //max-width:200px;
 }
-.filterRow{
-  margin-left:1px;  
-}
-.tab1IonCard{
+
+.tab1IonCard {
   //max-width:300px;
   border-radius: 5%;border-width: 1px;
-  text-align: center;
-}
-.tab1ImgIonCard{
-  //width: 100%;
+  /* Si también quieres ajustar el padding a la derecha */
 }
 .tab1IonButton{
   border-radius: 5%;
 }
-.slides-custom {
-  /* Agrega estilos personalizados aquí para sobrescribir los estilos predeterminados de ion-slides */
-  /* Por ejemplo, para quitar el margen y el relleno predeterminados: */
- // height: auto; width: auto; display: block; margin: 0; padding: 0; position: static;
-  /* Otros estilos personalizados... */
-}
-ion-fab-button {
-  --background: #ffffff;
-  --background-activated: transparent;
-  --background-hover: #115c2b;
-  --border-radius: 10px;
-  --border-width: 0px;
-  --box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 0px rgba(0, 0, 0, 0.15);
-  --color: #115c2b;
-  width:30px;
-  height:30px;
-}
-/* Ajuste de padding solo para pantallas más grandes (mayores a 768 píxeles) */
-@media screen and (min-width: 769px) {
-  .slides-custom {
-    /* Agrega estilos personalizados aquí para sobrescribir los estilos predeterminados de ion-slides */
-    /* Por ejemplo, para quitar el margen y el relleno predeterminados: */
-    height: auto; width: auto; display: block; margin: 0; padding: 0; position: static;
-    /* Otros estilos personalizados... */
+.ion-card-content-class{    
+  text-align: justify;    
   }
-  .filterIcon{
-    margin-top: 20px;
-    padding-right:5px; 
-    width:30px;
-    height:20px;
-    color:#115c2b;       
-  }
-  .searchBar {
-    max-width:300px;
+  .filterRow{
+    margin-left:15px;
     border-radius: 5%;border-width: 1px;
-
-    /* Si también quieres ajustar el padding a la derecha */
+    
   }
-  .catBar {
-    max-width:300px;
-    border-radius: 5%;border-width: 1px;
-
-    /* Si también quieres ajustar el padding a la derecha */
+  .productosLista{
+    margin-left:150px;
   }
-  .catBarSelect{
-    color:#115c2b;
-    border-width: 0px;
-    width:200px;
-    max-width:200px;
-    /* Si también quieres ajustar el padding a la derecha */
-  }
-  .catBarSelectOption{
-    color:#115c2b;
-    border-width: 0px;
-    width:200px;
-    max-width:200px;
-  }
-
-  .tab1IonCard {
-    max-width:300px;
-    border-radius: 5%;border-width: 1px;
-    /* Si también quieres ajustar el padding a la derecha */
-  }
-  .tab1IonButton{
-    border-radius: 5%;
-  }
-  .ion-card-content-class{    
-    text-align: justify;    
-    }
-    .filterRow{
-      margin-left:15px;
-      border-radius: 5%;border-width: 1px;
-      
-    }
 }
 //////////////////////////////////////////////////////////////SEARCHBAR
 

@@ -16,7 +16,17 @@ export class IniciarusuarioService {
   urlRoot: string = AppConfig.urlRoot; 
   constructor(public storage: Storage, public navCtrl: NavController,public httpClient: HttpClient) {
     this.init();
-  }  
+  }
+  
+  
+  async getUserProfile(idusuario){
+    const headers: any		= new HttpHeaders({'Content-Type' : 'application/octet-stream'});
+    const idUSUARIO: any = idusuario;        
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    const options: any		= {idUSUARIO};         
+    return (this.httpClient.post(this.urlRoot +'/index.php/Api/getUserById/',
+    JSON.stringify(options), headers))
+    }
   async init() {
     const storage = await this.storage.create();
     const productosJSON = await storage.get('productosSeleccionados');

@@ -1,16 +1,22 @@
 <ion-content>  
   
   <ion-grid>
-    <ion-row style="text-align: center;">
-      <ion-col (click)="modalCheckout()" >
+    <ion-row >
+      <ion-col (click)="modalCheckout()" style="margin-left:10px;width:30px;">
         <ion-badge  color="danger" class="cartIcontxt">
           {{totalCantidades}}
         </ion-badge>
         <ion-icon   name="cart-sharp" class="cartIcon"></ion-icon>
-       
+       <!-- <ion-badge *ngIf="verCarro && totalCantidades !== 0; else recalculaTotal" color="danger" class="cartIcontxt">
+          {{totalCantidades}}
+        </ion-badge>  
+        <ng-template #recalculaTotal>
+          {{ recalcularTotalCantidades() }}
+        </ng-template>     
+        <ion-icon  *ngIf="verCarro" name="cart-sharp" class="cartIcon"></ion-icon>--> 
       </ion-col>
       <ion-col style="text-align: left;">
-        <ion-searchbar [debounce]="500" class="searchBar" showCancelButton="focus"  (ionInput)="buscarProductos($event)"></ion-searchbar>
+        <ion-searchbar  [debounce]="500" class="searchBar" showCancelButton="focus"  (ionInput)="buscarProductos($event)"></ion-searchbar>
       </ion-col>
       <ion-col>
         <ion-icon class="filterIcon" (click)="showFilter()" name="filter-sharp" ></ion-icon>
@@ -33,14 +39,15 @@
       <ion-col></ion-col>
     </ion-row>
 
+    <!--
     <ion-row  *ngIf="!searchText && !noVerPorCat" style="text-align: center;">
       <ion-col></ion-col>
       <ion-col>
         <ion-label><h1 style="text-align: left;margin-left:20px;">Ofertas</h1></ion-label>
-          <ion-card class="tab1IonCard">               
-              <ion-slides pager="true" loop="true" class="slides-custom"  [options]="{  slidesPerView:1, autoplay: {delay: 2500} }" style="max-height:250px;">
-                <ion-slide  style="max-height:245px;" *ngFor="let consulta of productosOfertas">        
-                  <ion-img style="max-height:240px;" (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
+          <ion-card class="tab2IonCard">               
+              <ion-slides pager="true" loop="true"   [options]="{  slidesPerView:1, autoplay: {delay: 2500} }" >
+                <ion-slide   *ngFor="let consulta of productosOfertas">        
+                  <ion-img  (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
                   consulta.precioProducto);"
                   src="{{urlRoot}}/images/{{consulta.fotoProducto}}"></ion-img>                
                 </ion-slide>
@@ -50,61 +57,59 @@
       </ion-col>
       <ion-col></ion-col>
     </ion-row>    
-
-    <ion-row  >
-      <ion-col></ion-col>
-      <ion-col>        
-        <ion-list>           
-          <ion-card  *ngFor="let consulta of productos" class="tab1IonCard" >
-            <ion-card-header>        
-              <ion-img src="{{urlRoot}}/images/{{consulta.fotoProducto}}"
-              (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
-                      consulta.precioProducto);">                     
-              </ion-img>              
-              
-            </ion-card-header>
-            <ion-card-header>
-              <ion-card-title color="primary"
-              (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
-              consulta.precioProducto);">
-                {{consulta.nombreProducto | slice:0:23}}
-              </ion-card-title>
-              <ion-card-subtitle
-              (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
-              consulta.precioProducto);">{{consulta.descripcionProducto | slice:0:70}}... &nbsp;
-              </ion-card-subtitle>              
-              <ion-card-title color="primary"
-              (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
-              consulta.precioProducto);"> $ {{consulta.precioProducto}}</ion-card-title>
-              <ion-card-title (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
-              consulta.precioProducto);">
-                <ion-icon name="eye-sharp" style="font-size: 20px;color:#115c2b;"></ion-icon>
-              </ion-card-title>                    
-            </ion-card-header>
+  -->
+    <ion-row class="productosLista">
+        
+        <ion-card  *ngFor="let consulta of productos" class="tab1IonCard" >
+          <ion-card-header>        
+            <img src="{{urlRoot}}/images/{{consulta.fotoProducto}}" style="width:200px;height:200px;"
+            (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
+                    consulta.precioProducto);"/>                     
+                          
+            
+          </ion-card-header>
+          <ion-card-header>
+            <ion-card-title color="primary"
+            (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
+            consulta.precioProducto);">
+              {{consulta.nombreProducto | slice:0:23}}
+            </ion-card-title>
+            <ion-card-subtitle style="height:35px;"
+            (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
+            consulta.precioProducto);">{{consulta.descripcionProducto | slice:0:70}}... &nbsp;
+            </ion-card-subtitle>              
+            <ion-card-title color="primary"
+            (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
+            consulta.precioProducto);"> $ {{consulta.precioProducto}}</ion-card-title>
+            <ion-card-title (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
+            consulta.precioProducto);">
+              <ion-icon name="eye-sharp" style="font-size: 20px;color:#115c2b;"></ion-icon>
+            </ion-card-title>                    
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col (click)="decrementar(consulta.idProducto)">
+                <ion-icon name="remove-circle-outline" style="font-size:24px;"></ion-icon>
+              </ion-col>
+              <ion-col>
+                <ion-label>{{ cantidadesPorProducto[consulta.idProducto] || 1 }}</ion-label>
+              </ion-col>
+              <ion-col (click)="incrementar(consulta.idProducto)">                  
+                <ion-icon name="add-circle-outline" style="font-size:24px;"></ion-icon>
+              </ion-col>
+            </ion-row>            
+          </ion-card-content>
             <ion-card-content>
-              <ion-row style="display: none;">
-                <ion-col (click)="decrementar(consulta.idProducto)">
-                  <ion-icon name="remove-circle-outline" style="font-size:24px;"></ion-icon>
-                </ion-col>
-                <ion-col>
-                  <ion-label>{{ cantidadesPorProducto[consulta.idProducto] || 1 }}</ion-label>
-                </ion-col>
-                <ion-col (click)="incrementar(consulta.idProducto)">                  
-                  <ion-icon name="add-circle-outline" style="font-size:24px;"></ion-icon>
-                </ion-col>
-              </ion-row>            
-            </ion-card-content>
-              <ion-card-content>
-              <ion-button fill="outline" class="tab1IonButton"
-              (click)="add(consulta.idProducto,consulta.nombreProducto,consulta.fotoProducto,consulta.precioProducto)">Añadir al carrito</ion-button>
-              </ion-card-content> 
-          </ion-card>   
-        </ion-list>
-        <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)" *ngIf="!noVerPorCat">
-          <ion-infinite-scroll-content></ion-infinite-scroll-content>
-        </ion-infinite-scroll>
-      </ion-col>
-      <ion-col></ion-col>
+            <ion-button fill="outline" class="tab1IonButton"
+            (click)="add(consulta.idProducto,consulta.nombreProducto,consulta.fotoProducto,consulta.precioProducto)">Añadir al carrito</ion-button>
+            </ion-card-content> 
+        </ion-card>   
+       
+      <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)" *ngIf="!noVerPorCat">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+               
+           
     </ion-row>
   </ion-grid> 
 </ion-content>
