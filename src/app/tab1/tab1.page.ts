@@ -32,9 +32,12 @@ totalCantidades: any=0;
 
 urlRoot: string = AppConfig.urlRoot;
 
+pageNumber: number = 1;
+
 filtroCategoria: string = ''; // Nueva propiedad
 noVerPorCat: any = false;
   productosOfertas: any[] = [];
+  isSearching: boolean= false;
   constructor(public fb: FormBuilder, public http: HttpClient,private platform: Platform,
             private route: ActivatedRoute,public alertController: AlertController,
             private modalCtrl: ModalController,public menuCtrl: MenuController,public toastController:ToastController,
@@ -47,7 +50,23 @@ noVerPorCat: any = false;
     this.calculaTotal();
   }
    
-
+  onIonInfinite(ev) {
+    setTimeout(() => {
+      // Incrementa el número de página
+      this.pageNumber++;
+  
+      // Llama al método getProductos con el número de página actual
+      this.getProductos(null, this.pageNumber);
+  
+      // Deshabilita el evento ionInfinite si ya no hay más productos
+      if (this.productos.length % 6 !== 0) {
+        (ev as InfiniteScrollCustomEvent).target.disabled = true;
+      }
+  
+      // Completa el evento de scroll infinito
+      (ev as InfiniteScrollCustomEvent).target.complete();
+    }, 500);
+  }
     showFilter(){
       if(this.showFilters){
         this.showFilters=false;
@@ -124,13 +143,21 @@ noVerPorCat: any = false;
     toast.present();
     }
   
-  buscarProductos(event: any) {    
-    this.searchText = event.target.value.trim().toLowerCase();
-    // Obtener el valor de búsqueda del evento
-    const busqueda = event.target.value;  
-    // Llamar a getProductos con el valor de búsqueda
-    this.getProductos(busqueda); 
-  }  
+    buscarProductos(event: any) {
+      this.searchText = event.target.value.trim().toLowerCase();
+      
+      // Verifica si hay texto de búsqueda
+      if (this.searchText) {
+        // Desactiva el Infinite Scroll y realiza la búsqueda
+        this.isSearching = true;
+        this.getProductos(this.searchText);
+      } else {
+        // Si no hay texto de búsqueda, reactiva el Infinite Scroll y carga los productos normales
+        this.isSearching = false;
+        this.pageNumber = 1; // Restaura el número de página a 1
+        this.getProductos(null, this.pageNumber);
+      }
+    }  
    
   ngOnInit() {    
     //this.inicia.verificar();
@@ -172,40 +199,31 @@ noVerPorCat: any = false;
     // Imprime la sumatoria total en la consola    
     this.totalCantidades =_totalCantidades;
   }
-  onIonInfinite(ev) {
-    if(this.noVerPorCat!==true){ 
-    setTimeout(() => {
-      this.getProductos();  
-      
-      //this.buscarProductos(this.searchText);    
-      (ev as InfiniteScrollCustomEvent).target.complete();       
-    }, 500);
-  }
-  }
-  async getProductos(busqueda: string=null)
-  {    
-     
-    // eslint-disable-next-line @typescript-eslint/naming-convention
+  
+  async getProductos(busqueda: string = null, pageNumber: number = 1) {
     const headers: any		= new HttpHeaders({'Content-Type' : 'application/octet-stream'});
-    //const BUSQUEDA: any=this.registroForm.value.busqueda;
-
-    const options: any = {};
-  if (busqueda) {
-    options.busqueda = busqueda;
+    
+    const options: any = { busqueda, pageNumber };
+  
+    // Realiza la solicitud HTTP con las opciones
+    this.http.post(this.urlRoot + '/index.php/Api/Productos/', JSON.stringify(options), headers)
+      .subscribe(
+        (res: any) => {
+          if (this.isSearching) {
+            // Si está buscando, asigna los resultados de la búsqueda
+            this.productos = res;
+          } else {
+            // Si no está buscando, concatena los resultados al arreglo existente
+            this.productos = this.productos.concat(res);
+          }
+  
+          // ...
+        },
+        (error: any) => {
+          console.log(error);
+        }
+      );
   }
-
-  // Llamar a la API con las opciones
-  this.http.post(this.urlRoot+'/index.php/Api/Productos/',
-    JSON.stringify(options), headers)
-    .subscribe(
-      (res: any) => {
-        this.productos = res;        
-      },
-      (error: any) => {         
-        console.log(error);
-      }
-    );
-}
   async getCategorias()
   {
      

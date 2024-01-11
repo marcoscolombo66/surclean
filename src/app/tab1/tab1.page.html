@@ -39,7 +39,7 @@
       <ion-col></ion-col>
     </ion-row>
 
-    <!--
+    
     <ion-row  *ngIf="!searchText && !noVerPorCat" style="text-align: center;">
       <ion-col></ion-col>
       <ion-col>
@@ -57,19 +57,19 @@
       </ion-col>
       <ion-col></ion-col>
     </ion-row>    
-  -->
+
     <ion-row class="productosLista">
         
         <ion-card  *ngFor="let consulta of productos" class="tab1IonCard" >
           <ion-card-header>        
-            <img src="{{urlRoot}}/images/{{consulta.fotoProducto}}" style="width:200px;height:200px;"
+            <img src="{{urlRoot}}/images/{{consulta.fotoProducto}}" style="margin-top:11px;width:200px;height:200px;"
             (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
                     consulta.precioProducto);"/>                     
                           
             
           </ion-card-header>
           <ion-card-header>
-            <ion-card-title color="primary"
+            <ion-card-title color="primary" width="40px;"
             (click)="modalMasInfo(consulta.idProducto,consulta.nombreProducto,consulta.descripcionProducto,consulta.fotoProducto,
             consulta.precioProducto);">
               {{consulta.nombreProducto | slice:0:23}}
@@ -86,7 +86,7 @@
               <ion-icon name="eye-sharp" style="font-size: 20px;color:#115c2b;"></ion-icon>
             </ion-card-title>                    
           </ion-card-header>
-          <ion-card-content>
+         <!-- <ion-card-content>
             <ion-row>
               <ion-col (click)="decrementar(consulta.idProducto)">
                 <ion-icon name="remove-circle-outline" style="font-size:24px;"></ion-icon>
@@ -98,16 +98,16 @@
                 <ion-icon name="add-circle-outline" style="font-size:24px;"></ion-icon>
               </ion-col>
             </ion-row>            
-          </ion-card-content>
+          </ion-card-content>-->
             <ion-card-content>
             <ion-button fill="outline" class="tab1IonButton"
             (click)="add(consulta.idProducto,consulta.nombreProducto,consulta.fotoProducto,consulta.precioProducto)">Añadir al carrito</ion-button>
             </ion-card-content> 
         </ion-card>   
        
-      <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)" *ngIf="!noVerPorCat">
-        <ion-infinite-scroll-content></ion-infinite-scroll-content>
-      </ion-infinite-scroll>
+        <ion-infinite-scroll *ngIf="!isSearching" (ionInfinite)="onIonInfinite($event)">
+          <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
                
            
     </ion-row>

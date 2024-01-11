@@ -3,9 +3,13 @@
   --ion-safe-area-top: 20px;
   --ion-safe-area-bottom: 22px;
 }
-.productosLista{
-  margin-left:15px;
-}
+.productosLista {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Para que los elementos se envuelvan en filas si no caben en una sola línea */
+  margin-left: 0;}
+
 /* *{font-family: 'arial';}*/
 
 .avatar{border-radius: 50%; width: 150px; height: 150px; margin-top:10px;}
@@ -70,18 +74,21 @@ border-width: 0px;
 .catBarSelectOption{
 color:#115c2b;  
 border-width: 0px;
-//max-width:300px;
-//width:300px;
+max-width:300px;
+width:300px;
 }
 .filterRow{
 margin-left:1px;  
 }
-.tab1IonCard{
-width:300px;
+.tab1IonCard {
+  text-align: center;
+  margin: 10px; /* Ajusta el margen según sea necesario */
+  width:300px;
 height:550px;
 border-radius: 5%;border-width: 1px;
 text-align: center;
 }
+
 
 .tab1ImgIonCard{
 width: 100%;
@@ -131,8 +138,8 @@ height:30px;
   color:#115c2b;       
 }
 .searchBar {
-  max-width:350px;
-  width:350px;
+  max-width:330px;
+  width:330px;
   border-radius: 5%;border-width: 1px;
 
   /* Si también quieres ajustar el padding a la derecha */
@@ -158,10 +165,14 @@ height:30px;
 }
 
 .tab1IonCard {
-  //max-width:300px;
-  border-radius: 5%;border-width: 1px;
-  /* Si también quieres ajustar el padding a la derecha */
+  text-align: center;
+  margin: 10px; /* Ajusta el margen según sea necesario */
+  width:300px;
+height:550px;
+border-radius: 5%;border-width: 1px;
+text-align: center;
 }
+
 .tab1IonButton{
   border-radius: 5%;
 }
@@ -169,13 +180,18 @@ height:30px;
   text-align: justify;    
   }
   .filterRow{
-    margin-left:15px;
+    margin-left:1px;
     border-radius: 5%;border-width: 1px;
+    margin-right: 150px;
     
   }
-  .productosLista{
-    margin-left:150px;
-  }
+  .productosLista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Para que los elementos se envuelvan en filas si no caben en una sola línea */
+    margin-left: 0; }
+  
 }
 //////////////////////////////////////////////////////////////SEARCHBAR
 
