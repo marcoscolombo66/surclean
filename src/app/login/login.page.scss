@@ -34,7 +34,13 @@ text-align: justify;
 }
 
 
-
+.loginCenter{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Para que los elementos se envuelvan en filas si no caben en una sola línea */
+    margin-left: 0;
+}
 .estrellita{
 color:gold;
 }
