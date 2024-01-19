@@ -25,8 +25,8 @@ export class TabsPage implements OnInit {
         {
           text: 'Consulta',
           role: 'destructive',
-          icon: 'whatsapp-sharp',
-          handler: () => {/*this.perfil()*/ this.whatsapp();},         
+          icon: 'logo-whatsapp',
+          handler: () => {this.whatsapp();},         
           data: {
             action: 'delete',
           },
