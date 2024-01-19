@@ -18,7 +18,7 @@
           <ion-list>           
             <ion-item *ngFor="let item of arrayCarro">
               <ion-thumbnail slot="start" style="max-width: 30px;max-height: 30px;">
-                <ion-img alt="{{ item.nombreProducto }}" src="{{url_proyecto}}/images/{{item.fotoProducto}}" ></ion-img>
+                <ion-img alt="{{ item.nombreProducto }}" src="{{urlRoot}}/images/{{item.fotoProducto}}" ></ion-img>
               </ion-thumbnail>              
               <ion-label>{{ item.cant }} x {{ item.nombreProducto | slice:0:15 }}</ion-label>              
               <ion-label style="max-width: 90px;text-align:right;">US$ {{ item.precio }}</ion-label>
@@ -38,28 +38,28 @@
               <ion-label></ion-label>
               <ion-label style="max-width: 30px;text-align:right;"> </ion-label>
               <ion-label style="max-width: 20px;text-align:right;"></ion-label>
-              <ion-label style="max-width: 110px;text-align:right; color:#115c2b;" (click)="vaciarCarro()"> <ion-icon name="trash-bin-sharp"></ion-icon> Vaciar</ion-label>
+              <ion-label style="max-width: 110px;text-align:right;" color="primary" (click)="vaciarCarro()"> <ion-icon name="trash-bin-sharp"></ion-icon> Vaciar</ion-label>
             </ion-item>              
           </ion-list>          
         </ion-card-content>
       </ion-card>    
 </ion-grid>
-<ion-row style="text-align: center;display:none;" *ngIf="totalSuma!==0">
+<ion-row style="text-align: center;" *ngIf="totalSuma!==0">
   <ion-col></ion-col> 
   <ion-col><label style="font-weight: bold;">PAGAR</label></ion-col>
   <ion-col></ion-col>
 </ion-row>
-<ion-row style="text-align: center;display:none;" *ngIf="totalSuma!==0">
+<ion-row style="text-align: center;" *ngIf="totalSuma!==0">
   <ion-col></ion-col>
   <ion-col><ion-button (click)="pagarUala()">Uala</ion-button></ion-col>
   <ion-col></ion-col>
 </ion-row>
-<ion-row style="text-align: center;display:none;" *ngIf="totalSuma!==0">
+<ion-row style="text-align: center;" *ngIf="totalSuma!==0">
   <ion-col></ion-col>
   <ion-col><ion-button (click)="pagarMercadopago()">Mercadopago</ion-button></ion-col>
   <ion-col></ion-col>
 </ion-row>
-<ion-row style="text-align: center;display:none;" *ngIf="totalSuma!==0">
+<ion-row style="text-align: center;" *ngIf="totalSuma!==0">
   <ion-col></ion-col>
   <ion-col><ion-button (click)="transferencia()">Transferencia</ion-button></ion-col>
   <ion-col></ion-col>
@@ -67,7 +67,7 @@
 
 <ion-row style="text-align: center;">
   <ion-col></ion-col>
-  <ion-col><ion-button (click)="whatsapp()"><ion-icon name="chatbubble-sharp"></ion-icon>&nbsp;&nbsp; Consultar</ion-button></ion-col>
+  <ion-col><ion-button (click)="whatsapp()"><ion-icon name="logo-whatsapp"></ion-icon>&nbsp;&nbsp; Consultar</ion-button></ion-col>
   <ion-col></ion-col>
 </ion-row>
 </ion-content>

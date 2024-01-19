@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
-import { IniciarusuarioService } from '../../iniciarusuario.service';
+import { IniciarusuarioService } from '../iniciarusuario.service';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { LoadingController, NavController, NavParams } from '@ionic/angular';
-import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { LoadingController, NavController } from '@ionic/angular';
+import { FormGroup,Validators } from '@angular/forms';
 import { ModalController,ToastController } from '@ionic/angular';
-import { ComprobantePage } from '../comprobante/comprobante.page';
-import { AppConfig } from '../../config';
+import { ComprobantePage } from '../modals/comprobante/comprobante.page';
+import { AppConfig } from '../config';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.page.html',
   styleUrls: ['./checkout.page.scss'],
 })
 export class CheckoutPage implements OnInit {
-   
+
   user: any;
   itemsJson: any;
   idOrden : any;
@@ -28,29 +28,37 @@ export class CheckoutPage implements OnInit {
   mensaje: any;
    
   urlRoot: string = AppConfig.urlRoot;
+   
   
- constructor(public http: HttpClient, public navParams: NavParams,public modalCtrl: ModalController,
+ constructor(public http: HttpClient, public modalCtrl: ModalController,
    public navCtrl: NavController, public inicia: IniciarusuarioService, 
-   public formBuilder: FormBuilder, public toastController: ToastController, 
+   public toastController: ToastController, 
    public loadingCtrl: LoadingController)
-    {    
-    this.arrayCarro =  this.inicia.obtenerProductosSeleccionados()
-    const productosSeleccionadosString = JSON.stringify(this.arrayCarro, null, 2);
-    const productosSeleccionadosObject = JSON.parse(productosSeleccionadosString);
+    {
 
-    // Convierte el objeto en un array
-    this.arrayCarro = Object.values(productosSeleccionadosObject);
-    for (const item of this.arrayCarro) {
-      this.totalSuma += item.cant*item.precio;
+      // Verificar si hay datos almacenados al inicializar la página
+    this.inicia.tieneDatosAlmacenados().then((result) => {
+      if(result===false){
+        this.navCtrl.navigateRoot('login');
+      }
+    });
+
+      this.arrayCarro =  this.inicia.obtenerProductosSeleccionados()
+      const productosSeleccionadosString = JSON.stringify(this.arrayCarro, null, 2);
+      const productosSeleccionadosObject = JSON.parse(productosSeleccionadosString);
+
+      // Convierte el objeto en un array
+      this.arrayCarro = Object.values(productosSeleccionadosObject);
+        for (const item of this.arrayCarro) {
+          this.totalSuma += item.cant*item.precio;
+        }
     }
 
-     
-    }
+  
     cancel() {
-      return this.modalCtrl.dismiss(null, 'cancel');
+      return  this.navCtrl.navigateRoot('tab1');
     }
-  ngOnInit() {    
-    
+    ngOnInit() {
   }
   async showLoading() {
     const loading = await this.loadingCtrl.create({
@@ -143,7 +151,7 @@ export class CheckoutPage implements OnInit {
                 // vaciaCarro     
                 this.vaciarCarro();
                 this.navCtrl.navigateRoot('/tab3');
-                this.modalCtrl.dismiss(null, 'cancel'); 
+                //this.modalCtrl.dismiss(); 
                 this.loadingCtrl.dismiss();
                 // Manejar la respuesta aquí
               },
@@ -321,7 +329,7 @@ export class CheckoutPage implements OnInit {
           let mensaje = "Hola!%0AQuería%20consultarte%20por:%0A"
           mensaje=mensaje+cadenaProductos.replace(/ /g, '%20');
           mensaje= mensaje + ".%0A%0AGracias!";
-          const urlWhataspp=`${"https://wa.me/542974235583?text="}${mensaje}`;
+          const urlWhataspp=`${"https://wa.me/542974235278?text="}${mensaje}`;
           
           window.open(urlWhataspp,'_system','location=yes'); 
           
@@ -376,7 +384,7 @@ async subirComprobante(idOrden,url) {
     componentProps: {
       idOrden: idOrden,
       totalSuma: this.totalSuma,
-      url_proyecto: url
+      url_proyecto: this.urlRoot
     },
     animated: true,
     canDismiss: true,
@@ -390,6 +398,5 @@ async subirComprobante(idOrden,url) {
   this.totalSuma=0;
   this.inicia.vaciarProductosSeleccionados();   
 }
-
 
 }

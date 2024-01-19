@@ -10,7 +10,7 @@ import { MenuController } from '@ionic/angular';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { MasinfoPage } from '../modals/masinfo/masinfo.page';
-import { CheckoutPage } from '../modals/checkout/checkout.page';
+
 import { AppConfig } from 'src/app/config';
 
 @Component({
@@ -268,7 +268,8 @@ noVerPorCat: any = false;
   }
 
   async modalCheckout() {
-    //const user= await this.inicia.getUser();
+     
+    /*//const user= await this.inicia.getUser();
     //const url_proyecto = user[0].url_proyecto
     const modal = await this.modalCtrl.create({
       component: CheckoutPage,
@@ -284,5 +285,7 @@ noVerPorCat: any = false;
       keyboardClose: true,
     });
     await modal.present();
+    */
+    this.navCtrl.navigateRoot('checkout');
   }
 }

@@ -21,6 +21,7 @@ export class TabsPage implements OnInit {
       header: 'Opciones',
       cssClass: 'tabs.page.css',
       buttons: [
+        
         {
           text: 'Consulta',
           role: 'destructive',
@@ -29,16 +30,25 @@ export class TabsPage implements OnInit {
           data: {
             action: 'delete',
           },
-        },        
+        }, 
+        {
+          text: 'Mi perfil',
+          role: 'destructive',
+          icon: 'person-sharp',
+          handler: () => {this.perfil(); },         
+          data: {
+            action: 'delete',
+          },
+        },       
         {
           text: 'Salir',
           role: 'destructive',
           icon: 'log-out-sharp',
-          handler: () => {/*this.cerrar()*/},
+          handler: () => {this.cerrar()},
           data: {
             action: 'delete',
           },
-        },
+        } 
       ],
     });
 
@@ -48,18 +58,21 @@ export class TabsPage implements OnInit {
   whatsapp()
     {        
           let mensaje = "Hola!%0AQuería%20consultarte%20por:%0A";
-          const urlWhataspp=`${"https://wa.me/542974235583?text="}${mensaje}`;          
+          const urlWhataspp=`${"https://wa.me/542974235278?text="}${mensaje}`;          
           window.open(urlWhataspp,'_system','location=yes');                
     }
  cerrar(){
   console.log('cerrar')
   //this.storage.remove('token');
   this.storage.remove('datos_user');
-  //this.inicia.verificar();
+  this.navCtrl.navigateRoot('login');
  }
 
  perfil(){
   this.navCtrl.navigateRoot('perfil');
  } 
+
+
+  
 
 }

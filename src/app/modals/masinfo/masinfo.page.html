@@ -11,8 +11,12 @@
 <ion-content>
 <ion-card>
   
-  <ion-card-header style="text-align:center;">
-    <ion-img alt="{{nombreProducto}}" src="{{urlRoot}}/images/{{fotoProducto}}" ></ion-img>
+  <ion-card-header style="
+    display: flex;
+    justify-content: center;    
+    margin-left: 0;">
+    <ion-img alt="{{nombreProducto}}" src="{{urlRoot}}/images/{{fotoProducto}}" 
+    style="max-width:300px;max-height: 300px;"></ion-img>
   </ion-card-header>
   <ion-card-header>
     <ion-card-title><span style="font-weight:bold;font-size: 22px;">{{nombreProducto}}</span></ion-card-title>    
@@ -23,7 +27,7 @@
   </ion-card-content>
 
   <ion-card-content>
-    <span style="font-weight:bold; color:#115c2b; font-size: 22px;">
+    <span style="font-weight:bold; font-size: 22px;" color="primary">
     Precio:</span><span style="font-size: 22px;" > US$ {{precioProducto}}
     </span>
   </ion-card-content>

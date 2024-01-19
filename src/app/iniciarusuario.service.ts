@@ -52,16 +52,24 @@ export class IniciarusuarioService {
     this.productosSeleccionados = {}; // Vaciar la variable local
     this.storage.remove('productosSeleccionados'); // Eliminar la información del almacenamiento
   }
-   verificar(){
+
+
+  async tieneDatosAlmacenados(): Promise<boolean> {
+    const datosUsuario = await this.storage.get('datos_user');
+    return datosUsuario !== null && datosUsuario !== undefined;
+  }
+   verificar(): any{
     this.storage.get('datos_user').then(data=>
       {
         if(data)
         {
-          //console.log('Login','activo');
+          //console.log('Login','activo');      
+          
         }
         else
-        {console.log('Login','Inactivo');
-        return this.navCtrl.navigateRoot('/login');
+        {           
+          console.log('Login','Inactivo');         
+         return this.navCtrl.navigateRoot('/login');
       }
 });
 

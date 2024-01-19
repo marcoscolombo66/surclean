@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./olvido/olvido.module').then( m => m.OlvidoPageModule)
   },
   {
-    path: 'checkout',
+    path: 'modalcheckout',
     loadChildren: () => import('./modals/checkout/checkout.module').then( m => m.CheckoutPageModule)
   },
   {
@@ -42,7 +42,12 @@ const routes: Routes = [
   {
     path: 'orden',
     loadChildren: () => import('./modals/orden/orden.module').then( m => m.OrdenPageModule)
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
   }
+
 ];
 
 @NgModule({

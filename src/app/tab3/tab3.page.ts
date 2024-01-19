@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IniciarusuarioService } from '../iniciarusuario.service';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { interval} from 'rxjs';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 import { Location } from "@angular/common";
 import { OrdenPage } from '../modals/orden/orden.page';
 import { AppConfig } from 'src/app/config';
@@ -19,13 +19,19 @@ export class Tab3Page implements OnInit {
   consulta: any;
   idUSUARIO: any;
   urlRoot: string = AppConfig.urlRoot;
-  constructor(public location: Location, public inicia: IniciarusuarioService,public http: HttpClient, public modalCtrl: ModalController)
+  constructor(public location: Location, public inicia: IniciarusuarioService,
+    public http: HttpClient, public modalCtrl: ModalController,public navCtrl: NavController)
   {
-this.nomostrar=true;
-const numbers = interval(20000);
-    numbers.subscribe(()=>{
-      this.getOrdenes();
+    this.inicia.tieneDatosAlmacenados().then((result) => {
+      if(result===false){
+        this.navCtrl.navigateRoot('login');
+      }
     });
+    this.nomostrar=true;
+    const numbers = interval(20000);
+        numbers.subscribe(()=>{
+          this.getOrdenes();
+        });
    }
 
   ngOnInit() {
@@ -80,7 +86,7 @@ window.open(url,'_system','location=yes');
   }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 myBackButton(){
-  this.location.back();
+  this.navCtrl.navigateRoot('tab1');
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 async modalMasInfo(idOrden,fecha,totalCompra,respuesta,dataProductos,procesaPago,metodoPago) {

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { IniciarusuarioService } from '../../iniciarusuario.service';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { NavParams } from '@ionic/angular';
+import { NavController, NavParams } from '@ionic/angular';
 import { interval} from 'rxjs';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { ModalController, ToastController } from '@ionic/angular';
-import { Clipboard } from '@capacitor/clipboard';
+
 import { ComprobantePage } from '../comprobante/comprobante.page';
 import { AppConfig } from 'src/app/config';
 @Component({
@@ -34,23 +34,13 @@ export class OrdenPage implements OnInit {
 
 public myForm: FormGroup;
 mensaje: any;
-constructor(public http: HttpClient, public navParams: NavParams,public modalCtrl: ModalController,
+constructor(public http: HttpClient, public navParams: NavParams,public modalCtrl: ModalController,public navCtrl: NavController,
   public inicia: IniciarusuarioService, public formBuilder: FormBuilder, public toastController: ToastController)
   {      
     this.nomostrar=true;
           
   }
-  async copiarCbu()
-  {
-    //total final resto es total final menos el 23% que seria la comision.
-    const  cbu = '898798798798798978978';
-    Clipboard.write({
-      // eslint-disable-next-line id-blacklist
-      string: ''+ cbu,
-    });
-    this.presentToast('Se copió el CBU:  '+cbu);
-        //Va a ir Link personalizado.
-  }
+  
   async presentToast(mensaje) {
     const toast = await this.toastController.create({
       //header: 'Toast header',
