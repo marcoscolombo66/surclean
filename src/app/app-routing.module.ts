@@ -30,11 +30,7 @@ const routes: Routes = [
   {
     path: 'olvido',
     loadChildren: () => import('./olvido/olvido.module').then( m => m.OlvidoPageModule)
-  },
-  {
-    path: 'modalcheckout',
-    loadChildren: () => import('./modals/checkout/checkout.module').then( m => m.CheckoutPageModule)
-  },
+  },  
   {
     path: 'perfil',
     loadChildren: () => import('./modals/perfil/perfil.module').then( m => m.PerfilPageModule)
