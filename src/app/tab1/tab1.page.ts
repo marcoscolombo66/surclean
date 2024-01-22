@@ -162,9 +162,14 @@ noVerPorCat: any = false;
   ngOnInit() {    
     //this.inicia.verificar();
     this.getProductos();
-    this.getProductosOferta();    
+    this.getProductosOferta();
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      this.goBack();
+    });    
   }
-   
+  goBack() {
+    this.navCtrl.back();
+  }
    incrementar(idProducto: string) { 
      this.cantidadesPorProducto[idProducto] =  (this.cantidadesPorProducto[idProducto] || 1) + 1;
      
