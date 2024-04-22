@@ -184,7 +184,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 // config.ts
 const AppConfig = {
-    urlRoot: 'https://www.antiguoshop.ar/admin',
+    urlRoot: 'https://www.gestionst.com.ar/surclean/admin',
     parametro2: 'valor2'
 };
 
