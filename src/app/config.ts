@@ -1,6 +1,6 @@
 // config.ts
 
 export const AppConfig = {
-    urlRoot: 'https://www.antiguoshop.ar/admin',
+    urlRoot: 'https://www.gestionst.com.ar/surclean/admin',
     parametro2: 'valor2'
   };
