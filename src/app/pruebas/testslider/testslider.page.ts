@@ -9,14 +9,15 @@ import { IonSlides } from '@ionic/angular';
 })
 export class TestsliderPage implements OnInit {
   slideOptions = {
-    slidesPerView: 1,
+    slidesPerView: 2,
     autoplay: {
       delay: 2500,
     },
     initialSlide: 1,
     speed: 400,
-    pager: true,
-    scrollbar: true
+    pager: false,
+    scrollbar: false,
+    
   };
 
   fotos = [
@@ -34,7 +35,13 @@ export class TestsliderPage implements OnInit {
 
   ngOnInit() {
   }
+  prevSlide() {
+    document.querySelector('ion-slides').slidePrev();
+  }
 
+  nextSlide() {
+    document.querySelector('ion-slides').slideNext();
+  }
 }
 
 /*

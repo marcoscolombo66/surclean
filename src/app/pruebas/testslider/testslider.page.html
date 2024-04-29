@@ -1,6 +1,31 @@
 <ion-content>
 
-    <ion-slides pager="true" loop="true" [options]="slideOptions">
+    <!-- <ion-slides pager="true" loop="true" [options]="slideOptions">
+      <ion-slide *ngFor="let foto of fotos">
+        <img src="{{ foto.url }}" alt="{{ foto.descripcion }}" />
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ foto.descripcion }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-slide>
+    </ion-slides> -->
+
+   
+    
+
+    <div class="slider-nav">
+      <!-- Flecha izquierda -->
+      <div class="prev-arrow" (click)="prevSlide()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </div>
+      <!-- Flecha derecha -->
+      <div class="next-arrow" (click)="nextSlide()">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+
+    <ion-slides pager="true" [options]="slideOptions">
       <ion-slide *ngFor="let foto of fotos">
         <img src="{{ foto.url }}" alt="{{ foto.descripcion }}" />
         <ion-card>
@@ -10,8 +35,8 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
-
     
+        
   
 
 </ion-content>
