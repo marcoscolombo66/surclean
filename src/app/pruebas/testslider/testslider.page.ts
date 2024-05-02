@@ -20,17 +20,6 @@ export class TestsliderPage implements OnInit {
     
   };
 
-  fotos = [
-    { url: 'https://i.postimg.cc/15rBTBm1/Foto-Alejandro-Sosa.png', descripcion: 'Cloro Ultra Concentrado 100gr/l Anmat Senasa '},
-    { url: 'https://i.postimg.cc/bJQLNQtQ/Marcos-Colombo-Coordinador-Regional-de-Chubut.png', descripcion: 'hola \n escripción de la imagen 2' },
-    { url: 'https://i.postimg.cc/g0p1TLZn/photo-2023-10-21-14-00-22.jpg', descripcion: 'hola\nDescripción de la imagen 3' },
-    { url: 'https://i.postimg.cc/15rBTBm1/Foto-Alejandro-Sosa.png', descripcion: 'hola\nDescripción de la imagen 1' },
-    { url: 'https://i.postimg.cc/bJQLNQtQ/Marcos-Colombo-Coordinador-Regional-de-Chubut.png', descripcion: 'hola\nDescripción de la imagen 2' },
-    { url: 'https://i.postimg.cc/g0p1TLZn/photo-2023-10-21-14-00-22.jpg', descripcion: 'hola\nDescripción de la imagen 3' },
-    { url: 'https://i.postimg.cc/15rBTBm1/Foto-Alejandro-Sosa.png', descripcion: 'hola\nDescripción de la imagen 1' },
-    { url: 'https://i.postimg.cc/bJQLNQtQ/Marcos-Colombo-Coordinador-Regional-de-Chubut.png', descripcion: 'hola\nDescripción de la imagen 2' },
-    { url: 'https://i.postimg.cc/g0p1TLZn/photo-2023-10-21-14-00-22.jpg', descripcion: 'hola\nDescripción de la imagen 3' },
-  ];
   constructor() { }
 
   ngOnInit() {

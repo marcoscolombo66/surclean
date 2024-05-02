@@ -1,6 +1,6 @@
 <ion-content>
 
-    <!-- <ion-slides pager="true" loop="true" [options]="slideOptions">
+  <!-- <ion-slides pager="true" loop="true" [options]="slideOptions">
       <ion-slide *ngFor="let foto of fotos">
         <img src="{{ foto.url }}" alt="{{ foto.descripcion }}" />
         <ion-card>
@@ -11,32 +11,50 @@
       </ion-slide>
     </ion-slides> -->
 
-   
-    
 
-    <div class="slider-nav">
-      <!-- Flecha izquierda -->
-      <div class="prev-arrow" (click)="prevSlide()">
-        <ion-icon name="arrow-back"></ion-icon>
+
+
+
+
+  <div class="ContainerCenter">
+    <!-- Radio Seleccionar -->
+    <input type="radio" name="Carrusel" id="Slider1" checked>
+    <input type="radio" name="Carrusel" id="Slider2">
+    <input type="radio" name="Carrusel" id="Slider3">
+
+    <div class="Carrusels">
+      <!-- Imagen contenido -->
+      <div class="Carrusel" style="background-image: url(https://i.postimg.cc/T2WDhxPj/Codific-AR-Dev.jpg);"></div>
+      <div class="Carrusel" style="background-image: url(https://i.postimg.cc/Y94kS2s9/Dise-o-sin-t-tulo.png);"></div>
+      <div class="Carrusel"
+        style="background-image: url(https://i.postimg.cc/nh2rnf9q/Screenshot-2024-04-23-at-14-44-21-Surclean-Quimica-surcleanquimica-Fotos-y-videos-de-Instagram.png);">
+      
       </div>
-      <!-- Flecha derecha -->
-      <div class="next-arrow" (click)="nextSlide()">
-        <ion-icon name="arrow-forward"></ion-icon>
-      </div>
+
+      
+
+
+      <!-- Flechas a la izquierda por cada imagen -->
+      <label for="Slider3" class="ArrowLeft Arrow1">❮</label>
+      <label for="Slider1" class="ArrowLeft Arrow2">❮</label>
+      <label for="Slider2" class="ArrowLeft Arrow3">❮</label>
+
+
+      <!-- Flechas a la derecha por cada imagen -->
+      <label for="Slider2" class="ArrowRight Arrow1">❯</label>
+      <label for="Slider3" class="ArrowRight Arrow2">❯</label>
+      <label for="Slider1" class="ArrowRight Arrow3">❯</label>
+
     </div>
 
-    <ion-slides pager="true" [options]="slideOptions">
-      <ion-slide *ngFor="let foto of fotos">
-        <img src="{{ foto.url }}" alt="{{ foto.descripcion }}" />
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>{{ foto.descripcion }}</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-    
-        
-  
+    <!-- Selector circulos inferiores colgantes -->
+    <div class="Selectors">
+      <label for="Slider1" class="Selector"></label>
+      <label for="Slider2" class="Selector"></label>
+      <label for="Slider3" class="Selector"></label>
+
+    </div>
+  </div>
+
 
 </ion-content>
