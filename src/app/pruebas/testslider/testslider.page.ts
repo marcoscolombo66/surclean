@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
-
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-testslider',
@@ -17,13 +16,13 @@ export class TestsliderPage implements OnInit {
     speed: 400,
     pager: false,
     scrollbar: false,
-    
   };
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
   }
+
   prevSlide() {
     document.querySelector('ion-slides').slidePrev();
   }
@@ -31,32 +30,27 @@ export class TestsliderPage implements OnInit {
   nextSlide() {
     document.querySelector('ion-slides').slideNext();
   }
+
+  navigateTo(page: string) {
+    // Aquí puedes definir la navegación a cada sección
+    switch (page) {
+      case 'home':
+        // Navegar a la página de inicio
+        break;
+      case 'productos':
+        // Navegar a la página de productos
+        break;
+      case 'quienes-somos':
+        // Navegar a la página de Quiénes Somos
+        break;
+      case 'ubicacion':
+        // Navegar a la página de Ubicación
+        break;
+      case 'servicios':
+        // Navegar a la página de Servicios
+        break;
+      default:
+        break;
+    }
+  }
 }
-
-/*
-
-import { Component } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
-
-@Component({
-  selector: 'app-slider',
-  templateUrl: './slider.page.html',
-  styleUrls: ['./slider.page.scss'],
-})
-export class SliderPage {
-  slideOptions = {
-    slidesPerView: 1,
-    autoplay: {
-      delay: 2500,
-    },
-  };
-
-  fotos = [
-    { url: 'URL_DE_LA_IMAGEN_1', descripcion: 'Descripción de la imagen 1' },
-    { url: 'URL_DE_LA_IMAGEN_2', descripcion: 'Descripción de la imagen 2' },
-    { url: 'URL_DE_LA_IMAGEN_3', descripcion: 'Descripción de la imagen 3' },
-  ];
-}
-
-
-*/

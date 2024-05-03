@@ -1,20 +1,38 @@
 <ion-content>
+  <ion-header>
+    <ion-toolbar color="light">
+      <!-- Logo -->
+      <img src="https://i.postimg.cc/qv5xtrh1/8530a21d-816b-4a00-9f2f-591f0c6ce018-Whats-App-Image-2024-04-04-at-1-03-59-PM.webp" alt="Logo" slot="start" width="100" height="auto" style="margin-left: 10px;">
+      
+      <!-- Menú horizontal -->
+      <div class="menu-container">
+        <ion-list lines="none" class="horizontal-menu">
+          <ion-item (click)="navigateTo('home')">
+            <ion-label>Home</ion-label>
+          </ion-item>
+          <ion-item (click)="navigateTo('productos')">
+            <ion-label>Productos</ion-label>
+          </ion-item>
+          <ion-item (click)="navigateTo('quienes-somos')">
+            <ion-label>Quiénes Somos</ion-label>
+          </ion-item>
+          <ion-item (click)="navigateTo('ubicacion')">
+            <ion-label>Ubicación</ion-label>
+          </ion-item>
+          <ion-item (click)="navigateTo('servicios')">
+            <ion-label>Servicios</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  
+ 
+ 
 
-  <!-- <ion-slides pager="true" loop="true" [options]="slideOptions">
-      <ion-slide *ngFor="let foto of fotos">
-        <img src="{{ foto.url }}" alt="{{ foto.descripcion }}" />
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>{{ foto.descripcion }}</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-slide>
-    </ion-slides> -->
-
-
-
-
-
+<!-- SLIDER FUNCIONAL -->
 
   <div class="ContainerCenter">
     <!-- Radio Seleccionar -->
@@ -24,10 +42,10 @@
 
     <div class="Carrusels">
       <!-- Imagen contenido -->
-      <div class="Carrusel" style="background-image: url(https://i.postimg.cc/T2WDhxPj/Codific-AR-Dev.jpg);"></div>
-      <div class="Carrusel" style="background-image: url(https://i.postimg.cc/Y94kS2s9/Dise-o-sin-t-tulo.png);"></div>
+      <div class="Carrusel" style="background-image: url(https://i.postimg.cc/Y2Lj6mnN/IMG-20240429-WA0034.jpg);"></div>
+      <div class="Carrusel" style="background-image: url(https://i.postimg.cc/rFSmb2LK/IMG-20240429-WA0035.jpg);"></div>
       <div class="Carrusel"
-        style="background-image: url(https://i.postimg.cc/nh2rnf9q/Screenshot-2024-04-23-at-14-44-21-Surclean-Quimica-surcleanquimica-Fotos-y-videos-de-Instagram.png);">
+        style="background-image: url(https://i.postimg.cc/gchkXbjN/IMG-20240429-WA0025.jpg);">
       
       </div>
 
@@ -47,14 +65,9 @@
 
     </div>
 
-    <!-- Selector circulos inferiores colgantes -->
-    <div class="Selectors">
-      <label for="Slider1" class="Selector"></label>
-      <label for="Slider2" class="Selector"></label>
-      <label for="Slider3" class="Selector"></label>
-
-    </div>
   </div>
 
+
+  
 
 </ion-content>

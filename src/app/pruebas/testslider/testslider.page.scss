@@ -1,106 +1,48 @@
-// ion-slide {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-end;
-//   position: static;
-//   bottom: 0 ;
-//   padding: 80px;
-  
-    
-  
-//   ion-card {
-//     background: blueviolet;
-//     color: black;
-//   }
+/* HEADER*/
 
-//   img {
-//     width: 50%;
-//     height: auto;
-//   }
-// }
+ion-header {
+  background-color: #f9f9f9; /* Color de fondo del encabezado */
+}
+
+ion-toolbar {
+  padding: 0 10px; /* Ajuste del espacio alrededor del contenido del encabezado */
+}
+
+.menu-container {
+  margin-left: auto; /* Mueve el menú horizontal a la derecha */
+}
+
+.horizontal-menu ion-item {
+  color: #312450; /* Color del texto del menú */
+}
+
+.horizontal-menu ion-item:hover {
+  background-color: #312450; /* Cambio de color de fondo al pasar el ratón sobre un elemento del menú */
+}
 
 
-/*SLIDE*/
 
-// ion-slide {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-end;
-//   position: static;
-//   width: 50%; /* Reducir el ancho del slide */
-//   padding: 20px; /* Reducir el relleno */
-//   margin: auto;
+/* MENU */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
 
-//   ion-card {
-//     background: blueviolet;
-//     color: black;
-//     padding: 10px; /* Reducir el relleno del ion-card */
-//   }
+.horizontal-menu {
+  display: flex;
+  list-style-type: none; /* Eliminar los estilos de lista predeterminados */
+}
 
-//   img {
-//     max-width: 25%; /* Ajustar el ancho máximo de la imagen al 100% del contenedor */
-//     height: auto;
-//   }
-// }
+.horizontal-menu ion-item {
+  margin: 0 10px; /* Ajusta el espacio entre elementos según sea necesario */
+  cursor: pointer; /* Agregar cursor pointer para indicar que son clicables */
+}
+ion-item:hover {
+  font-size: 1.2em; /* Aumentar el tamaño del texto al pasar el puntero */
+}
 
-/* SLIDER FUNCIONA */
-
-// ion-slide {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-end;
-//   position: static;
-//   width: 60%; /* Utilizamos porcentajes para el ancho */
-//   max-width: 400px; /* Establecemos un ancho máximo */
-//   margin: auto;
-//   padding: 50px;
-
-//   ion-card {
-//     background: blueviolet;
-//     color: black;
-//     padding: 10px;
-//   }
-
-//   img {
-//     max-width: 35%; /* La imagen se ajusta al ancho del contenedor */
-//     height: auto;
-//   }
-// }
-
-// @media (min-width: 768px) {
-//   ion-slide {
-//     width: 90%; /* Ajustamos el ancho para pantallas más grandes */
-//     max-width: 600px; /* Ajustamos el ancho máximo para pantallas más grandes */
-//   }
-// }
-
-// .slider-nav {
-//   position: absolute;
-//   top: 50%;
-//   left: 0;
-//   right: 0;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   z-index: 10;
-// }
-
-// .prev-arrow, .next-arrow {
-//   font-size: 24px;
-//   color: black;
-//   cursor: pointer;
-//   background-color: rgba(8, 174, 154, 0.5); /* Color de fondo */
-//   border-radius: 40%; /* Forma circular */
-//   padding: 20px; /* Espacio interior */
-// }
-
-// .prev-arrow {
-//   margin-left: 10px;
-// }
-
-// .next-arrow {
-//   margin-right: 10px;
-// }
+/* SLIDER FUNCIONAL */
 
 * {margin:0; box-sizing:content-box;}
 body{
@@ -133,19 +75,22 @@ input{display: none}
 
 /* Slider */
 .Carrusels{
+ 
   height: 300px;
   width: 500px;
   position: absolute;
   overflow-x: hidden;
-  
+  margin-top: 50px;
 }
 .Carrusel{
   height: 100%;
   width: 100%;
   position: absolute;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   overflow-y: hidden;
   transition: all .5s ease;
+  
 }
 /* Estado 1 */
 #Slider1:checked ~ .Carrusels .Carrusel:nth-of-type(1) {transform: translate(0%, 0);}
@@ -193,10 +138,11 @@ input{display: none}
   display: block;
   border-radius: 5px;
 }
-/* Condicionales para botón inferior */
-#Slider1:checked ~ .Selectors .Selector:nth-of-type(1) {background-color: #999999;}
-#Slider2:checked ~ .Selectors .Selector:nth-of-type(2) {background-color: #999999;}
-#Slider3:checked ~ .Selectors .Selector:nth-of-type(3) {background-color: #999999;}
+
+
+
+
+
 
 
 
