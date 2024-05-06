@@ -1,109 +1,200 @@
-/* HEADER*/
+// /* HEADER*/
 
-ion-header {
-  background-color: #f9f9f9; /* Color de fondo del encabezado */
-}
+// ion-header {
+//   background-color: #f9f9f9; /* Color de fondo del encabezado */
+// }
 
-ion-toolbar {
-  padding: 0 10px; /* Ajuste del espacio alrededor del contenido del encabezado */
-}
+// ion-toolbar {
+//   padding: 0 10px; /* Ajuste del espacio alrededor del contenido del encabezado */
+// }
 
-.menu-container {
-  margin-left: auto; /* Mueve el menú horizontal a la derecha */
-}
+// .menu-container {
+//   margin-left: auto; /* Mueve el menú horizontal a la derecha */
+// }
 
-.horizontal-menu ion-item {
-  color: #312450; /* Color del texto del menú */
-}
+// .horizontal-menu ion-item {
+//   color: #312450; /* Color del texto del menú */
+// }
 
-.horizontal-menu ion-item:hover {
-  background-color: #312450; /* Cambio de color de fondo al pasar el ratón sobre un elemento del menú */
-}
+// .horizontal-menu ion-item:hover {
+//   background-color: #312450; /* Cambio de color de fondo al pasar el ratón sobre un elemento del menú */
+// }
 
 
 
-/* MENU */
-.menu-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px; /* Ajusta el margen superior según sea necesario */
-}
+// /* MENU */
+// .menu-container {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+// }
+
+// .horizontal-menu {
+//   display: flex;
+//   list-style-type: none; /* Eliminar los estilos de lista predeterminados */
+// }
+
+// .horizontal-menu ion-item {
+//   margin: 0 10px; /* Ajusta el espacio entre elementos según sea necesario */
+//   cursor: pointer; /* Agregar cursor pointer para indicar que son clicables */
+// }
+// ion-item:hover {
+//   font-size: 1.2em; /* Aumentar el tamaño del texto al pasar el puntero */
+// }
+
+// /* SLIDER FUNCIONAL */
+
+// * {margin:0; box-sizing:content-box;}
+// body{
+//   height:100vh;
+//   background-color: #101010;
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+// 	font-family: Arial;
+//   color:White;
+//   font-size:min(30px, max(3.75vw, 25px));
+//   text-align: center;
+//   display: flex;
+//   justify-content:center;
+//   align-items: center;
+// }
+
+// label{cursor: pointer;}
+
+// /* Contenedor para centrar */
+// .ContainerCenter{
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+// }
+// /* Input */
+// input{display: none}
+
+
+
+// /* Slider */
+// .Carrusels{
+ 
+//   height: 300px;
+//   width: 500px;
+//   position: absolute;
+//   overflow-x: hidden;
+//   margin-top: 50px;
+// }
+// .Carrusel{
+//   height: 100%;
+//   width: 100%;
+//   position: absolute;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   overflow-y: hidden;
+//   transition: all .5s ease;
+  
+// }
+// /* Estado 1 */
+// #Slider1:checked ~ .Carrusels .Carrusel:nth-of-type(1) {transform: translate(0%, 0);}
+// #Slider1:checked ~ .Carrusels .Carrusel:nth-of-type(2) {transform: translate(100%, 0);}
+// #Slider1:checked ~ .Carrusels .Carrusel:nth-of-type(3) {transform: translate(200%, 0);}
+// /* Estado 2 */
+// #Slider2:checked ~ .Carrusels .Carrusel:nth-of-type(1) {transform: translate(-100%, 0);}
+// #Slider2:checked ~ .Carrusels .Carrusel:nth-of-type(2) {transform: translate(0%, 0);}
+// #Slider2:checked ~ .Carrusels .Carrusel:nth-of-type(3) {transform: translate(100%, 0);}
+// /* Estado 3 */
+// #Slider3:checked ~ .Carrusels .Carrusel:nth-of-type(1) {transform: translate(-200%, 0);}
+// #Slider3:checked ~ .Carrusels .Carrusel:nth-of-type(2) {transform: translate(-100%, 0);}
+// #Slider3:checked ~ .Carrusels .Carrusel:nth-of-type(3) {transform: translate(0%, 0);}
+
+
+
+// /* Flechas */
+// .Carrusels .ArrowLeft, .Carrusels .ArrowRight{
+//   position: absolute;
+//   height: 100%;
+//   width: 2em;
+//   align-items: center;
+//   justify-content: center;
+//   display: none;
+//   user-select: none;
+// }
+// .Carrusels .ArrowLeft{left: 0px;}
+// .Carrusels .ArrowRight{right: 0px;}
+// /* Configuracion de flechas individuales */
+// #Slider1:checked ~ .Carrusels .Arrow1{display: flex;}
+// #Slider2:checked ~ .Carrusels .Arrow2{display: flex;}
+// #Slider3:checked ~ .Carrusels .Arrow3{display: flex;}
+
+// /* Selectores */
+// .Selectors {
+//   width: 60px;
+//   padding: 15px;
+//   display: flex;
+//   justify-content: space-between;
+// }
+// .Selectors .Selector {
+//   background-color: #FFF;
+//   height: 10px;
+//   width: 10px;
+//   display: block;
+//   border-radius: 5px;
+// }
 
 .horizontal-menu {
-  display: flex;
-  list-style-type: none; /* Eliminar los estilos de lista predeterminados */
-}
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center;
+    padding: 0; /* Elimina el relleno */
+    margin: 0; /* Elimina el margen */
+  }
 
-.horizontal-menu ion-item {
-  margin: 0 10px; /* Ajusta el espacio entre elementos según sea necesario */
-  cursor: pointer; /* Agregar cursor pointer para indicar que son clicables */
-}
-ion-item:hover {
-  font-size: 1.2em; /* Aumentar el tamaño del texto al pasar el puntero */
-}
+  .horizontal-menu .menu-item {
+    padding: 0 10px; /* Ajusta el espacio entre los elementos */
+    font-size: 14px; /* Ajusta el tamaño de fuente */
+    transition: all 1.0s ease; /* Velocidad de Transición */
+  }
 
-/* SLIDER FUNCIONAL */
-
-* {margin:0; box-sizing:content-box;}
-body{
-  height:100vh;
-  background-color: #101010;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-	font-family: Arial;
-  color:White;
-  font-size:min(30px, max(3.75vw, 25px));
-  text-align: center;
-  display: flex;
-  justify-content:center;
-  align-items: center;
-}
-
-label{cursor: pointer;}
-
-/* Contenedor para centrar */
-.ContainerCenter{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-/* Input */
-input{display: none}
-
-
+  .horizontal-menu .menu-item:hover {
+    transform: scale(1.3); /* Agranda el elemento al pasar el cursor por encima */
+    color: teal; /* Cambia el color del texto */
+    background-color: turquoise;
+  }
 
 /* Slider */
-.Carrusels{
- 
+.Carrusels .Selectors {
+  display: none;
   height: 300px;
   width: 500px;
-  position: absolute;
+  position: relative; /* Cambiado a relative para centrar el slider */
   overflow-x: hidden;
-  margin-top: 50px;
+  margin: 50px auto; /* Centrar verticalmente y horizontalmente */
+  
 }
-.Carrusel{
-  height: 100%;
+.Carrusel {
+  height:50%;
   width: 100%;
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
   overflow-y: hidden;
   transition: all .5s ease;
-  
+  left: 50%; /* Ajustar para centrar horizontalmente */
+  top: 100; /* Ajustar si es necesario */
+  transform: translateX(-50%); /* Centrar horizontalmente */
+  background-position: center center; /* Centra la imagen horizontal y verticalmente */
 }
-/* Estado 1 */
-#Slider1:checked ~ .Carrusels .Carrusel:nth-of-type(1) {transform: translate(0%, 0);}
-#Slider1:checked ~ .Carrusels .Carrusel:nth-of-type(2) {transform: translate(100%, 0);}
-#Slider1:checked ~ .Carrusels .Carrusel:nth-of-type(3) {transform: translate(200%, 0);}
+
+/* Estados */
+#Slider1:checked ~ .Carrusels .Carrusel:nth-of-type(1) {transform: translate(-50%, 0);}
+#Slider1:checked ~ .Carrusels .Carrusel:nth-of-type(2) {transform: translate(50%, 0);}
+#Slider1:checked ~ .Carrusels .Carrusel:nth-of-type(3) {transform: translate(150%, 0);}
 /* Estado 2 */
-#Slider2:checked ~ .Carrusels .Carrusel:nth-of-type(1) {transform: translate(-100%, 0);}
-#Slider2:checked ~ .Carrusels .Carrusel:nth-of-type(2) {transform: translate(0%, 0);}
-#Slider2:checked ~ .Carrusels .Carrusel:nth-of-type(3) {transform: translate(100%, 0);}
+#Slider2:checked ~ .Carrusels .Carrusel:nth-of-type(1) {transform: translate(-150%, 0);}
+#Slider2:checked ~ .Carrusels .Carrusel:nth-of-type(2) {transform: translate(-50%, 0);}
+#Slider2:checked ~ .Carrusels .Carrusel:nth-of-type(3) {transform: translate(50%, 0);}
 /* Estado 3 */
-#Slider3:checked ~ .Carrusels .Carrusel:nth-of-type(1) {transform: translate(-200%, 0);}
-#Slider3:checked ~ .Carrusels .Carrusel:nth-of-type(2) {transform: translate(-100%, 0);}
-#Slider3:checked ~ .Carrusels .Carrusel:nth-of-type(3) {transform: translate(0%, 0);}
+#Slider3:checked ~ .Carrusels .Carrusel:nth-of-type(1) {transform: translate(-250%, 0);}
+#Slider3:checked ~ .Carrusels .Carrusel:nth-of-type(2) {transform: translate(-150%, 0);}
+#Slider3:checked ~ .Carrusels .Carrusel:nth-of-type(3) {transform: translate(-50%, 0);}
 
 
 
@@ -111,14 +202,16 @@ input{display: none}
 .Carrusels .ArrowLeft, .Carrusels .ArrowRight{
   position: absolute;
   height: 100%;
-  width: 2em;
+  width: 55em;
   align-items: center;
   justify-content: center;
   display: none;
   user-select: none;
 }
-.Carrusels .ArrowLeft{left: 0px;}
-.Carrusels .ArrowRight{right: 0px;}
+.Carrusels .ArrowLeft{left: 100px;}
+.Carrusels .ArrowRight{right: 100px;}
+
+
 /* Configuracion de flechas individuales */
 #Slider1:checked ~ .Carrusels .Arrow1{display: flex;}
 #Slider2:checked ~ .Carrusels .Arrow2{display: flex;}
@@ -128,20 +221,16 @@ input{display: none}
 .Selectors {
   width: 60px;
   padding: 15px;
-  display: flex;
+  display: none;
   justify-content: space-between;
 }
 .Selectors .Selector {
-  background-color: #FFF;
-  height: 10px;
-  width: 10px;
-  display: block;
+  background-color: blueviolet;
+  height: 100px;
+  width: 100px;
+  display: none;
   border-radius: 5px;
 }
-
-
-
-
 
 
 

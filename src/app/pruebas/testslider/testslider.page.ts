@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-testslider',
   templateUrl: './testslider.page.html',
@@ -14,8 +15,8 @@ export class TestsliderPage implements OnInit {
     },
     initialSlide: 1,
     speed: 400,
-    pager: false,
-    scrollbar: false,
+    pager: true,
+    scrollbar: true,
   };
 
   constructor(private navCtrl: NavController) { }
