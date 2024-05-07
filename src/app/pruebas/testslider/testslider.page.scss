@@ -159,6 +159,12 @@
     background-color: turquoise;
   }
 
+ 
+
+
+
+
+
 /* Slider */
 .Carrusels .Selectors {
   display: none;
@@ -167,7 +173,6 @@
   position: relative; /* Cambiado a relative para centrar el slider */
   overflow-x: hidden;
   margin: 50px auto; /* Centrar verticalmente y horizontalmente */
-  
 }
 .Carrusel {
   height:50%;
@@ -180,7 +185,8 @@
   left: 50%; /* Ajustar para centrar horizontalmente */
   top: 100; /* Ajustar si es necesario */
   transform: translateX(-50%); /* Centrar horizontalmente */
-  background-position: center center; /* Centra la imagen horizontal y verticalmente */
+  background-position: center center;
+
 }
 
 /* Estados */
@@ -225,10 +231,11 @@
   justify-content: space-between;
 }
 .Selectors .Selector {
+  display: none;
   background-color: blueviolet;
   height: 100px;
   width: 100px;
-  display: none;
+  
   border-radius: 5px;
 }
 

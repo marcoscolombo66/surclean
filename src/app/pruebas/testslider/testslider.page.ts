@@ -17,6 +17,7 @@ export class TestsliderPage implements OnInit {
     speed: 400,
     pager: true,
     scrollbar: true,
+    
   };
 
   constructor(private navCtrl: NavController) { }
