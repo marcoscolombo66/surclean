@@ -1,13 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-testslider',
   templateUrl: './testslider.page.html',
   styleUrls: ['./testslider.page.scss'],
 })
 export class TestsliderPage implements OnInit {
+  mostrarBusqueda: boolean = false;
+
+  constructor(private navCtrl: NavController) { }
+
+  ngOnInit() {
+  }
+
+  iniciarBusqueda() {
+    this.mostrarBusqueda = true;
+  }
+
+  realizarBusqueda(event: any) {
+    const textoBusqueda = event.target.value;
+    // Aquí puedes implementar la lógica para buscar según el texto ingresado
+    console.log('Texto de búsqueda:', textoBusqueda);
+  }
+
   slideOptions = {
     slidesPerView: 2,
     autoplay: {
@@ -17,13 +33,7 @@ export class TestsliderPage implements OnInit {
     speed: 400,
     pager: true,
     scrollbar: true,
-    
   };
-
-  constructor(private navCtrl: NavController) { }
-
-  ngOnInit() {
-  }
 
   prevSlide() {
     document.querySelector('ion-slides').slidePrev();
