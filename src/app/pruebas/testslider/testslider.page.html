@@ -1,13 +1,10 @@
-<ion-content>
+<ion-content class="ion-text-center">
   <ion-header>
     <ion-toolbar color="white"> 
       <!-- Logo -->
       <img src="https://i.postimg.cc/qv5xtrh1/8530a21d-816b-4a00-9f2f-591f0c6ce018-Whats-App-Image-2024-04-04-at-1-03-59-PM.webp" alt="Logo" slot="start" width="100" height="auto" style="margin-left: 10px;">
       
-      <!--Prueba NotiGit-->
-
-
-      <!-- Menú horizontal -->
+        <!-- Menú horizontal -->
       <div class="menu-container">
         <ion-list lines="none" class="horizontal-menu">
           <ion-item (click)="navigateTo('home')" class="menu-item">
@@ -37,45 +34,20 @@
       </div>
     </ion-toolbar>
   </ion-header>
+
+
+  <h1>Productos Calidad Surclean</h1>
+  
+  <ion-slides [option]="slideOpts">
+  
+    <ion-slide *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+    <img src="https://i.postimg.cc/Z5S9KKL8/IMG-20240429-WA0010.jpg">
+  
+    
+  </ion-slide>
+  </ion-slides>
   
   
-  
-
-<!-- SLIDER FUNCIONAL -->
-
-  <div class="ContainerCenter">
-    <!-- Radio Seleccionar -->
-    <input type="radio" name="Carrusel" id="Slider1" checked>
-    <input type="radio" name="Carrusel" id="Slider2">
-    <input type="radio" name="Carrusel" id="Slider3">
-
-    <div class="Carrusels">
-      <!-- Imagen contenido -->
-      <div class="Carrusel" style="background-image: url(https://i.postimg.cc/nL407mTx/logo.png);"></div>
-      <div class="Carrusel" style="background-image: url(https://i.postimg.cc/rFSmb2LK/IMG-20240429-WA0035.jpg);"></div>
-      <div class="Carrusel"
-        style="background-image: url(https://i.postimg.cc/gchkXbjN/IMG-20240429-WA0025.jpg);">
-      
-      </div>
-
-      
-
-
-      <!-- Flechas a la izquierda por cada imagen -->
-      <label for="Slider3" class="ArrowLeft Arrow1">❮</label>
-      <label for="Slider1" class="ArrowLeft Arrow2">❮</label>
-      <label for="Slider2" class="ArrowLeft Arrow3">❮</label>
-
-
-      <!-- Flechas a la derecha por cada imagen -->
-      <label for="Slider2" class="ArrowRight Arrow1">❯</label>
-      <label for="Slider3" class="ArrowRight Arrow2">❯</label>
-      <label for="Slider1" class="ArrowRight Arrow3">❯</label>
-
-    </div>
-
-  </div>
-
 
   
 
