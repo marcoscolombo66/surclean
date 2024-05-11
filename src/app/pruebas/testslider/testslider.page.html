@@ -1,10 +1,12 @@
 <ion-content class="ion-text-center">
-  <ion-header>
-    <ion-toolbar color="white"> 
+  <ion-header >
+    <ion-toolbar color="white">
       <!-- Logo -->
-      <img src="https://i.postimg.cc/qv5xtrh1/8530a21d-816b-4a00-9f2f-591f0c6ce018-Whats-App-Image-2024-04-04-at-1-03-59-PM.webp" alt="Logo" slot="start" width="100" height="auto" style="margin-left: 10px;">
-      
-        <!-- Menú horizontal -->
+      <img
+        src="https://i.postimg.cc/qv5xtrh1/8530a21d-816b-4a00-9f2f-591f0c6ce018-Whats-App-Image-2024-04-04-at-1-03-59-PM.webp"
+        alt="Logo" slot="start" width="100" height="auto" style="margin-left: 10px;">
+
+      <!-- Menú horizontal -->
       <div class="menu-container">
         <ion-list lines="none" class="horizontal-menu">
           <ion-item (click)="navigateTo('home')" class="menu-item">
@@ -25,11 +27,11 @@
           <ion-item (click)="iniciarBusqueda()">
             <ion-icon name="search"></ion-icon>
           </ion-item>
-          
+
           <ion-item *ngIf="mostrarBusqueda">
             <ion-input placeholder="Buscar" (input)="realizarBusqueda($event)"></ion-input>
           </ion-item>
-          
+
         </ion-list>
       </div>
     </ion-toolbar>
@@ -39,12 +41,12 @@
   <ion-slides [options]="slideOpts">
     <ion-slide *ngFor="let photo of photos">
       <img [src]="photo">
-     
+      <button class="swiper-button-prev" (click)="prev()"></button>
+      <button class="swiper-button-next" (click)="next()"></button>
     </ion-slide>
   </ion-slides>
 
-  <button class="swiper-button-prev" (click)="prev()"></button>
-  <button class="swiper-button-next" (click)="next()"></button>
-  
+
+
 
 </ion-content>
