@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { IonSlides } from '@ionic/angular'; // Importa IonSlides desde '@ionic/angular'
 
+
 @Component({
   selector: 'app-testslider',
   templateUrl: './testslider.page.html',
@@ -32,6 +33,7 @@ export class TestsliderPage {
       slidesPerView: 1, // Muestra una sola foto a la vez
       spaceBetween: 25, // Sin espacio entre las fotos
       loop: false, // Desactiva el bucle
+      arrow: true
       
     };
   
@@ -73,11 +75,11 @@ export class TestsliderPage {
       }
     }
   
-    prev() {
-      this.slider.slidePrev();
-    }
-  
-    next() {
-      this.slider.slideNext();
-    }
+   prev() {
+  this.slider.slidePrev();
+}
+
+next() {
+  this.slider.slideNext();
+}
   }

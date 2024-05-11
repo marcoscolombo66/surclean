@@ -39,9 +39,12 @@
   <ion-slides [options]="slideOpts">
     <ion-slide *ngFor="let photo of photos">
       <img [src]="photo">
+     
     </ion-slide>
   </ion-slides>
-  
+
+  <button class="swiper-button-prev" (click)="prev()"></button>
+  <button class="swiper-button-next" (click)="next()"></button>
   
 
 </ion-content>

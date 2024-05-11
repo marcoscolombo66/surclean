@@ -1,64 +1,163 @@
-.menu-container {
-  display: flex; /* Habilitar flexbox para diseño horizontal */
-  justify-content: center; /* Centrar el contenido horizontalmente */
+// .menu-container {
+//   display: flex; /* Habilitar flexbox para diseño horizontal */
+//   justify-content: center; /* Centrar el contenido horizontalmente */
 
-  /* Estilos predeterminados para pantallas pequeñas (menú vertical) */
+//   /* Estilos predeterminados para pantallas pequeñas (menú vertical) */
+//   flex-direction: column;
+//   align-items: center;
+
+//   /* Consulta de medios para pantallas más grandes (menú horizontal) */
+//   @media (min-width: 768px) { /* Ajustar punto de interrupción según sea necesario */
+//     flex-direction: row;
+//     align-items: stretch;
+//   }
+// }
+
+// .horizontal-menu {
+//   display: flex; /* Mantener flexbox para disposición horizontal */
+//   width: 100%; /* Asegurar ancho completo para el menú horizontal */
+//   border: none; /* Eliminar borde predeterminado para una apariencia más limpia */
+//   justify-content: center; /* Centrar el contenido horizontalmente */
+
+//   .menu-item {
+//     position: relative; /* Establecer posición relativa para el efecto de iluminación */
+
+//     /* Ajustar estilos para diseño horizontal (opcional) */
+//     padding: 10px 20px; /* Ejemplo de relleno para elementos del menú horizontal */
+//     border-right: none; /* Separador opcional entre elementos */
+//     transition: font-size 0.3s; /* Transición suave para el cambio de tamaño del texto */
+
+//     &:last-child {
+//       border-right: none; /* Eliminar borde para el último elemento */
+//     }
+
+//     &:hover {
+//       font-size: 1.2em; /* Aumentar el tamaño del texto al pasar el cursor */
+//     }
+
+//     &:before {
+//       content: ''; /* Crear un pseudo-elemento para el efecto de iluminación */
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff); /* Colores del efecto neon */
+//       background-size: 400% 400%; /* Tamaño del degradado */
+//       border-radius: 5px; /* Borde redondeado */
+//       z-index: -1; /* Colocar detrás del texto */
+//       opacity: 0; /* Inicialmente oculto */
+//       transition: opacity 0.5s; /* Transición suave para la opacidad */
+//       pointer-events: none; /* Evitar la interacción con el pseudo-elemento */
+//     }
+
+//     &:hover:before {
+//       opacity: 1; /* Mostrar el efecto de iluminación al pasar el cursor */
+//     }
+//   }
+// }
+
+
+
+
+// ion-slides {
+//   margin-top: 5px;
+//   padding: 5px;
+// }
+
+// ion-slide {
+//   border-radius: 5px;
+//   overflow: hidden;
+  
+
+//   img {
+//     border-radius: 5px;
+//     width: 100%; /* Establecer el ancho al 100% */
+//     height: auto; /* Establecer la altura al 100% */
+//     object-fit: cover; /* Escalar la imagen para que cubra todo el contenedor */
+//   }
+
+//   .swiper-slide-active {
+//     img {
+//       box-shadow: 0px 5px 6px 1px rgba(195, 16, 16, 0.55); /* Cambiar el color de la sombra a rojo */
+//     }
+//   }
+// }
+
+// .swiper-button-prev,
+// .swiper-button-next {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   z-index: 10;
+//   padding: 10px;
+//   background-color: transparent;
+//   color: white;
+//   cursor: pointer;
+// }
+
+// .swiper-button-prev {
+//   left: 10px; /* Ajustar la posición a la izquierda */
+// }
+
+// .swiper-button-next {
+//   right: 10px; /* Ajustar la posición a la derecha */
+// }
+
+
+.menu-container {
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 
-  /* Consulta de medios para pantallas más grandes (menú horizontal) */
-  @media (min-width: 768px) { /* Ajustar punto de interrupción según sea necesario */
+  @media (min-width: 768px) {
     flex-direction: row;
     align-items: stretch;
   }
 }
 
 .horizontal-menu {
-  display: flex; /* Mantener flexbox para disposición horizontal */
-  width: 100%; /* Asegurar ancho completo para el menú horizontal */
-  border: none; /* Eliminar borde predeterminado para una apariencia más limpia */
-  justify-content: center; /* Centrar el contenido horizontalmente */
+  display: flex;
+  width: 100%;
+  border: none;
+  justify-content: center;
 
   .menu-item {
-    position: relative; /* Establecer posición relativa para el efecto de iluminación */
-
-    /* Ajustar estilos para diseño horizontal (opcional) */
-    padding: 10px 20px; /* Ejemplo de relleno para elementos del menú horizontal */
-    border-right: none; /* Separador opcional entre elementos */
-    transition: font-size 0.3s; /* Transición suave para el cambio de tamaño del texto */
+    position: relative;
+    padding: 10px 20px;
+    border-right: none;
+    transition: font-size 0.3s;
 
     &:last-child {
-      border-right: none; /* Eliminar borde para el último elemento */
+      border-right: none;
     }
 
     &:hover {
-      font-size: 1.2em; /* Aumentar el tamaño del texto al pasar el cursor */
+      font-size: 1.2em;
     }
 
     &:before {
-      content: ''; /* Crear un pseudo-elemento para el efecto de iluminación */
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff); /* Colores del efecto neon */
-      background-size: 400% 400%; /* Tamaño del degradado */
-      border-radius: 5px; /* Borde redondeado */
-      z-index: -1; /* Colocar detrás del texto */
-      opacity: 0; /* Inicialmente oculto */
-      transition: opacity 0.5s; /* Transición suave para la opacidad */
-      pointer-events: none; /* Evitar la interacción con el pseudo-elemento */
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+      background-size: 400% 400%;
+      border-radius: 5px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
     }
 
     &:hover:before {
-      opacity: 1; /* Mostrar el efecto de iluminación al pasar el cursor */
+      opacity: 1;
     }
   }
 }
-
-
-
 
 ion-slides {
   margin-top: 5px;
@@ -66,21 +165,39 @@ ion-slides {
 }
 
 ion-slide {
-  border-radius: 1px;
+  border-radius: 5px;
   overflow: hidden;
-  
 
   img {
-    border-radius: 1px;
-    width: 100%; /* Establecer el ancho al 100% */
-    height: 100%; /* Establecer la altura al 100% */
-    object-fit: cover; /* Escalar la imagen para que cubra todo el contenedor */
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
   .swiper-slide-active {
     img {
-      box-shadow: 0px 5px 6px 1px rgba(195, 16, 16, 0.55); /* Cambiar el color de la sombra a rojo */
+      box-shadow: 0px 5px 6px 1px rgba(195, 16, 16, 0.55);
     }
   }
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  z-index: 10;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
