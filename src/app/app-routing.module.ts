@@ -46,6 +46,10 @@ const routes: Routes = [
   {
     path: 'testslider',
     loadChildren: () => import('./pruebas/testslider/testslider.module').then( m => m.TestsliderPageModule)
+  },
+  {
+    path: 'toggle',
+    loadChildren: () => import('./toggle/toggle.module').then( m => m.TogglePageModule)
   }
 
 ];
