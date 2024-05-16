@@ -32,13 +32,20 @@ export class TestsliderPage implements OnInit {
     loop: false, // Desactiva el bucle
     arrow: true
   };
+  mostrarMenu: boolean = true;
 
-  constructor(private navCtrl: NavController, private platform: Platform) {}
-
-  ngOnInit() {
+  
+  constructor(private navCtrl: NavController, private platform: Platform) {
     this.detectarDispositivo();
   }
-
+  toggleMenu() {
+    this.mostrarMenu = !this.mostrarMenu;
+  }
+  ngOnInit() {
+    
+  }
+ 
+  
   iniciarBusqueda() {
     this.mostrarBusqueda = true;
   }
@@ -83,8 +90,10 @@ export class TestsliderPage implements OnInit {
   detectarDispositivo() {
     this.pantallaChica = this.isSmallScreen();
     if (this.pantallaChica) {
+      this.pantallaChica=false;
       console.log('Estás en una pantalla chica');
     } else {
+      this.pantallaChica=false;
       console.log('Estás en una pantalla grande');
     }
   }

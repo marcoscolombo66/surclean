@@ -1,7 +1,7 @@
-.logo {
-  display: flex;
-  max-width: 80px; /* Ensure logo doesn't exceed container width */
-  height: auto; /* Maintain aspect ratio */
+.logo {  
+  max-width: 80px;
+  max-height: 80px; /* Ensure logo doesn't exceed container width */
+  /* Maintain aspect ratio */
   margin-left: 10px; /* Move logo to the left (adjust as needed) */
   justify-content: center;
   
@@ -133,3 +133,20 @@ ion-slide {
 }
 
 
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: auto;
+    left: 10px;
+    width: 100px;
+    margin-top: 10px; /* Espacio entre el logo y el menú */
+  }
+ 
+
+  .show-menu {
+    display: block !important; /* Muestra el menú cuando mostrarMenu es true */
+  }
+}
