@@ -10,7 +10,7 @@ import { IonSlides, Platform } from '@ionic/angular'; // Importa IonSlides desde
 export class TestsliderPage implements OnInit {
   @ViewChild('slider') slider: IonSlides;
   mostrarBusqueda: boolean = false; // Declara la propiedad aquí
-  pantallaChica: boolean=false;
+  pantallaChica: boolean;
 
   photos = [
     'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/15536367e8a2169aa3b6bf35c66f9646.jpg',
@@ -33,12 +33,10 @@ export class TestsliderPage implements OnInit {
     arrow: true
   };
 
-  constructor(private navCtrl: NavController, private platform: Platform) {
-
-  }
+  constructor(private navCtrl: NavController, private platform: Platform) {}
 
   ngOnInit() {
-    //this.detectarDispositivo();
+    this.detectarDispositivo();
   }
 
   iniciarBusqueda() {

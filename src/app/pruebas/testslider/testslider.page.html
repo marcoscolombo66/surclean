@@ -1,13 +1,13 @@
 <!-- Menú horizontal para pantallas grandes -->
-<ion-content class="ion-text-center">
+<ion-content class="ion-text-center" *ngIf="!pantallaChica">
   <ion-header>
-    <ion-toolbar color="white"  *ngIf="!pantallaChica">
+    <ion-toolbar color="white">
       <!-- Logo -->
       <img class="logo" src="https://i.postimg.cc/qv5xtrh1/8530a21d-816b-4a00-9f2f-591f0c6ce018-Whats-App-Image-2024-04-04-at-1-03-59-PM.webp" alt="Logo" slot="start" (click)="toggleMenu()">
       <!-- Menú horizontal -->
       <div class="menu-container">
         <ion-list lines="none" class="horizontal-menu">
-          <ion-item (click)="detectarDispositivo()" class="menu-item">
+          <ion-item (click)="navigateTo('home')" class="menu-item">
             <ion-label>Home</ion-label>
           </ion-item>
           <ion-item (click)="navigateTo('productos')" class="menu-item">
