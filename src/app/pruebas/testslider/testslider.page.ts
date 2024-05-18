@@ -1,3 +1,4 @@
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { IonSlides, Platform } from '@ionic/angular'; // Importa IonSlides desde '@ionic/angular'
@@ -32,13 +33,22 @@ export class TestsliderPage implements OnInit {
     loop: false, // Desactiva el bucle
     arrow: true
   };
+  mostrarMenu: boolean = true;
 
-  constructor(private navCtrl: NavController, private platform: Platform) {}
-
-  ngOnInit() {
+  
+  constructor(private navCtrl: NavController, private platform: Platform) {
     this.detectarDispositivo();
   }
-
+  toggleMenu() {
+    this.mostrarMenu = !this.mostrarMenu;
+    const menuContent = document.getElementById('main-content'); // Obtiene el contenido del menú
+    menuContent.classList.toggle('hidden'); // Muestra/oculta el menú vertical basado en mostrarMenu
+  }
+  ngOnInit() {
+    
+  }
+ 
+  
   iniciarBusqueda() {
     this.mostrarBusqueda = true;
   }
@@ -83,8 +93,10 @@ export class TestsliderPage implements OnInit {
   detectarDispositivo() {
     this.pantallaChica = this.isSmallScreen();
     if (this.pantallaChica) {
+      this.pantallaChica=false;
       console.log('Estás en una pantalla chica');
     } else {
+      this.pantallaChica=false;
       console.log('Estás en una pantalla grande');
     }
   }
