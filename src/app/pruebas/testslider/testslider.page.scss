@@ -89,42 +89,47 @@ ion-header::after {
   }
 }
 
+
+
 ion-slides {
-  position: relative; /* Asegúrate de que ion-slides tenga position: relative */
+  margin-top: 5px;
+  padding: 5px;
 }
 
-.slide-content {
-  position: relative; /* Permite posicionar los botones dentro del contenedor */
-  width: 100%; /* Ocupa todo el ancho de la diapositiva */
-  height: 100%; /* Ocupa toda la altura de la diapositiva */
+ion-slide {
+  border-radius: 5px;
+  overflow: hidden;
+
+  img {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .swiper-slide-active {
+    img {
+      box-shadow: 0px 5px 6px 1px rgba(195, 16, 16, 0.55);
+    }
+  }
 }
 
-ion-button {
+.swiper-button-prev,
+.swiper-button-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  margin-top: 100px; /* Ajusta el margen superior según tus preferencias */
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
 }
 
-ion-button.arrow-prev {
-  left: 5px;
-  font-size: 32px; 
-  --color: black; 
+.swiper-button-prev {
+  left: 10px;
 }
 
-ion-button.arrow-next {
-  right: 5px;
-  font-size: 32px; 
-  --color: black; 
+.swiper-button-next {
+  right: 10px;
 }
-
-ion-button[fill="clear"] {
-  background: transparent;
-  
-  
-}
-
-
-
-

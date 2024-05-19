@@ -33,28 +33,16 @@
     </ion-toolbar>
   </ion-header>
 
-
-  <!-- FLECHAS Y SLIDER -->
-  <ion-slides pager="true" [options]="slideOpts" #slider class="image-slider">
+  <!-- SLIDER -->
+  <ion-slides [options]="slideOpts">
     <ion-slide *ngFor="let photo of photos">
-      <div class="slide-content">  
-        <img [src]="photo">
-      </div>
+      <img [src]="photo">
+      <button class="swiper-button-prev" (click)="prev()"></button>
+      <button class="swiper-button-next" (click)="next()"></button>
     </ion-slide>
   </ion-slides>
-  
-  <ion-button fill="clear" (click)="prev()" class="arrow-prev">
-    <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
-  </ion-button>
-  <ion-button fill="clear" (click)="next()" class="arrow-next">
-    <ion-icon name="chevron-forward-outline" slot="icon-only"></ion-icon>
-  </ion-button>
-  
-  
+</ion-content>
 
- 
-
-  
 <!-- Menú vertical para pantallas pequeñas (se muestra al hacer clic en el logo) -->
 <ion-menu contentId="main-content" *ngIf="pantallaChica">
   <ion-header class="header">
