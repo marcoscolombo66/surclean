@@ -35,7 +35,7 @@
 
 
   <!-- FLECHAS Y SLIDER -->
-  <ion-slides pager="true" [options]="slideOpts" #slider class="image-slider">
+  <ion-slides pager="false" [options]="slideOpts" #slider class="image-slider">
     <ion-slide *ngFor="let photo of photos">
       <div class="slide-content">  
         <img [src]="photo">
