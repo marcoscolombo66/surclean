@@ -45,9 +45,13 @@ export class TestsliderPage implements OnInit {
     menuContent.classList.toggle('hidden'); // Muestra/oculta el menú vertical basado en mostrarMenu
   }
   ngOnInit() {
-    
+    this.startAutoplay();
   }
- 
+  startAutoplay() {
+    setInterval(() => {
+      this.slider.slideNext(); // Avanzar a la siguiente diapositiva
+    }, 5000); // Cambiar de diapositiva cada 3 segundos (ajusta el valor según tus necesidades)
+  }
   
   iniciarBusqueda() {
     this.mostrarBusqueda = true;
@@ -82,14 +86,7 @@ export class TestsliderPage implements OnInit {
     }
   }
 
-  prev() {
-    this.slider.slidePrev();
-  }
-
-  next() {
-    this.slider.slideNext();
-  }
-
+  
   detectarDispositivo() {
     this.pantallaChica = this.isSmallScreen();
     if (this.pantallaChica) {

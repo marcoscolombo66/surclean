@@ -1,12 +1,16 @@
 .logo {  
   
-  max-width: 100px;
-  max-height: 100px; /* Ensure logo doesn't exceed container width */
+  max-width: 150px;
+  max-height: 150px; /* Ensure logo doesn't exceed container width */
   /* Maintain aspect ratio */
   margin-left: 10px; /* Move logo to the left (adjust as needed) */
   justify-content: center;
   margin: 0 auto;
   
+}
+
+ion-toolbar {
+  --border-width: 0; // Elimina el borde inferior del toolbar
 }
 
 
@@ -96,35 +100,13 @@ ion-slides {
 .slide-content {
   position: relative; /* Permite posicionar los botones dentro del contenedor */
   width: 100%; /* Ocupa todo el ancho de la diapositiva */
-  height: 100%; /* Ocupa toda la altura de la diapositiva */
+  height: auto; /* Ocupa toda la altura de la diapositiva */
 }
 
 ion-button {
   position: absolute;
-  top: 50%;
+  top: 80%;
   transform: translateY(-50%);
-  z-index: 10;
-  margin-top: 100px; /* Ajusta el margen superior según tus preferencias */
+  z-index: 10; /* Asegura que los botones estén por encima de las imágenes */
 }
-
-ion-button.arrow-prev {
-  left: 5px;
-  font-size: 32px; 
-  --color: black; 
-}
-
-ion-button.arrow-next {
-  right: 5px;
-  font-size: 32px; 
-  --color: black; 
-}
-
-ion-button[fill="clear"] {
-  background: transparent;
-  
-  
-}
-
-
-
 
