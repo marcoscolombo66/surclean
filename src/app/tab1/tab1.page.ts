@@ -333,7 +333,7 @@ noVerPorCat: any = false;
   
   iniciarBusqueda() {
     this.mostrarBusqueda = !this.mostrarBusqueda;
-    //this.mostrarMenu = !this.mostrarMenu;
+    this.mostrarMenu = !this.mostrarMenu;
   }
 
   realizarBusqueda(event: any) {
