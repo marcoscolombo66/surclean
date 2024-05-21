@@ -58,29 +58,6 @@
   </ion-slides>
   
   <ion-grid>
-    <ion-row >
-      <ion-col (click)="modalCheckout()" style="margin-left:10px;width:30px;">
-        <ion-badge  color="danger" class="cartIcontxt">
-          {{totalCantidades}}
-        </ion-badge>
-        <ion-icon   name="cart-sharp" class="cartIcon"></ion-icon>
-       <!-- <ion-badge *ngIf="verCarro && totalCantidades !== 0; else recalculaTotal" color="danger" class="cartIcontxt">
-          {{totalCantidades}}
-        </ion-badge>  
-        <ng-template #recalculaTotal>
-          {{ recalcularTotalCantidades() }}
-        </ng-template>     
-        <ion-icon  *ngIf="verCarro" name="cart-sharp" class="cartIcon"></ion-icon>--> 
-      </ion-col>
-      <ion-col style="text-align: left;">
-        
-      </ion-col>
-      <ion-col>
-       
-      </ion-col>
-    </ion-row>
-        
-
     <ion-row *ngIf="showFilters" class="filterRow">
       <ion-col ></ion-col>
       <ion-col> 
