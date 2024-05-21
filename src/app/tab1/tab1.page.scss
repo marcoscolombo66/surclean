@@ -195,6 +195,118 @@ text-align: center;
 }
 //////////////////////////////////////////////////////////////SEARCHBAR
 
+.logo {  
+  
+  max-width: 150px;
+  max-height: 150px; /* Ensure logo doesn't exceed container width */
+  /* Maintain aspect ratio */
+  margin-left: 10px; /* Move logo to the left (adjust as needed) */
+  justify-content: center;
+  margin: 0 auto;
+  
+}
+
+ion-toolbar {
+  --border-width: 0; // Elimina el borde inferior del toolbar
+}
+
+
+ion-header::after {
+  height: 0px; /* Altura de la línea */
+  background-color: transparent; /* Color de fondo de la línea */
+}
+
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .menu-container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.horizontal-menu {
+  display: flex;
+  width: 100%;
+  border: none;
+  justify-content: start; /* Or justify-content: center */
+  align-items: center; /* Align items vertically in the center */
+
+  .mobile-menu-toggle {
+    display: none; /* Hide toggle button on larger screens */
+    cursor: pointer;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column; /* Stack menu items vertically on small screens */
+    .mobile-menu-toggle {
+     
+      display: block; /* Show toggle button on small screens */
+    }
+  }
+
+  .menu-item {
+    position: relative;
+    padding: 5px 10px; /* Reduced padding */
+    border-right: none;
+    transition: font-size 0.3s;
+    flex: 1; /* Allow items to flex and share available space */
+    text-align: center;
+    
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      font-size: 1.2em;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+      background-size: 500% 500%;
+      border-radius: 5px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
+
+    &:hover:before {
+      opacity: 1;
+    }
+  }
+}
+
+ion-slides {
+  position: relative; /* Asegúrate de que ion-slides tenga position: relative */
+}
+
+.slide-content {
+  position: relative; /* Permite posicionar los botones dentro del contenedor */
+  width: 100%; /* Ocupa todo el ancho de la diapositiva */
+  height: auto; /* Ocupa toda la altura de la diapositiva */
+}
+
+ion-button {
+  position: absolute;
+  top: 80%;
+  transform: translateY(-50%);
+  z-index: 10; /* Asegura que los botones estén por encima de las imágenes */
+}
+
 
 
 

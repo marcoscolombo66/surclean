@@ -1,13 +1,21 @@
 <!-- Menú horizontal para pantallas grandes -->
 <ion-content class="ion-text-center" *ngIf="!pantallaChica">
   <ion-header>
-    <ion-img class="logo" 
-    src="https://i.postimg.cc/qv5xtrh1/8530a21d-816b-4a00-9f2f-591f0c6ce018-Whats-App-Image-2024-04-04-at-1-03-59-PM.webp" 
-    (click)="toggleMenu()"></ion-img>
+    <ion-toolbar color="white">
+      <!-- Logo -->
+     
+      <ion-header>
+        <ion-toolbar color="white">
+          <div class="header-content">
+            <img class="logo" src="https://i.postimg.cc/qv5xtrh1/8530a21d-816b-4a00-9f2f-591f0c6ce018-Whats-App-Image-2024-04-04-at-1-03-59-PM.webp" alt="Logo" slot="start" (click)="toggleMenu()">
+            <div class="menu-container" *ngIf="mostrarMenu">
+              </div>
+          </div>
+        </ion-toolbar>
+      </ion-header>
       
-    <ion-toolbar color="white" *ngIf="mostrarMenu"> 
       <!-- Menú horizontal -->
-      <div class="menu-container" [ngClass]="{'show-menu': mostrarMenu}">
+      <div class="menu-container"*ngIf="mostrarMenu">
         <ion-list lines="none" class="horizontal-menu">
           <ion-item (click)="navigateTo('home')" class="menu-item">
             <ion-label>Home</ion-label>
@@ -37,13 +45,18 @@
     </ion-toolbar>
   </ion-header>
 
-  <!-- SLIDER -->
-  <ion-slides [options]="slideOpts">
+
+  <!-- FLECHAS Y SLIDER -->
+  <ion-slides pager="false" [options]="slideOpts" #slider class="image-slider">
     <ion-slide *ngFor="let photo of photos">
-      <img [src]="photo">
-      <button class="swiper-button-prev" (click)="prev()"></button>
-      <button class="swiper-button-next" (click)="next()"></button>
+      <div class="slide-content">  
+        <img [src]="photo">
+      </div>
     </ion-slide>
   </ion-slides>
-</ion-content>
+  
+ 
+  
+  
 
+ 
