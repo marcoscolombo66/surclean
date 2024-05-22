@@ -50,7 +50,11 @@ const routes: Routes = [
   {
     path: 'toggle',
     loadChildren: () => import('./toggle/toggle.module').then( m => m.TogglePageModule)
+  },  {
+    path: 'menu-desplegable',
+    loadChildren: () => import('./menu-desplegable/menu-desplegable.module').then( m => m.MenuDesplegablePageModule)
   }
+
 
 ];
 

@@ -1,0 +1,55 @@
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="menu-row">
+      <ion-col class="menu-item" (click)="navigateTo('inicio')">
+        Detergentes
+      </ion-col>
+      <ion-col class="menu-item" (click)="navigateTo('servicios')">
+        Desinfectantes
+      </ion-col>
+      <ion-col class="menu-item" (click)="navigateTo('servicios')">
+        Ceras y Lustradores
+      </ion-col>
+      <ion-col class="menu-item" (click)="navigateTo('servicios')">
+        Auxiliares Textiles
+      </ion-col>
+      <ion-col #otrosProductosBtn class="menu-item" (click)="toggleProductosMenu()">
+        Otros Productos
+        <ion-icon name="caret-down" *ngIf="productosMenuOpen"></ion-icon>
+        <ion-icon name="caret-forward" *ngIf="!productosMenuOpen"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="productosMenuOpen && otrosProductosBtn" [ngStyle]="{ width: submenuWidth + 'px', top: otrosProductosBtn.nativeElement.offsetTop + otrosProductosBtn.nativeElement.offsetHeight + 'px', left: otrosProductosBtn.nativeElement.offsetLeft + 'px' }" class="submenu">
+      <ion-col>
+        <ion-list>
+          <ion-item (click)="navigateTo('detergentes')">
+            Líquidos Baja Espuma
+          </ion-item>
+          <ion-item (click)="navigateTo('lavandina')">
+            Perfumes Para La Ropa
+          </ion-item>
+          <ion-item (click)="navigateTo('otros')">
+            Perfuminas
+          </ion-item>
+          <ion-item (click)="navigateTo('otros')">
+            Limpiadores y Desengrasantes
+          </ion-item>
+          <ion-item (click)="navigateTo('otros')">
+            Jabones Líquidos
+          </ion-item>
+          <ion-item (click)="navigateTo('otros')">
+            Línea Automotor
+          </ion-item>
+          <ion-item (click)="navigateTo('otros')">
+            Desodorantes tradicionales
+          </ion-item>
+          <ion-item (click)="navigateTo('otros')">
+            Desodorantes Pinos
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
