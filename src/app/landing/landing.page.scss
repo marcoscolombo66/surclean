@@ -1,0 +1,80 @@
+ion-header {
+    ion-toolbar {
+        --padding-start: 0; // Elimina el padding izquierdo del toolbar
+        --padding-end: 0; // Elimina el padding derecho del toolbar
+
+
+        ion-buttons[slot="start"] {
+            margin-left: 16px; // Añade margen izquierdo al logo
+        }
+
+        ion-buttons[slot="end"] {
+            display: flex; // Activa Flexbox para los botones del menú
+            justify-content: center; // Centra horizontalmente los botones
+            width: 100%; // Ocupa todo el ancho disponible
+            gap: 15px; // Ajusta el valor según el espacio deseado
+
+            ion-button {
+                text-transform: none; // Evita que el texto se convierta en mayúsculas
+                color: black;
+                
+            }
+        }
+    }
+}
+
+ion-img {
+    width: 200px; // Ajusta el ancho deseado
+    height: auto; // Ajusta el alto deseado
+}
+
+ion-header::after {
+    height: 0px;
+    /* Altura de la línea */
+    background-color: transparent;
+    /* Color de fondo de la línea */
+}
+
+
+ion-slides {
+    position: relative;
+    /* Asegúrate de que ion-slides tenga position: relative */
+}
+
+.slide-content {
+    position: relative;
+    /* Permite posicionar los botones dentro del contenedor */
+    width: 100%;
+    /* Ocupa todo el ancho de la diapositiva */
+    height: auto;
+    /* Ocupa toda la altura de la diapositiva */
+}
+
+ion-label {
+    color: none; // Ejemplo de color de texto
+    background-color: none; // Ejemplo de color de fondo
+    padding: 10px 20px; // Ejemplo de padding
+    border: none;
+    border-bottom: none !important;
+    box-shadow: none !important;
+   
+}
+
+/* Apunta al elemento ion-item que contiene el ion-select */
+ion-item {
+    --border-style: none; /* Elimina cualquier borde del ion-item */
+    --inner-padding-end: 0; /* Elimina el padding interno derecho del ion-item */
+  }
+  
+  /* Apunta específicamente al popover generado por el ion-select */
+  .popover-content .select-popover {
+    margin-top: -1px; /* Ajusta el margen superior del popover para corregir la alineación */
+  }
+
+  /* En tu archivo .page.scss o global.scss */
+.popover-content .select-popover {
+    --width: 250px; // Ajusta este valor según tus necesidades
+  }
+  
+  
+  

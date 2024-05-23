@@ -9,9 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { Drivers } from '@ionic/storage';
 import { IniciarusuarioService } from './iniciarusuario.service';
+import { SearchPopoverComponent } from './search-popover/search-popover.component'; // Asegúrate de que la ruta sea correcta
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,  SearchPopoverComponent],
   entryComponents: [],
+ 
+
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     IonicStorageModule.forRoot({
       name: 'AntiguoShop',

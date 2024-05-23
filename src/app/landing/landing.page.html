@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-img src="https://i.postimg.cc/nL407mTx/logo.png"></ion-img> 
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>Detergentes</ion-button>
+      <ion-button>Desinfectantes</ion-button>
+      <ion-button>Ceras y Lustradores</ion-button>
+      <ion-button>Auxiliares Textiles</ion-button>
+      <ion-button>Liquidos Baja Espuma</ion-button>
+      <ion-item>
+        <ion-label>Otros Productos</ion-label>
+        <ion-select interface="popover">
+          <ion-select-option value="opcion1">Desodorantes Pino</ion-select-option>
+          <ion-select-option value="opcion2">Perfumes Para la Ropa</ion-select-option>
+          <ion-select-option value="opcion3">Perfuminas (Ambientes - Ropa)</ion-select-option>
+          <ion-select-option value="opcion3">Limpiadores y Desengrasantes</ion-select-option>
+          <ion-select-option value="opcion3">Jabones Liquidos Multiuso</ion-select-option>
+          <ion-select-option value="opcion3">Linea Automotor</ion-select-option>
+          <ion-select-option value="opcion3">Desodorantes Tradicionales</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+    </ion-buttons>
+  <ion-buttons slot="end">
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentSearchPopover($event)">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  
+
+  <!-- FLECHAS Y SLIDER -->
+  <ion-slides pager="false" [options]="slideOpts" #slider class="image-slider">
+    <ion-slide *ngFor="let photo of photos">
+      <div class="slide-content">
+        <img [src]="photo">
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+
+</ion-content>
