@@ -1,80 +1,212 @@
-ion-header {
-    ion-toolbar {
-        --padding-start: 0; // Elimina el padding izquierdo del toolbar
-        --padding-end: 0; // Elimina el padding derecho del toolbar
+// //ion-header {
+//     ion-toolbar {
+//         --padding-start: 0; // Elimina el padding izquierdo del toolbar
+//         --padding-end: 0; // Elimina el padding derecho del toolbar
 
 
-        ion-buttons[slot="start"] {
-            margin-left: 16px; // Añade margen izquierdo al logo
-        }
+//         // ion-buttons[slot="start"] {
+//         //     margin-left: 16px; // Añade margen izquierdo al logo
+//         // }
 
-        ion-buttons[slot="end"] {
-            display: flex; // Activa Flexbox para los botones del menú
-            justify-content: center; // Centra horizontalmente los botones
-            width: 100%; // Ocupa todo el ancho disponible
-            gap: 15px; // Ajusta el valor según el espacio deseado
+//         ion-buttons[slot="end"] {
+//             display: flex; // Activa Flexbox para los botones del menú
+            
+//             justify-content: center; // Centra horizontalmente los botones
+//             width: 15%; // Ocupa todo el ancho disponible
+//             gap: 5px; // Ajusta el valor según el espacio deseado
 
-            ion-button {
-                text-transform: none; // Evita que el texto se convierta en mayúsculas
-                color: black;
+//             ion-button {
+//                 text-transform: none; // Evita que el texto se convierta en mayúsculas
+//                 color: black;
                 
-            }
-        }
-    }
-}
+//             }
+//         }
+//     }
+// //}
 
-ion-img {
-    width: 200px; // Ajusta el ancho deseado
-    height: auto; // Ajusta el alto deseado
-}
+// // ion-img {
+// //     width: 200px; // Ajusta el ancho deseado
+// //     height: auto; // Ajusta el alto deseado
+// // }
 
-ion-header::after {
-    height: 0px;
-    /* Altura de la línea */
-    background-color: transparent;
-    /* Color de fondo de la línea */
-}
+// ion-header::after {
+//     height: 0px;
+//     /* Altura de la línea */
+//     background-color: transparent;
+//     /* Color de fondo de la línea */
+// }
 
 
-ion-slides {
-    position: relative;
-    /* Asegúrate de que ion-slides tenga position: relative */
-}
+// ion-slides {
+//     position: relative;
+//     /* Asegúrate de que ion-slides tenga position: relative */
+// }
 
-.slide-content {
-    position: relative;
-    /* Permite posicionar los botones dentro del contenedor */
-    width: 100%;
-    /* Ocupa todo el ancho de la diapositiva */
-    height: auto;
-    /* Ocupa toda la altura de la diapositiva */
-}
+// .slide-content {
+//     position: relative;
+//     /* Permite posicionar los botones dentro del contenedor */
+//     width: 100%;
+//     /* Ocupa todo el ancho de la diapositiva */
+//     height: auto;
+//     /* Ocupa toda la altura de la diapositiva */
+// }
 
-ion-label {
-    color: none; // Ejemplo de color de texto
-    background-color: none; // Ejemplo de color de fondo
-    padding: 10px 20px; // Ejemplo de padding
-    border: none;
-    border-bottom: none !important;
-    box-shadow: none !important;
+// ion-label {
+//     color: none; // Ejemplo de color de texto
+//     background-color: none; // Ejemplo de color de fondo
+//     padding: 10px 10px; // Ejemplo de padding
+//     border: none;
+//     border-bottom: none !important;
+//     box-shadow: none !important;
    
+// }
+
+// /* Apunta al elemento ion-item que contiene el ion-select */
+// ion-item {
+//     --border-style: none; /* Elimina cualquier borde del ion-item */
+//     --inner-padding-end: 0; /* Elimina el padding interno derecho del ion-item */
+//   }
+  
+//   /* Apunta específicamente al popover generado por el ion-select */
+//   .popover-content .select-popover {
+//     margin-top: -1px; /* Ajusta el margen superior del popover para corregir la alineación */
+//   }
+
+//   /* En tu archivo .page.scss o global.scss */
+// .popover-content .select-popover {
+//     --width: 250px; // Ajusta este valor según tus necesidades
+//   }
+
+//   @media (max-width: 768px) {
+//     ion-toolbar {
+//       display: flex; /* Opcional: Centrar el logo horizontalmente */
+//       justify-content: center; 
+//     }
+  
+//     // ion-img {
+//     //   width: 150px;
+//     // }
+  
+//     #menu-container {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       gap: 5px;
+//     }
+  
+//     /* Centra la lupa de búsqueda */
+//     ion-buttons[slot="end"] { 
+//       display: flex;
+//       justify-content: center;
+//       width: 100%; /* Para centrar el botón */
+//       margin-top: 10px; /* Espacio entre el menú y la lupa */
+//     }
+//   }
+
+
+// //LOGO RESPONSIVE
+
+// ion-header {
+//   position: absolute; /* ¡Añade esta línea! */
+// }
+
+// ion-toolbar {
+//   height: 200px; /* Ajusta este valor según el tamaño de tu logo */
+//   --min-height: 200px;
+// }
+
+
+// #logo-container {
+//   position: absolute; /* Posicionamiento absoluto para mover libremente */
+//   top: 10px; /* Ajusta según tu diseño */
+//   left: 10px;
+//   transition: all 0.3s ease; /* Transición suave */
+//   width: 100px;
+//   height: auto;
+// }
+
+// /* Pantallas pequeñas */
+// @media (max-width: 576px) {
+//   #logo {
+//     max-width: 60%;
+//   }
+// }
+
+// /* Pantallas medianas */
+// @media (min-width: 577px) and (max-width: 992px) {
+//   #logo {
+//     max-width: 70%;
+//   }
+// }
+
+// /* Pantallas grandes */
+// @media (min-width: 993px) {
+//   #logo {
+//     max-width: 15%;
+//   }
+//   #logo-container {
+//     display: flex;
+//     display: flex-start;
+//     margin: 50px;
+    
+//   }
+// }
+
+
+// #logo-container {
+//   /* ... otros estilos ... */
+//   width: auto; /* Elimina el ancho fijo */
+// }
+
+// #logo {
+//   max-width: 100%; /* Permite que el logo se escale */
+//   width: 300px;
+//   height: auto;
+// }
+// // //////////////////////////////////////////////////////////////////////////////////////////
+
+.header-toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Logo a la izquierda, menú autoajustable */
+  align-items: center; /* Alinea verticalmente al centro */
+  padding: 16px;
 }
 
-/* Apunta al elemento ion-item que contiene el ion-select */
-ion-item {
-    --border-style: none; /* Elimina cualquier borde del ion-item */
-    --inner-padding-end: 0; /* Elimina el padding interno derecho del ion-item */
-  }
+.logo-container {
+  // display: flex;
+  // justify-content: flex-start; /* Alinea el logo a la izquierda */
+  // align-items: center;
+  // width: 400px;
+  // padding: auto;
+  //position: absolute;
+  //left: 20px;
+  //right: 20px;
+  //top: 50%;
+  //transform: translateY(-50%);
+  display: inline-block;
+}
+
+.menu-container {
+  display: inline-block;
+  //justify-content: center; /* Alinea el menú a la derecha */
+  //align-items: center;
   
-  /* Apunta específicamente al popover generado por el ion-select */
-  .popover-content .select-popover {
-    margin-top: -1px; /* Ajusta el margen superior del popover para corregir la alineación */
+
+  ion-button {
+    margin-left: 20px; /* Espacio entre botones */
+    margin-right: 20px;
+    margin-top: 1px;
+  }
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .header-toolbar {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
   }
 
-  /* En tu archivo .page.scss o global.scss */
-.popover-content .select-popover {
-    --width: 250px; // Ajusta este valor según tus necesidades
+  .menu-container {
+    justify-content: center; /* Centra el menú en pantallas pequeñas */
+    margin-top: 10px; /* Espacio entre logo y menú */
   }
-  
-  
-  
+}

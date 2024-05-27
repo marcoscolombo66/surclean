@@ -1,9 +1,15 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    
+        <div id="logo-container">
+          <img src="https://i.postimg.cc/nL407mTx/logo.png" alt="Logo" id="logo">
+        </div>
+   
+    <!-- <ion-buttons slot="start">
       <ion-img src="https://i.postimg.cc/nL407mTx/logo.png"></ion-img> 
-    </ion-buttons>
-    <ion-buttons slot="end">
+    </ion-buttons> -->
+
+    <!-- <ion-buttons slot="end">
       <ion-button>Detergentes</ion-button>
       <ion-button>Desinfectantes</ion-button>
       <ion-button>Ceras y Lustradores</ion-button>
@@ -21,8 +27,8 @@
           <ion-select-option value="opcion3">Desodorantes Tradicionales</ion-select-option>
         </ion-select>
       </ion-item>
-    </ion-buttons>
-
+    </ion-buttons> -->
+<!-- 
     <ion-buttons slot="start">
     </ion-buttons>
   <ion-buttons slot="end">
@@ -36,18 +42,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content> -->
   
   
 
   <!-- FLECHAS Y SLIDER -->
-  <ion-slides pager="false" [options]="slideOpts" #slider class="image-slider">
+  <!-- <ion-slides pager="false" [options]="slideOpts" #slider class="image-slider">
     <ion-slide *ngFor="let photo of photos">
       <div class="slide-content">
         <img [src]="photo">
       </div>
     </ion-slide>
-  </ion-slides>
+  </ion-slides> -->
 
+<!-- 
+</ion-content> --> -->
 
-</ion-content>
+<ion-header>
+  
+  <ion-toolbar class="header-toolbar">
+    <div class="logo-container">
+      <ion-img src="https://i.postimg.cc/nL407mTx/logo.png"></ion-img>
+    </div>
+    <nav class="menu-container">
+      <ion-button>Inicio</ion-button>
+      <ion-button>Productos</ion-button>
+      <ion-button>Servicios</ion-button>
+      <ion-button>Contacto</ion-button>
+      <ion-button>Sobre Nosotros</ion-button>
+      <ion-button>Blog</ion-button>
+    </nav>
+   
+  </ion-toolbar>
+</ion-header>

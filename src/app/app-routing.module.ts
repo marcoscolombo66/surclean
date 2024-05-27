@@ -58,6 +58,10 @@ const routes: Routes = [
     path: 'landing',
     loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
   },
+  {
+    path: 'tester',
+    loadChildren: () => import('./tester/tester.module').then( m => m.TesterPageModule)
+  },
 
   
 

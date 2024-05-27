@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+.container {
+  display: flex;
+  /* Usamos Flexbox para distribuir los elementos */
+  justify-content: space-between;
+  /* Separamos el logo y el menú */
+  align-items: center;
+  /* Alineamos verticalmente al centro */
+}
+
+
+.contenedor {
+
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  /* Ajusta el valor según necesites */
+  margin-right: 25px;
+
+  ion-buttons {
+    display: flex;
+    /* Asegura que los botones se distribuyan con flexbox */
+    flex-wrap: wrap;
+    /* Permite que los botones se ajusten en varias líneas si es necesario */
+    gap: 15px;
+    color: black;
+    font-family: 'Roboto', sans-serif !important; // Usar la fuente importada
+    
+  }
+
+  /* Media Query para pantallas pequeñas */
+  @media (max-width: 768px) {
+
+    // Ajusta el valor según tus necesidades
+    ion-buttons {
+      flex-direction: column;
+      /* Cambia la dirección a columna en pantallas pequeñas */
+    }
+  }
+
+}
+
+.contenedor-logo {
+  display: inline-block;
+  margin-top: 1px;
+  width: 150px;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+
+  /* Ajusta el valor según tus necesidades */
+  .container {
+    flex-direction: column;
+    /* Cambiamos a dirección vertical */
+    align-items: center;
+    /* Alineamos horizontalmente al centro */
+  }
+
+  .contenedor-logo {
+    margin-bottom: 20px;
+    /* Espacio entre el logo y el menú */
+  }
+
+  .contenedor {
+    top: -15px;
+    /* Ajusta el valor según necesites */
+  }
+}
+
+.lupa {
+  display: inline-block;
+  justify-content: start;
+  margin-right: 100px;
+}
+
+.otros {
+  --border-style: none;
+  --color: black;
+  font-family: 'Roboto', sans-serif; // Usar la fuente importada
+
+}
+
+@media (max-width: 768px) {
+
+  /* Ajusta el valor según tus necesidades */
+  .lupa {
+    margin-right: 20px;
+  }
+}

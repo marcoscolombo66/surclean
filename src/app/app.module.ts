@@ -10,9 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { Drivers } from '@ionic/storage';
 import { IniciarusuarioService } from './iniciarusuario.service';
 import { SearchPopoverComponent } from './search-popover/search-popover.component'; // Asegúrate de que la ruta sea correcta
+import { PopoverComponent } from './popover/popover.component';
 
 @NgModule({
-  declarations: [AppComponent,  SearchPopoverComponent],
+  declarations: [AppComponent,  SearchPopoverComponent, PopoverComponent],
   entryComponents: [],
  
 
