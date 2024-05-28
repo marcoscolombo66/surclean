@@ -24,9 +24,11 @@
     /* Asegura que los botones se distribuyan con flexbox */
     flex-wrap: wrap;
     /* Permite que los botones se ajusten en varias líneas si es necesario */
-    gap: 15px;
+    //gap: 15px;
+    gap: 10px;
     color: black;
     font-family: 'Roboto', sans-serif !important; // Usar la fuente importada
+    font-size: 14px;
     
   }
 
@@ -42,10 +44,13 @@
 
 }
 
+
 .contenedor-logo {
   display: inline-block;
   margin-top: 1px;
-  width: 150px;
+  //width: 150px;
+  width: 130px;
+  margin-left: 20px;
 }
 
 /* Media Query para pantallas pequeñas */
@@ -89,4 +94,18 @@
   .lupa {
     margin-right: 20px;
   }
+}
+
+@media (max-width: 1024px) and (max-height: 600px) {
+  /* Estilos específicos para 1024x600 */
+  .contenedor ion-buttons {
+    gap: 5px; /* Reducimos aún más el espacio entre botones */
+  }
+}
+
+
+ion-input {
+  width: 100px; /* Ajusta el ancho deseado */
+  color: teal;
+  
 }
