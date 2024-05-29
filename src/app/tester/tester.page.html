@@ -95,9 +95,9 @@
             <!-- <ion-button appPopover="Contenido del popover para Liquidos Baja Espuma">Liquidos Baja Espuma</ion-button> -->
             <ion-item class="otros">
               <ion-label>Otros Productos</ion-label>
-              <ion-select interface="popover">
-                <ion-select-option value="opcion1"
-                  appPopover="Contenido del popover para Desodorantes Pino">Desodorantes Pino</ion-select-option>
+              <ion-select interface="popover" (ionfocus)="closePopover()">
+                <ion-select-option value="/tab1"
+                  appPopover="Contenido del popover para Desodorantes Pino" (click)="navigateToPage('/tab1', $event)">Desodorantes Pino</ion-select-option>
                 <ion-select-option value="opcion2"
                   appPopover="Contenido del popover para Perfumes Para la Ropa">Perfumes Para la
                   Ropa</ion-select-option>

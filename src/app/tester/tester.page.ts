@@ -3,6 +3,7 @@ import { Directive, ElementRef, Input } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { PopoverComponent } from '../../app/popover/popover.component'; // Crea un componente para el contenido del popover
 import { IonSlides } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tester',
@@ -57,8 +58,16 @@ export class TesterPage implements OnInit {
   handleChange(e) {
     this.pushLog('ionChange fired with value: ' + e.detail.value);
   }
-  constructor(private popoverController: PopoverController) { }
+  constructor(private popoverController: PopoverController, private router: Router) { }
 
+  navigateToPage(pageUrl: string, event: Event) {
+    event.stopPropagation();
+    this.router.navigateByUrl(pageUrl);
+    this.popoverController.dismiss();
+  }
+  closePopover() {
+    this.popoverController.dismiss();
+  }
   ngOnInit() {
   }
 
