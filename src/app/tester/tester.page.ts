@@ -70,6 +70,7 @@ export class TesterPage implements OnInit {
   }
   ngOnInit() {
   }
+  
   test(event: any) {
     console.log('Valor seleccionado:', event.detail.value);
   }

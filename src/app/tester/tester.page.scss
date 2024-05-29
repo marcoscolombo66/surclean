@@ -88,6 +88,7 @@
 
 }
 
+
 @media (max-width: 768px) {
 
   /* Ajusta el valor según tus necesidades */
@@ -109,3 +110,20 @@ ion-input {
   color: teal;
   
 }
+
+ion-accordion {
+  --border-width: 0;
+  width: auto; /* Permite que el acordeón se ajuste al contenido */
+}
+
+ion-accordion::part(container) {
+  position: static; /* Restaura el posicionamiento por defecto */
+  width: max-content; /* Se ajusta al contenido */
+}
+
+.contenedor {
+  display: inline-block;
+  position: relative;
+  z-index: 10; /* Asegura que el acordeón esté por encima de otros elementos */
+}
+
