@@ -61,7 +61,9 @@ export class TesterPage implements OnInit {
 
   ngOnInit() {
   }
-
+  test(event: any) {
+    console.log('Valor seleccionado:', event.detail.value);
+  }
 }
 @Directive({
   selector: '[appPopover]'
@@ -80,5 +82,7 @@ export class PopoverDirective {
     });
     return await popover.present();
   }
+
+  
 }
 

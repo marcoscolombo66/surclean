@@ -1,83 +1,3 @@
-<!-- <ion-content>
-
-  <ion-header>
-    <ion-toolbar>
-      <div class="container">
-        <div class="contenedor-logo">
-          <img src="../../assets/logo-codificardev.svg" alt="">
-        </div>
-
-        <!-- <div class="contenedor">
-          <ion-button id="click-trigger">Left-Click Me</ion-button>
-          <ion-popover trigger="click-trigger" triggerAction="click">
-            <ng-template>
-              <ion-content class="ion-padding">Hello World!</ion-content>
-            </ng-template>
-          </ion-popover>
-
-          <ion-button id="context-menu-trigger">Right-Click Me</ion-button>
-          <ion-popover trigger="context-menu-trigger" triggerAction="context-menu">
-            <ng-template>
-              <ion-content class="ion-padding">Hello World!</ion-content>
-            </ng-template>
-          </ion-popover>
-
-          <ion-button id="hover-trigger">Hover Over Me</ion-button>
-          <ion-popover trigger="hover-trigger" triggerAction="hover">
-            <ng-template>
-              <ion-content class="ion-padding">Hello World!</ion-content>
-            </ng-template>
-          </ion-popover>
-
-
-          <ion-buttons>
-            <ion-button>Detergentes</ion-button>
-            <ion-button>Desinfectantes</ion-button>
-            <ion-button>Ceras y Lustradores</ion-button>
-            <ion-button>Auxiliares Textiles</ion-button>
-            <ion-button>Liquidos Baja Espuma</ion-button>
-            <ion-item>
-              <ion-label>Otros Productos</ion-label>
-              <ion-select interface="popover">
-                <ion-select-option value="opcion1">Desodorantes Pino</ion-select-option>
-                <ion-select-option value="opcion2">Perfumes Para la Ropa</ion-select-option>
-                <ion-select-option value="opcion3">Perfuminas (Ambientes - Ropa)</ion-select-option>
-                <ion-select-option value="opcion3">Limpiadores y Desengrasantes</ion-select-option>
-                <ion-select-option value="opcion3">Jabones Liquidos Multiuso</ion-select-option>
-                <ion-select-option value="opcion3">Linea Automotor</ion-select-option>
-                <ion-select-option value="opcion3">Desodorantes Tradicionales</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-buttons>
-
-
-        </div>
-      </div> -->
-
-<!-- <ion-buttons>
-        <ion-button appPopover="Contenido del popover para Detergentes">Detergentes</ion-button>
-        <ion-button appPopover="Contenido del popover para Desinfectantes">Desinfectantes</ion-button>
-        <ion-button appPopover="Contenido del popover para Ceras y Lustradores">Ceras y Lustradores</ion-button>
-        <ion-button appPopover="Contenido del popover para Auxiliares Textiles">Auxiliares Textiles</ion-button>
-        <ion-button appPopover="Contenido del popover para Liquidos Baja Espuma">Liquidos Baja Espuma</ion-button>
-        <ion-item>
-          <ion-label>Otros Productos</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="opcion1" appPopover="Contenido del popover para Desodorantes Pino">Desodorantes Pino</ion-select-option>
-            <ion-select-option value="opcion2" appPopover="Contenido del popover para Perfumes Para la Ropa">Perfumes Para la Ropa</ion-select-option>
-            <ion-select-option value="opcion3" appPopover="Contenido del popover para Perfuminas (Ambientes - Ropa)">Perfuminas (Ambientes - Ropa)</ion-select-option>
-            <ion-select-option value="opcion3" appPopover="Contenido del popover para Limpiadores y Desengrasantes">Limpiadores y Desengrasantes</ion-select-option>
-            <ion-select-option value="opcion3" appPopover="Contenido del popover para Jabones Liquidos Multiuso">Jabones Liquidos Multiuso</ion-select-option>
-            <ion-select-option value="opcion3" appPopover="Contenido del popover para Linea Automotor">Linea Automotor</ion-select-option>
-            <ion-select-option value="opcion3" appPopover="Contenido del popover para Desodorantes Tradicionales">Desodorantes Tradicionales</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-buttons>
-      
-    </ion-toolbar>
-  </ion-header> -->
-<!-- 
-</ion-content> -->
 
 <ion-content>
   <ion-header>
@@ -95,8 +15,8 @@
             <!-- <ion-button appPopover="Contenido del popover para Liquidos Baja Espuma">Liquidos Baja Espuma</ion-button> -->
             <ion-item class="otros">
               <ion-label>Otros Productos</ion-label>
-              <ion-select interface="popover">
-                <ion-select-option value="opcion1"
+              <ion-select interface="popover" (ionChange)="test($event);">
+                <ion-select-option value="opcion1" 
                   appPopover="Contenido del popover para Desodorantes Pino">Desodorantes Pino</ion-select-option>
                 <ion-select-option value="opcion2"
                   appPopover="Contenido del popover para Perfumes Para la Ropa">Perfumes Para la
