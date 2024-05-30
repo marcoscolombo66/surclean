@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+ion-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Asegura que esté por encima del contenido */
+  
+}
+
+.foto {
+  width: 100%;
+}
 
 .container {
   display: flex;
@@ -12,7 +24,7 @@
 
 
 .contenedor {
-
+  background-color: aqua;
   display: inline-block;
   position: relative;
   top: 1px;
@@ -41,7 +53,9 @@
       /* Cambia la dirección a columna en pantallas pequeñas */
     }
   }
-
+  .contenedor-logo{
+    margin-left: -30;
+  }
 }
 
 
@@ -49,8 +63,8 @@
   display: inline-block;
   margin-top: 1px;
   //width: 150px;
-  width: 130px;
-  margin-left: 20px;
+  width: 140px;
+  margin-left: 10px;
 }
 
 /* Media Query para pantallas pequeñas */
@@ -67,10 +81,12 @@
   .contenedor-logo {
     margin-bottom: 20px;
     /* Espacio entre el logo y el menú */
+    margin-left: -30px;
   }
 
   .contenedor {
     top: -15px;
+    
     /* Ajusta el valor según necesites */
   }
 }
@@ -127,3 +143,91 @@ ion-accordion::part(container) {
   z-index: 10; /* Asegura que el acordeón esté por encima de otros elementos */
 }
 
+// ion-footer {
+  
+//   ion-toolbar {
+//     --background: aqua; // Color de fondo del footer (opcional)
+//     -padding-top: 10px; 
+//     --padding-bottom: 10px;
+
+//     .developed-by {
+      
+//       font-size: 12px;
+//       color: #666; // O el color que prefieras
+//       display: flex;
+//       align-items: center; // Alinea verticalmente el texto con el logo
+//     }
+
+//     .logo {
+//       display: flex;
+//       align-items: center;
+//       img {
+//         height: 20px; // Ajusta el tamaño del logo según tus necesidades
+//       }
+
+//     ion-icon {
+//       font-size: 24px; // Tamaño de los iconos
+//       margin: 0 10px; // Espaciado entre iconos
+//       color: #333; // Color de los iconos
+//     }
+//   }
+
+// }
+// }
+
+ion-footer {
+  ion-toolbar {
+      --background: aqua;
+      --padding-top: 10px;
+      --padding-bottom: 10px;
+  
+
+    
+      .footer-row {
+        display: flex; // Agrega display: flex de nuevo
+        align-items: center;
+        justify-content: center; // Alinea todo a la izquierda
+  
+        .social-icons {
+          display: flex;
+          text-align: center;
+          
+
+
+        ion-icon {
+          font-size: 24px;
+          margin: 0 10px;
+          color: #333;
+          
+        }
+      }
+
+      .developed-by {
+        display: flex;
+        align-items: center;
+        margin-left: auto; // Empuja "Desarrollado por" a la derecha
+        
+
+        span {
+          font-size: 12px;
+          color: #666;
+          margin-right: 5px; // Espacio entre el texto y el logo
+        }
+
+        img {
+          height: 25px;
+        }
+      }
+    }
+  }
+}
+
+.ion-content-scroll-host {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
