@@ -232,3 +232,18 @@ ion-footer {
   overflow-y: auto;
 }
 .ion-padding{ cursor: pointer;}
+
+.custom-searchbar {
+  --border: none;
+  --box-shadow: none;
+  --background: transparent;
+}
+
+.custom-searchbar .searchbar-input-container {
+  border: none;
+}
+
+.custom-searchbar .searchbar-clear-button,
+.custom-searchbar .searchbar-search-icon {
+  display: none;
+}

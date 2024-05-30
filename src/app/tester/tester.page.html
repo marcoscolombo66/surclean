@@ -7,19 +7,13 @@
         </div>
         <div class="contenedor">
           <ion-buttons>
-            <ion-button *ngIf="!mostrarBusqueda" (click)="iniciarBusqueda()"><ion-icon name="search-sharp" ></ion-icon></ion-button>
-            <ion-button *ngIf="mostrarBusqueda">
-              <ion-input placeholder="Buscar" (input)="realizarBusqueda($event)"></ion-input>
-            </ion-button>
-            <ion-button *ngIf="mostrarBusqueda" (click)="iniciarBusqueda()"><ion-icon name="close-sharp" ></ion-icon></ion-button>
-                    
+                  
             <ion-button *ngIf="!mostrarBusqueda" (click)="abrirModal();">DETERGENTES</ion-button>
             <ion-button *ngIf="!mostrarBusqueda" (click)="abrirModal();">DESINFECTANTES</ion-button>
             <ion-button *ngIf="!mostrarBusqueda" (click)="abrirModal();">CERAS</ion-button>
             <ion-button *ngIf="!mostrarBusqueda" (click)="abrirModal();">AUXILIARES</ion-button>
             <!-- <ion-button appPopover="Contenido del popover para Liquidos Baja Espuma">Liquidos Baja Espuma</ion-button> -->
-           
-           
+                     
             <ion-accordion-group class="contenedor" expand="inset" *ngIf="!mostrarBusqueda">
 
               <ion-accordion value="otros-productos" >
@@ -33,6 +27,12 @@
               </ion-accordion>
 
             </ion-accordion-group>
+            <ion-button *ngIf="mostrarBusqueda">
+              <ion-searchbar class="custom-searchbar" placeholder="Buscar producto" (input)="realizarBusqueda($event)"></ion-searchbar>              
+            </ion-button>
+            <ion-button *ngIf="!mostrarBusqueda" (click)="iniciarBusqueda()"><ion-icon name="search-sharp" ></ion-icon></ion-button>
+            <ion-button *ngIf="mostrarBusqueda" (click)="iniciarBusqueda()"><ion-icon name="close-sharp" ></ion-icon></ion-button>
+              
             </ion-buttons>
 
         </div>
