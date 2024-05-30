@@ -1,7 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
-import { Directive, ElementRef, Input } from '@angular/core';
-import { PopoverController } from '@ionic/angular';
-import { PopoverComponent } from '../../app/popover/popover.component'; // Crea un componente para el contenido del popover
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -19,11 +16,7 @@ export class TesterPage implements OnInit {
     'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/15536367e8a2169aa3b6bf35c66f9646.jpg',
     'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/9672053fa2213156bbf46107f308094a.jpg',
     'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/15536367e8a2169aa3b6bf35c66f9646.jpg',
-    'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/9672053fa2213156bbf46107f308094a.jpg',
-    'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/15536367e8a2169aa3b6bf35c66f9646.jpg',
-    'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/9672053fa2213156bbf46107f308094a.jpg',
-    'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/15536367e8a2169aa3b6bf35c66f9646.jpg',
-    'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/9672053fa2213156bbf46107f308094a.jpg',
+    
     // Agrega las URL de las otras fotos aquí
   ];
 
@@ -44,7 +37,7 @@ export class TesterPage implements OnInit {
   logs: string[] = [];
  
 
-  constructor(private el: ElementRef, private popoverController: PopoverController) { }    
+  constructor() { }    
   
   test(event: any) {
     console.log('Valor seleccionado:', event.detail.value);

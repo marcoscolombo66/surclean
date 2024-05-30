@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 ion-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   z-index: 10; /* Asegura que esté por encima del contenido */
-  
 }
 
 .foto {
@@ -15,235 +10,112 @@ ion-header {
 
 .container {
   display: flex;
-  /* Usamos Flexbox para distribuir los elementos */
   justify-content: space-between;
-  /* Separamos el logo y el menú */
   align-items: center;
-  /* Alineamos verticalmente al centro */
 }
-
 
 .contenedor {
   background-color: transparent !important;
   display: inline-block;
   position: relative;
-  top: 1px;
-  /* Ajusta el valor según necesites */
   margin-right: 25px;
-
-  ion-buttons {
-    display: flex;
-    /* Asegura que los botones se distribuyan con flexbox */
-    flex-wrap: wrap;
-    /* Permite que los botones se ajusten en varias líneas si es necesario */
-    //gap: 15px;
-    gap: 10px;
-    color: black;
-    font-family: 'Roboto', sans-serif !important; // Usar la fuente importada
-    font-size: 14px;
-    
-  }
-
-  /* Media Query para pantallas pequeñas */
-  @media (max-width: 768px) {
-
-    // Ajusta el valor según tus necesidades
-    ion-buttons {
-      flex-direction: column;
-      /* Cambia la dirección a columna en pantallas pequeñas */
-    }
-  }
-  .contenedor-logo{
-    margin-left: -30;
-  }
 }
 
-
-.contenedor-logo {
-  display: inline-block;
-  margin-top: 1px;
-  //width: 150px;
-  width: 140px;
-  margin-left: 10px;
+.contenedor ion-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: black;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 14px;
 }
 
-/* Media Query para pantallas pequeñas */
 @media (max-width: 768px) {
-
-  /* Ajusta el valor según tus necesidades */
   .container {
     flex-direction: column;
-    /* Cambiamos a dirección vertical */
     align-items: center;
-    /* Alineamos horizontalmente al centro */
-  }
-
-  .contenedor-logo {
-    margin-bottom: 20px;
-    /* Espacio entre el logo y el menú */
-    margin-left: -30px;
   }
 
   .contenedor {
     top: -15px;
-    
-    /* Ajusta el valor según necesites */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+  .contenedor-logo {
+    margin: 10px 0; /* Añadir margen superior e inferior de 10px */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contenedor ion-buttons {
+    justify-content: center;
+    flex-direction: column; /* Cambia la dirección a columna */
+    align-items: center;
+  }
+}
+
+.contenedor-logo {
+  display: inline-block;
+  width: 140px;
+  margin-left: 10px;
 }
 
 .lupa {
   display: inline-block;
-  justify-content: start;
   margin-right: 100px;
 }
 
-.otros {
-  --border-style: none;
-  --color: black;
-  font-family: 'Roboto', sans-serif; // Usar la fuente importada
-
-}
-
-
 @media (max-width: 768px) {
-
-  /* Ajusta el valor según tus necesidades */
   .lupa {
     margin-right: 20px;
   }
 }
 
+.otros {
+  --border-style: none;
+  --color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
 @media (max-width: 1024px) and (max-height: 600px) {
-  /* Estilos específicos para 1024x600 */
   .contenedor ion-buttons {
-    gap: 5px; /* Reducimos aún más el espacio entre botones */
+    gap: 5px;
   }
 }
 
-
 ion-input {
-  width: 100px; /* Ajusta el ancho deseado */
+  width: 100px;
   color: teal;
-  
 }
 
 ion-accordion {
   --border-width: 0;
-  width: auto; /* Permite que el acordeón se ajuste al contenido */
+  width: auto;
 }
 
 ion-accordion::part(container) {
-  position: static; /* Restaura el posicionamiento por defecto */
-  width: max-content; /* Se ajusta al contenido */
+  position: static;
 }
 
-.contenedor {
-  display: inline-block;
-  position: relative;
-  z-index: 10; /* Asegura que el acordeón esté por encima de otros elementos */
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-// ion-footer {
-  
-//   ion-toolbar {
-//     --background: aqua; // Color de fondo del footer (opcional)
-//     -padding-top: 10px; 
-//     --padding-bottom: 10px;
-
-//     .developed-by {
-      
-//       font-size: 12px;
-//       color: #666; // O el color que prefieras
-//       display: flex;
-//       align-items: center; // Alinea verticalmente el texto con el logo
-//     }
-
-//     .logo {
-//       display: flex;
-//       align-items: center;
-//       img {
-//         height: 20px; // Ajusta el tamaño del logo según tus necesidades
-//       }
-
-//     ion-icon {
-//       font-size: 24px; // Tamaño de los iconos
-//       margin: 0 10px; // Espaciado entre iconos
-//       color: #333; // Color de los iconos
-//     }
-//   }
-
-// }
-// }
-
-ion-footer {
-  ion-toolbar {
-      --background: #0cf7f700;
-      --padding-top: 10px;
-      --padding-bottom: 10px;
-  
-
-    
-      .footer-row {
-        display: flex; // Agrega display: flex de nuevo
-        align-items: center;
-        justify-content: center; // Alinea todo a la izquierda
-  
-        .social-icons {
-          display: flex;
-          text-align: center;
-          
-
-
-        ion-icon {
-          font-size: 24px;
-          margin: 0 10px;
-          color: #333;
-          
-        }
-      }
-
-      .developed-by {
-        display: flex;
-        align-items: center;
-        margin-left: auto; // Empuja "Desarrollado por" a la derecha
-        
-
-        span {
-          font-size: 12px;
-          color: #666;
-          margin-right: 5px; // Espacio entre el texto y el logo
-        }
-
-        img {
-          height: 25px;
-        }
-      }
-    }
-  }
+.social-icons a {
+  margin: 0 10px;
 }
 
-.ion-content-scroll-host {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-}
-.ion-padding{ cursor: pointer;}
-
-.custom-searchbar {
-  --border: none;
-  --box-shadow: none;
-  --background: transparent;
+.developed-by {
+  display: flex;
+  align-items: center;
 }
 
-.custom-searchbar .searchbar-input-container {
-  border: none;
-}
-
-.custom-searchbar .searchbar-clear-button,
-.custom-searchbar .searchbar-search-icon {
-  display: none;
+.developed-by img {
+  width: 100px;
+  margin-left: 10px;
 }

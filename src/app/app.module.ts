@@ -11,7 +11,7 @@ import { Drivers } from '@ionic/storage';
 import { IniciarusuarioService } from './iniciarusuario.service';
 import { SearchPopoverComponent } from './search-popover/search-popover.component'; // Asegúrate de que la ruta sea correcta
 import { PopoverComponent } from './popover/popover.component';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
   declarations: [AppComponent,  SearchPopoverComponent, PopoverComponent],
   entryComponents: [],
@@ -24,5 +24,6 @@ import { PopoverComponent } from './popover/popover.component';
     }),],
   providers: [IniciarusuarioService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
