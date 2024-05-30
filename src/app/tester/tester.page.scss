@@ -24,7 +24,7 @@ ion-header {
 
 
 .contenedor {
-  background-color: aqua;
+  background-color: transparent !important;
   display: inline-block;
   position: relative;
   top: 1px;
@@ -177,7 +177,7 @@ ion-accordion::part(container) {
 
 ion-footer {
   ion-toolbar {
-      --background: aqua;
+      --background: #0cf7f700;
       --padding-top: 10px;
       --padding-bottom: 10px;
   
@@ -231,3 +231,4 @@ ion-footer {
   width: 100%;
   overflow-y: auto;
 }
+.ion-padding{ cursor: pointer;}

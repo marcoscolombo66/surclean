@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class TesterPage implements OnInit {
   @ViewChild('slider') slider: IonSlides;
   mostrarBusqueda: boolean = false; // Declara la propiedad aquí
-  pantallaChica: boolean;
+  
 
   photos = [
     'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/15536367e8a2169aa3b6bf35c66f9646.jpg',
@@ -42,12 +42,16 @@ export class TesterPage implements OnInit {
   mostrarMenu: boolean = true;
 
   logs: string[] = [];
+ 
 
-  pushLog(msg) {
-    this.logs.unshift(msg);
+  constructor(private el: ElementRef, private popoverController: PopoverController) { }    
+  
+  test(event: any) {
+    console.log('Valor seleccionado:', event.detail.value);
   }
   iniciarBusqueda() {
-    this.mostrarBusqueda = true;
+    this.mostrarBusqueda = !this.mostrarBusqueda;
+    console.log('Valor selecc') 
   }
 
   realizarBusqueda(event: any) {
@@ -55,44 +59,10 @@ export class TesterPage implements OnInit {
     // Aquí puedes implementar la lógica para buscar según el texto ingresado
     console.log('Texto de búsqueda:', textoBusqueda);
   }
-  handleChange(e) {
-    this.pushLog('ionChange fired with value: ' + e.detail.value);
-  }
-  constructor(private popoverController: PopoverController, private router: Router) { }
+  
 
-  navigateToPage(pageUrl: string, event: Event) {
-    event.stopPropagation();
-    this.router.navigateByUrl(pageUrl);
-    this.popoverController.dismiss();
-  }
-  closePopover() {
-    this.popoverController.dismiss();
-  }
+  abrirModal(){console.log('se va a abrir pagina con los resultados de busqueda por categoria');}
   ngOnInit() {
   }
   
-  test(event: any) {
-    console.log('Valor seleccionado:', event.detail.value);
-  }
 }
-@Directive({
-  selector: '[appPopover]'
-})
-export class PopoverDirective {
-  @Input('appPopover') popoverContent: string; // Contenido HTML para el popover
-
-  constructor(private el: ElementRef, private popoverController: PopoverController) { }
-
-  @HostListener('click') async presentPopover() {
-    const popover = await this.popoverController.create({
-      component: PopoverComponent,
-      componentProps: { content: this.popoverContent }, // Pasa el contenido al componente del popover
-      event: event,
-      translucent: true
-    });
-    return await popover.present();
-  }
-
-  
-}
-
