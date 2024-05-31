@@ -148,6 +148,7 @@ ion-accordion::part(container) {
 }
 
 
+
 //MAPA CON MARCADOR DE SUCURSAL
 .map-container {
   width: 90%; /* Ancho inicial amplio para ocupar la mayor parte de la pantalla */
@@ -270,3 +271,36 @@ ion-card::before {
   width: 90%; /* Ancho del slider */
   margin: 0 auto; /* Centrar el slider */
 }
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-container {
+  display: flex; 
+  align-items: center;
+}
+
+.search-container ion-searchbar {
+  flex: 1;
+}
+
+.search-container ion-button {
+  margin-left: 8px;
+}
+
+.search-results-container {
+  padding: 0 16px;
+}
+
+.search-results {
+  width: 100%;
+}
+
+.custom-searchbar {
+  width: 100%;
+}
+
+
+.product-image{max-width: 100px;max-height:100px;}

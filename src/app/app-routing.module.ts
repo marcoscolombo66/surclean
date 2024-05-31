@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  //{path: 'home',loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+  {path: 'home',loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   //{path: '',redirectTo: 'home',pathMatch: 'full'},
   {
     path: '',
-    redirectTo: 'tab1',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {path: '',loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)},  
@@ -54,14 +54,12 @@ const routes: Routes = [
   {
     path: 'menu-desplegable',
     loadChildren: () => import('./menu-desplegable/menu-desplegable.module').then( m => m.MenuDesplegablePageModule)
-  },  {
+  },
+  {
     path: 'landing',
     loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
   },
-  {
-    path: 'tester',
-    loadChildren: () => import('./tester/tester.module').then( m => m.TesterPageModule)
-  },
+  
 
   
 

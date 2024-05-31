@@ -25,52 +25,61 @@
                 <div class="ion-padding" slot="content" (click)="abrirModal();">DESODORANTES</div>
                 <div class="ion-padding" slot="content" (click)="abrirModal();">POLVOS</div>
                 <div class="ion-padding" slot="content" (click)="abrirModal();">CLORO</div>
-
               </ion-accordion>
             </ion-accordion-group>
-            <ion-button *ngIf="mostrarBusqueda">
-              <ion-searchbar class="custom-searchbar" placeholder="Buscar producto" (input)="realizarBusqueda($event)"></ion-searchbar>
-            </ion-button>
+            <div class="search-container" *ngIf="mostrarBusqueda">
+              <ion-searchbar class="custom-searchbar" show-clear-button="always" show-cancel-button="never"
+              placeholder="Buscar producto" (ionInput)="buscarProductos($event)"></ion-searchbar>
+              <ion-button (click)="iniciarBusqueda()"><ion-icon name="close-sharp"></ion-icon></ion-button>
+            </div>
             <ion-button *ngIf="!mostrarBusqueda" (click)="iniciarBusqueda()"><ion-icon name="search-sharp"></ion-icon></ion-button>
-            <ion-button *ngIf="mostrarBusqueda" (click)="iniciarBusqueda()"><ion-icon name="close-sharp"></ion-icon></ion-button>
           </ion-buttons>
         </div>
       </div>
     </ion-toolbar>
   </ion-header>
+  <ion-grid *ngIf="mostrarBusqueda && productos.length > 0" class="search-results">
+    <ion-row *ngFor="let resultado of productos" class="align-center" style="cursor: pointer;"
+    (click)="modalMasInfo(resultado.idProducto,resultado.nombreProducto,resultado.descripcionProducto,resultado.fotoProducto,resultado.precioProducto)">
+      
+      <ion-col>
+        <img src="{{urlRoot}}/images/{{ resultado.fotoProducto }}" class="product-image"/>
+      </ion-col>
+      <ion-col>
+        {{ resultado.nombreProducto }}
+      </ion-col>
+      <ion-col ></ion-col>
+    </ion-row>
+  </ion-grid>
+  
 
   <swiper-container class="image-slider" [slidesPerView]="1" [loop]="true" navigation="true"
-  pagination="false" centered-slides="true"autoplay-delay="3000" autoplay-disable-on-interaction="false">
+  pagination="false" centered-slides="true" autoplay-delay="3000" autoplay-disable-on-interaction="false">
     <swiper-slide><ion-img class="imgBanner" src="../../assets/IMAGEN_PAG_1.png"></ion-img></swiper-slide>
     <swiper-slide><ion-img class="imgBanner" src="../../assets/IMAGEN_PAG_2.png"></ion-img></swiper-slide>
     <swiper-slide><ion-img class="imgBanner" src="../../assets/IMAGEN_PAG_3.png"></ion-img></swiper-slide>
   </swiper-container>
 
   <ion-card class="card-container">
-    
     <ion-card-content>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt harum quis excepturi saepe enim, atque asperiores nisi soluta dolores, cum non perspiciatis odit! Corporis hic delectus perspiciatis enim ipsum quis adipisci id laborum repellendus? Maiores quidem ipsum quam minus. Aut labore nisi reprehenderit harum, autem, accusamus doloribus quas ullam voluptatum voluptate alias rem, repudiandae adipisci. Facere accusantium facilis voluptatibus iste minima accusamus magnam itaque velit fuga possimus magni, dolores explicabo pariatur natus, laboriosam porro praesentium molestias provident ratione eius non in repellendus consequuntur. Voluptatibus mollitia numquam voluptatum fugiat soluta, explicabo debitis, ea assumenda laudantium eos praesentium ad fugit, impedit ducimus!
     </ion-card-content>
   </ion-card>
-    
 
-<img class="foto"   src="../../assets/LOGO_SURCLEAN_4.svg" alt="Logo surclean">
-
+  <img class="foto" src="../../assets/LOGO_SURCLEAN_4.svg" alt="Logo surclean">
   <h2 class="sucursal-titulo">Nuestra Sucursal</h2>
 
-<div class="map-container">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.2112936233602!2d-58.36912112520551!3d-34.725068063915444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a332add2d5c173%3A0xca7e811a968d8607!2sAv.%209%20de%20Julio%203373%2C%20B1825ALC%20Lan%C3%BAs%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1717151842060!5m2!1ses-419!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.2112936233602!2d-58.36912112520551!3d-34.725068063915444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a332add2d5c173%3A0xca7e811a968d8607!2sAv.%209%20de%20Julio%203373%2C%20B1825ALC%20Lan%C3%BAs%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1717151842060!5m2!1ses-419!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
 
-<!-- Contenido adicional -->
+  <!-- Contenido adicional -->
 
-<ion-card class="card-container">
-    
-  <ion-card-content>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt harum quis excepturi saepe enim, atque asperiores nisi soluta dolores, cum non perspiciatis odit! Corporis hic delectus perspiciatis enim ipsum quis adipisci id laborum repellendus? Maiores quidem ipsum quam minus. Aut labore nisi reprehenderit harum, autem, accusamus doloribus quas ullam voluptatum voluptate alias rem, repudiandae adipisci. Facere accusantium facilis voluptatibus iste minima accusamus magnam itaque velit fuga possimus magni, dolores explicabo pariatur natus, laboriosam porro praesentium molestias provident ratione eius non in repellendus consequuntur. Voluptatibus mollitia numquam voluptatum fugiat soluta, explicabo debitis, ea assumenda laudantium eos praesentium ad fugit, impedit ducimus!
-  </ion-card-content>
-</ion-card>
-
+  <ion-card class="card-container">
+    <ion-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt harum quis excepturi saepe enim, atque asperiores nisi soluta dolores, cum non perspiciatis odit! Corporis hic delectus perspiciatis enim ipsum quis adipisci id laborum repellendus? Maiores quidem ipsum quam minus. Aut labore nisi reprehenderit harum, autem, accusamus doloribus quas ullam voluptatum voluptate alias rem, repudiandae adipisci. Facere accusantium facilis voluptatibus iste minima accusamus magnam itaque velit fuga possimus magni, dolores explicabo pariatur natus, laboriosam porro praesentium molestias provident ratione eius non in repellendus consequuntur. Voluptatibus mollitia numquam voluptatum fugiat soluta, explicabo debitis, ea assumenda laudantium eos praesentium ad fugit, impedit ducimus!
+    </ion-card-content>
+  </ion-card>
 
   <ion-footer collapse="fade">
     <ion-toolbar>
@@ -78,7 +87,6 @@
         <div class="social-icons">
           <a href="https://www.instagram.com/surcleanquimica/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
           <a href="https://wa.me/+541137390935" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a>
-          
         </div>
         <div class="developed-by">
           <span>Desarrollado por</span>
