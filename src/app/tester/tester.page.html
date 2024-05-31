@@ -33,7 +33,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <swiper-container class="image-slider">
+  <swiper-container class="image-slider" [slidesPerView]="1" [loop]="true" navigation="true"
+  pagination="true" centered-slides="true"autoplay-delay="2500" autoplay-disable-on-interaction="false">
     <swiper-slide><ion-img class="imgBanner" src="https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/15536367e8a2169aa3b6bf35c66f9646.jpg"></ion-img></swiper-slide>
     <swiper-slide><ion-img class="imgBanner" src="https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/9672053fa2213156bbf46107f308094a.jpg"></ion-img></swiper-slide>
     <swiper-slide><ion-img class="imgBanner" src="https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/15536367e8a2169aa3b6bf35c66f9646.jpg"></ion-img></swiper-slide>

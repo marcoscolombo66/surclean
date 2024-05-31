@@ -11,14 +11,7 @@ export class TesterPage implements OnInit {
   @ViewChild('slider') slider: IonSlides;
   mostrarBusqueda: boolean = false; // Declara la propiedad aquí
   
-
-  photos = [
-    'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/15536367e8a2169aa3b6bf35c66f9646.jpg',
-    'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/9672053fa2213156bbf46107f308094a.jpg',
-    'https://zonazero.nyc3.cdn.digitaloceanspaces.com/dev/15536367e8a2169aa3b6bf35c66f9646.jpg',
-    
-    // Agrega las URL de las otras fotos aquí
-  ];
+ 
 
   slideOpts = {
     initialSlide: 0,
