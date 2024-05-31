@@ -11,13 +11,13 @@ export class TesterPage implements OnInit {
   @ViewChild('slider') slider: IonSlides;
   mostrarBusqueda: boolean = false; // Declara la propiedad aquí
   
- 
-
   slideOpts = {
     initialSlide: 0,
     speed: 400,
-    slidesPerView: 1,
-    spaceBetween: 25,
+    slidesPerView: 5,
+    spaceBetween: 10,
+    freeMode: true,
+    
     loop: true, // Activa el bucle para que el slider se repita
     autoplay: {
       delay: 3000, // Retraso entre diapositivas en milisegundos (3 segundos en este caso)
