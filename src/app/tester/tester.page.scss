@@ -106,8 +106,26 @@ ion-accordion::part(container) {
   align-items: center;
 }
 
+// .social-icons a {
+//   margin: 0 10px;
+// }
+
 .social-icons a {
-  margin: 0 10px;
+  margin: 0 10px; /* Espacio entre los iconos */
+  display: inline-flex; /* Para centrar el icono verticalmente */
+  align-items: center;
+}
+
+.social-icons ion-icon {
+  font-size: 20px; /* Tamaño inicial del icono */
+  color: black;   /* Color negro por defecto */
+  transition: all 0.3s ease; /* Transición suave para los cambios */
+}
+
+.social-icons a:hover ion-icon {
+  font-size: 28px;   /* Agrandar al pasar el mouse */
+  color: rgba(91, 164, 192, 0.5);     /* Color aqua al pasar el mouse */
+  text-shadow: 0 2px 4px rgba(91, 164, 192, 0.5); /* Sombra #5BA4C0 */
 }
 
 .developed-by {
@@ -116,6 +134,52 @@ ion-accordion::part(container) {
 }
 
 .developed-by img {
-  width: 100px;
+  width: 120px;
   margin-left: 10px;
 }
+
+//CENTRADO DE LOGO EN PANTALLAS CHICAS
+@media (max-width: 768px) {
+  .contenedor-logo {
+    margin-left: -50px;
+  }
+}
+
+
+//MAPA CON MARCADOR DE SUCURSAL
+.map-container {
+  width: 90%; /* Ancho inicial amplio para ocupar la mayor parte de la pantalla */
+  max-width: 1000px; /* Límite máximo para pantallas muy grandes */
+  height: 400px; /* Altura inicial razonable */
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease; /* Transición suave para la sombra al pasar el mouse */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Hover effect SUTIL EN EL MAPA */
+.map-container:hover {
+  box-shadow: 0 6px 12px rgba(91, 164, 192, 0.5);
+}
+
+
+//SOBREADO SUTIL EN TITULO SUCURSAL
+.sucursal-titulo {
+  font-family: 'Roboto', sans-serif !important; /* Fuente elegante */
+  font-size: 1.5em; /* Tamaño de fuente grande */
+  font-weight: 500; /* Negrita para destacar */
+  color: #333; /* Color de texto oscuro */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  margin-bottom: 10px; /* Espacio entre el título y la dirección */
+  text-align: left;
+  margin-left: 10px;
+
+}
+
