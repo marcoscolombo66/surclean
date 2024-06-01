@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 ion-header {
-  z-index: 10; /* Asegura que esté por encima del contenido */
+  z-index: 10;
+  /* Asegura que esté por encima del contenido */
 }
 
 .foto {
@@ -44,7 +45,8 @@ ion-header {
   }
 
   .contenedor-logo {
-    margin: 10px 0; /* Añadir margen superior e inferior de 10px */
+    margin: 10px 0;
+    /* Añadir margen superior e inferior de 10px */
     display: flex;
     justify-content: center;
     width: 100%;
@@ -52,7 +54,8 @@ ion-header {
 
   .contenedor ion-buttons {
     justify-content: center;
-    flex-direction: column; /* Cambia la dirección a columna */
+    flex-direction: column;
+    /* Cambia la dirección a columna */
     align-items: center;
   }
 }
@@ -111,28 +114,36 @@ ion-accordion::part(container) {
 // }
 
 .social-icons a {
-  margin: 0 10px; /* Espacio entre los iconos */
-  display: inline-flex; /* Para centrar el icono verticalmente */
+  margin: 0 10px;
+  /* Espacio entre los iconos */
+  display: inline-flex;
+  /* Para centrar el icono verticalmente */
   align-items: center;
 }
 
 .social-icons ion-icon {
-  font-size: 20px; /* Tamaño inicial del icono */
-  color: black;   /* Color negro por defecto */
-  transition: all 0.3s ease; /* Transición suave para los cambios */
+  font-size: 20px;
+  /* Tamaño inicial del icono */
+  color: black;
+  /* Color negro por defecto */
+  transition: all 0.3s ease;
+  /* Transición suave para los cambios */
 }
 
 .social-icons a:hover ion-icon {
-  font-size: 28px;   /* Agrandar al pasar el mouse */
-  color: rgba(91, 164, 192, 0.5);     /* Color aqua al pasar el mouse */
-  text-shadow: 0 2px 4px rgba(91, 164, 192, 0.5); /* Sombra #5BA4C0 */
+  font-size: 28px;
+  /* Agrandar al pasar el mouse */
+  color: rgba(91, 164, 192, 0.5);
+  /* Color aqua al pasar el mouse */
+  text-shadow: 0 2px 4px rgba(91, 164, 192, 0.5);
+  /* Sombra #5BA4C0 */
 }
 
 .developed-by {
   display: flex;
   align-items: center;
   font-size: 12px;
-  margin-right:10px;
+  margin-right: 10px;
 }
 
 .developed-by img {
@@ -151,14 +162,18 @@ ion-accordion::part(container) {
 
 //MAPA CON MARCADOR DE SUCURSAL
 .map-container {
-  width: 90%; /* Ancho inicial amplio para ocupar la mayor parte de la pantalla */
-  max-width: 1000px; /* Límite máximo para pantallas muy grandes */
-  height: 400px; /* Altura inicial razonable */
+  width: 90%;
+  /* Ancho inicial amplio para ocupar la mayor parte de la pantalla */
+  max-width: 1000px;
+  /* Límite máximo para pantallas muy grandes */
+  height: 400px;
+  /* Altura inicial razonable */
   margin: 20px auto;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease; /* Transición suave para la sombra al pasar el mouse */
+  transition: box-shadow 0.3s ease;
+  /* Transición suave para la sombra al pasar el mouse */
 }
 
 .map-container iframe {
@@ -175,12 +190,18 @@ ion-accordion::part(container) {
 
 //SOBREADO SUTIL EN TITULO SUCURSAL
 .sucursal-titulo {
-  font-family: 'Roboto', sans-serif !important; /* Fuente elegante */
-  font-size: 1.5em; /* Tamaño de fuente grande */
-  font-weight: 500; /* Negrita para destacar */
-  color: #333; /* Color de texto oscuro */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-  margin-bottom: 10px; /* Espacio entre el título y la dirección */
+  font-family: 'Roboto', sans-serif !important;
+  /* Fuente elegante */
+  font-size: 1.5em;
+  /* Tamaño de fuente grande */
+  font-weight: 500;
+  /* Negrita para destacar */
+  color: #3C3F44;
+  /* Color de texto oscuro */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  /* Sombra sutil */
+  margin-bottom: 10px;
+  /* Espacio entre el título y la dirección */
   text-align: left;
   margin-left: 10px;
 
@@ -208,18 +229,23 @@ ion-accordion::part(container) {
 //   //background-color: #ffffff75; /* Color blanco grisáceo */
 //   border-radius: 15px;      /* Bordes redondeados (ajusta el valor según tu preferencia) */
 //   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para el relieve */
-  
+
 // }
 
 ion-card {
   font-family: 'Roboto', sans-serif !important;
-  background-color: white; /* Fondo blanco base */
-  overflow: hidden; /* Para que la salpicadura no se desborde */
-  position: relative; /* Para posicionar el pseudoelemento */
-  text-align: justify; /* Centra el texto horizontalmente */
-  padding: 10px;     /* Margen de 10px en todos los lados */
-  
-  
+  background-color: white;
+  /* Fondo blanco base */
+  overflow: hidden;
+  /* Para que la salpicadura no se desborde */
+  position: relative;
+  /* Para posicionar el pseudoelemento */
+  text-align: justify;
+  /* Centra el texto horizontalmente */
+  padding: 10px;
+  /* Margen de 10px en todos los lados */
+
+
 }
 
 ion-card::before {
@@ -229,12 +255,17 @@ ion-card::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 20% 30%, #5BA4C0 20%, transparent 21%),
-              radial-gradient(circle at 80% 70%, #5BA4C0 20%, transparent 21%),
-              radial-gradient(circle at 40% 90%, #5BA4C0 20%, transparent 21%); /* Múltiples círculos de salpicadura */
-  opacity: 0.3; /* Ajusta la opacidad para que sea más sutil */
-  z-index: -1; /* Coloca el efecto detrás del contenido de la tarjeta */
-  mix-blend-mode: multiply; /* Para mezclar los colores con el fondo blanco */
+  background: radial-gradient(circle at 20% 30%, #5BA4C0 10%, transparent 11%),
+    radial-gradient(circle at 80% 70%, #5BA4C0 10%, transparent 11%),
+    radial-gradient(circle at 40% 90%, #5BA4C0 10%, transparent 11%);
+
+  opacity: 0.3;
+  /* Ajusta la opacidad para que sea más sutil */
+  z-index: -1;
+  /* Coloca el efecto detrás del contenido de la tarjeta */
+  mix-blend-mode: multiply;
+  /* Para mezclar los colores con el fondo blanco */
+  color: #3C3F44;
 }
 
 
@@ -243,9 +274,12 @@ ion-card::before {
   border-radius: 12px;
   margin: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  font-family: 'Roboto', sans-serif !important; /* Fuente elegante */
-  display: flex;          /* Activa Flexbox */
-  justify-content: center; /* Centra las tarjetas horizontalmente */
+  font-family: 'Roboto', sans-serif !important;
+  /* Fuente elegante */
+  display: flex;
+  /* Activa Flexbox */
+  justify-content: center;
+  /* Centra las tarjetas horizontalmente */
   gap: 20px;
 }
 
@@ -256,21 +290,30 @@ ion-card::before {
 
 .ion-card2 {
   font-family: 'Roboto', sans-serif !important;
-  background-color: white; /* Fondo blanco base */
-  overflow: hidden; /* Para que la salpicadura no se desborde */
-  position: relative; /* Para posicionar el pseudoelemento */
-  text-align: center; /* Centra el texto horizontalmente */
-  padding: 10px;     /* Margen de 10px en todos los lados */
-  width: 300px; /* Ajusta el ancho de las tarjetas según tus necesidades */
-  
-    
+  background-color: white;
+  /* Fondo blanco base */
+  overflow: hidden;
+  /* Para que la salpicadura no se desborde */
+  position: relative;
+  /* Para posicionar el pseudoelemento */
+  text-align: center;
+  /* Centra el texto horizontalmente */
+  padding: 10px;
+  /* Margen de 10px en todos los lados */
+  width: 300px;
+  /* Ajusta el ancho de las tarjetas según tus necesidades */
+
+
 }
 
 /* Estilos para el slider */
 .my-swiper {
-  width: 90%; /* Ancho del slider */
-  margin: 0 auto; /* Centrar el slider */
+  width: 90%;
+  /* Ancho del slider */
+  margin: 0 auto;
+  /* Centrar el slider */
 }
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -278,7 +321,7 @@ ion-card::before {
 }
 
 .search-container {
-  display: flex; 
+  display: flex;
   align-items: center;
 }
 
@@ -303,4 +346,7 @@ ion-card::before {
 }
 
 
-.product-image{max-width: 100px;max-height:100px;}
+.product-image {
+  max-width: 100px;
+  max-height: 100px;
+}
