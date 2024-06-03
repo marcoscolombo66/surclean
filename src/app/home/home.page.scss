@@ -329,11 +329,17 @@ ion-card::before {
   .product-image {
     max-width: 50%; /* En pantallas medianas, ocupa el 50% del ancho */
   }
+  .large-screen {
+    display: block !important;
+  }
 }
 
 @media (min-width: 1024px) {
   .product-image {
     max-width: 30%; /* En pantallas grandes, ocupa el 30% del ancho */
+  }
+  .large-screen {
+    display: block !important;
   }
 }
 

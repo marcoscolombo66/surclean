@@ -89,7 +89,10 @@
   <ion-grid *ngIf="mostrarBusqueda && productos.length > 0" class="search-results">
     <ion-row *ngFor="let resultado of productos" class="align-center row-content" style="cursor: pointer;"
     (click)="modalMasInfo(resultado.idProducto, resultado.nombreProducto, resultado.descripcionProducto, resultado.fotoProducto, resultado.precioProducto)">
-      
+      <!-- Columna adicional solo visible en pantallas grandes -->
+       
+      <ion-col size="3" class="align-center ion-hide large-screen">
+      </ion-col>
       <ion-col size="auto" class="align-center">
         <img src="{{urlRoot}}/images/{{ resultado.fotoProducto }}" class="product-image"/>
       </ion-col>
