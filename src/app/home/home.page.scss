@@ -62,7 +62,7 @@ ion-header {
 
 .contenedor-logo {
   display: inline-block;
-  width: 140px;
+  width: 200px;
   margin-left: 10px;
 }
 
@@ -109,9 +109,7 @@ ion-accordion::part(container) {
   align-items: center;
 }
 
-// .social-icons a {
-//   margin: 0 10px;
-// }
+
 
 .social-icons a {
   margin: 0 10px;
@@ -188,7 +186,7 @@ ion-accordion::part(container) {
 }
 
 
-//SOBREADO SUTIL EN TITULO SUCURSAL
+//SOMBREADO SUTIL EN TITULO SUCURSAL
 .sucursal-titulo {
   font-family: 'Roboto', sans-serif !important;
   /* Fuente elegante */
@@ -208,30 +206,6 @@ ion-accordion::part(container) {
 }
 
 //TARJETAS
-// ion-card {
-//   --background: #f5f5f5;
-//   --color: #9efff0;
-// }
-
-// ion-card-title {
-//   --color: #52ffe4;
-// }
-
-// ion-card-subtitle {
-//   --color: #d1fff8;
-// }
-
-/* Estilo de la tarjeta */
-// ion-card {
-//   font-family: 'Roboto', sans-serif !important; /* Fuente elegante */
-//   background: linear-gradient(to bottom, rgba(91, 164, 192, 0.5), rgba(91, 164, 192, 0.1)); /* Degradado más suave */
-//   //background: linear-gradient(to bottom, #f8f5e8, #e9e0d6); /* Degradado de beige claro a beige oscuro */
-//   //background-color: #ffffff75; /* Color blanco grisáceo */
-//   border-radius: 15px;      /* Bordes redondeados (ajusta el valor según tu preferencia) */
-//   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para el relieve */
-
-// }
-
 ion-card {
   font-family: 'Roboto', sans-serif !important;
   background-color: white;
@@ -306,7 +280,7 @@ ion-card::before {
 
 }
 
-/* Estilos para el slider */
+/* ESTILOS SLIDER */
 .my-swiper {
   width: 90%;
   /* Ancho del slider */
@@ -350,3 +324,58 @@ ion-card::before {
   max-width: 100px;
   max-height: 100px;
 }
+
+@media (min-width: 768px) {
+  .product-image {
+    max-width: 50%; /* En pantallas medianas, ocupa el 50% del ancho */
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-image {
+    max-width: 30%; /* En pantallas grandes, ocupa el 30% del ancho */
+  }
+}
+
+
+
+.grid-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+}
+
+.search-results {
+  width: 80%; /* Ajusta este valor según el ancho deseado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+
+
+ion-col.size-auto {
+  flex: 1;
+  text-align: center;
+}
+
+
+
