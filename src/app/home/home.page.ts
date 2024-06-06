@@ -20,7 +20,12 @@ export class HomePage implements OnInit {
   productos: any;
   isSearching: boolean= false;
   pageNumber: number;
-  constructor(public http: HttpClient,private modalCtrl: ModalController) { }    
+  categorias: any;
+  categoriasOtros: any;
+  constructor(public http: HttpClient,private modalCtrl: ModalController) {
+    this.getCategorias();
+    
+   }    
   
   test(event: any) {
     console.log('Valor seleccionado:', event.detail.value);
@@ -96,10 +101,43 @@ export class HomePage implements OnInit {
         }
       );
   } 
-  abrirModal() {
-    console.log('se va a abrir pagina con los resultados de busqueda por categoria');
+  abrirModal(idCategoria: number) {
+    console.log('se va a abrir pagina con los resultados de busqueda por categoria:', idCategoria);
   }
 
   ngOnInit() {
   }
+
+  async getCategorias()
+  {     
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      const headers: any		= new HttpHeaders({'Content-Type' : 'application/octet-stream'});
+      const options: any = {};  
+
+    // Llamar a la API con las opciones
+    this.http.post(this.urlRoot+'/index.php/Api/Categorias/',
+      JSON.stringify(options), headers)
+      .subscribe(
+        (res: any) => {
+         // Filtrar las categorías cuyo campo 'otros' sea igual a 1 y transformar los nombres a mayúsculas
+        this.categoriasOtros = res
+        .filter((categoria: any) => categoria.otros == 1)
+        .map((categoria: any) => ({
+          ...categoria,
+          nombreCategoria: categoria.nombreCategoria.toUpperCase()
+        }));
+        
+        this.categorias = res
+        .filter((categoria: any) => categoria.otros == 0)
+        .map((categoria: any) => ({
+          ...categoria,
+          nombreCategoria: categoria.nombreCategoria.toUpperCase()
+        })); 
+                 
+        },
+        (error: any) => {         
+          console.log(error);
+        }
+      );
+}
 }
