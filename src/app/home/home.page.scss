@@ -50,6 +50,8 @@ ion-header {
     display: flex;
     justify-content: center;
     width: 100%;
+    
+    
   }
 
   .contenedor ion-buttons {
@@ -64,6 +66,7 @@ ion-header {
   display: inline-block;
   width: 200px;
   margin-left: 10px;
+  
 }
 
 .lupa {
@@ -103,6 +106,9 @@ ion-accordion::part(container) {
   position: static;
 }
 
+
+
+//FOOTER
 .footer-row {
   display: flex;
   justify-content: space-between;
@@ -122,7 +128,7 @@ ion-accordion::part(container) {
 .social-icons ion-icon {
   font-size: 20px;
   /* Tamaño inicial del icono */
-  color: black;
+  color: #5BA4C0;
   /* Color negro por defecto */
   transition: all 0.3s ease;
   /* Transición suave para los cambios */
@@ -131,9 +137,9 @@ ion-accordion::part(container) {
 .social-icons a:hover ion-icon {
   font-size: 28px;
   /* Agrandar al pasar el mouse */
-  color: rgba(91, 164, 192, 0.5);
+  color:#5BA4C0;
   /* Color aqua al pasar el mouse */
-  text-shadow: 0 2px 4px rgba(91, 164, 192, 0.5);
+  text-shadow: 0 2px 4px #5BA4C0;
   /* Sombra #5BA4C0 */
 }
 
@@ -147,7 +153,14 @@ ion-accordion::part(container) {
 .developed-by img {
   width: 120px;
   margin-left: 10px;
+  
 }
+
+//TEXTO DESARROLLADO POR
+span {
+  color: #5BA4C0;
+}
+
 
 //CENTRADO DE LOGO EN PANTALLAS CHICAS
 @media (max-width: 768px) {

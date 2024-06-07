@@ -1,0 +1,72 @@
+/* Estilos para centrar títulos */
+.centered-title {
+    text-align: center;
+    margin-bottom: 16px; /* Agrega espacio entre el título y los productos */
+  }
+  
+  /* Estilos para centrar contenido de las tarjetas */
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  .centered-header{
+      text-align: center;
+  }
+  
+  /* Estilos opcionales para las imágenes */
+  .product-card img {
+    max-width: 100%; /* Para que las imágenes no se salgan de la tarjeta */
+    height: auto;     /* Para mantener la proporción de aspecto */
+    margin-bottom: 8px; /* Espacio entre la imagen y el título */
+  }
+  
+/* En tu archivo de estilos */
+.custom-back-button {
+    --color: #5BA4C0; /* Cambia el color aquí */
+  }
+  
+  /* En tu archivo de estilos */
+ion-grid {
+    margin-bottom: 50px; /* Ajusta el valor según necesites */
+  }
+  
+// /* En tu archivo de estilos */
+// .product-card img {
+//     width: 150px; /* Ajusta el valor según necesites */
+//     height: 200px; /* Ajusta el valor según necesites */
+//     object-fit: cover; /* Opcional: Para que la imagen se ajuste al contenedor sin deformarse */
+//   }
+  
+/* En tu archivo de estilos */
+.product-card {
+    overflow: hidden; /* Para ocultar el desbordamiento de la imagen */
+  }
+  
+  .product-card img {
+    width: 100px;
+    height: 10s0px; /* Ajusta este valor según el tamaño que desees */
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transición solo para transform */
+  }
+  
+  .product-card:hover img {
+    transform: scale(1); /* No escalar la imagen */
+    opacity: 0.8; /* Opacidad inicial */
+  transition: opacity 0.3s ease;
+  }
+  
+  .product-card:hover { 
+    box-shadow: 0 4px 8px rgba(91, 164, 192, 0.5); /* Sombra en el contenedor */
+    opacity: 1; /* Opacidad completa al pasar el ratón */
+  }
+  
+  .product-card .info {
+    display: none; /* Ocultar por defecto */
+  }
+  
+  .product-card:hover .info {
+    display: block; /* Mostrar al pasar el ratón */
+  }
+  
+  
