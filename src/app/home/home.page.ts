@@ -5,6 +5,8 @@ import { AppConfig } from 'src/app/config';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { ModalController } from '@ionic/angular';
 import { MasinfoPage } from '../modals/masinfo/masinfo.page';
+import { ResultadosPage } from '../modals/resultados/resultados.page';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -140,4 +142,22 @@ export class HomePage implements OnInit {
         }
       );
 }
+async modalResultados(idCategoria) {
+  //const user= await this.inicia.getUser();
+  //const url_proyecto = user[0].url_proyecto
+  const modal = await this.modalCtrl.create({
+    component: ResultadosPage,
+    //breakpoints: [0, 0.99],
+    //initialBreakpoint: 0.99,
+    //handle: true,
+    componentProps: {
+      idCategoria: idCategoria,              
+    },
+    animated: true,
+    canDismiss: true,
+    keyboardClose: true,
+  });
+  await modal.present();
+}
+
 }

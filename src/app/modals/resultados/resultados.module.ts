@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TogglePageRoutingModule } from './toggle-routing.module';
+import { ResultadosPageRoutingModule } from './resultados-routing.module';
 
-import { TogglePage } from './toggle.page';
+import { ResultadosPage } from './resultados.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TogglePageRoutingModule
+    ResultadosPageRoutingModule
   ],
-  declarations: [TogglePage]
+  declarations: [ResultadosPage]
 })
-export class TogglePageModule {}
+export class ResultadosPageModule {}

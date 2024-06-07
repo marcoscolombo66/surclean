@@ -43,26 +43,14 @@ const routes: Routes = [
     path: 'checkout',
     loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
   },
-  {
-    path: 'testslider',
-    loadChildren: () => import('./pruebas/testslider/testslider.module').then( m => m.TestsliderPageModule)
-  },
-  {
-    path: 'toggle',
-    loadChildren: () => import('./toggle/toggle.module').then( m => m.TogglePageModule)
-  },
+  
   {
     path: 'menu-desplegable',
     loadChildren: () => import('./menu-desplegable/menu-desplegable.module').then( m => m.MenuDesplegablePageModule)
+  },  {
+    path: 'resultados',
+    loadChildren: () => import('./modals/resultados/resultados.module').then( m => m.ResultadosPageModule)
   },
-  {
-    path: 'landing',
-    loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
-  },
-  
-
-  
-
 
 ];
 

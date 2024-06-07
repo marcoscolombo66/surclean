@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { TogglePage } from './toggle.page';
+import { ResultadosPage } from './resultados.page';
 
-describe('TogglePage', () => {
-  let component: TogglePage;
-  let fixture: ComponentFixture<TogglePage>;
+describe('ResultadosPage', () => {
+  let component: ResultadosPage;
+  let fixture: ComponentFixture<ResultadosPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TogglePage ],
+      declarations: [ ResultadosPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TogglePage);
+    fixture = TestBed.createComponent(ResultadosPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

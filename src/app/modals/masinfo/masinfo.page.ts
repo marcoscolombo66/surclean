@@ -18,6 +18,7 @@ export class MasinfoPage implements OnInit {
   nombreProducto : any =this.navParams.get('mySubject2');
   descripcionProducto : any =this.navParams.get('mySubject3');
   fotoProducto : any =this.navParams.get('mySubject4');
+  
   precioProducto : any =this.navParams.get('mySubject5');
   isModalOpen = false;
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -31,7 +32,7 @@ export class MasinfoPage implements OnInit {
   totalCantidades: number;
   constructor(public http: HttpClient, public navParams: NavParams,public modalCtrl: ModalController,
     public toastController:ToastController, public inicia: IniciarusuarioService, public formBuilder: FormBuilder)
-    {
+    { 
       this.myForm=this.formBuilder.group({
         //asientos:['1',Validators.required],
         //totales:['']

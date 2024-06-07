@@ -9,11 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { Drivers } from '@ionic/storage';
 import { IniciarusuarioService } from './iniciarusuario.service';
-import { SearchPopoverComponent } from './search-popover/search-popover.component'; // Asegúrate de que la ruta sea correcta
-import { PopoverComponent } from './popover/popover.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
-  declarations: [AppComponent,  SearchPopoverComponent, PopoverComponent],
+  declarations: [AppComponent],
   entryComponents: [],
  
 
