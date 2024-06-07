@@ -11,7 +11,7 @@
           
           <ion-buttons>
           <ion-label *ngFor="let categoria of categorias" >
-            <ion-button   *ngIf="!mostrarBusqueda" (click)="modalResultados(categoria.idCategoria);">             
+            <ion-button   *ngIf="!mostrarBusqueda" (click)="modalResultados(categoria.idCategoria, categoria.nombreCategoria);">             
                 {{categoria.nombreCategoria}}              
             </ion-button>              
           </ion-label>
@@ -24,7 +24,7 @@
                   <ion-label>OTROS PRODUCTOS</ion-label>
                 </ion-item>
                 <div *ngFor="let categoriaOtro of categoriasOtros" class="ion-padding" slot="content" 
-                (click)="modalResultados(categoriaOtro.idCategoria);">
+                (click)="modalResultados(categoria.idCategoria, categoria.nombreCategoria);">
                   {{categoriaOtro.nombreCategoria}}
                 </div>                
               </ion-accordion>

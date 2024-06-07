@@ -142,7 +142,7 @@ export class HomePage implements OnInit {
         }
       );
 }
-async modalResultados(idCategoria) {
+async modalResultados(idCategoria,nombreCategoria) {
   //const user= await this.inicia.getUser();
   //const url_proyecto = user[0].url_proyecto
   const modal = await this.modalCtrl.create({
@@ -151,7 +151,8 @@ async modalResultados(idCategoria) {
     //initialBreakpoint: 0.99,
     //handle: true,
     componentProps: {
-      idCategoria: idCategoria,              
+      idCategoria: idCategoria,
+      nombreCategoria:nombreCategoria              
     },
     animated: true,
     canDismiss: true,
