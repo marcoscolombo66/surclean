@@ -12,8 +12,10 @@ import { NavParams } from '@ionic/angular';
 export class ResultadosPage implements OnInit {
   urlRoot: string = AppConfig.urlRoot;
   productos: any;
+  nombreCategoria: any;
   constructor( public navParams: NavParams,public http: HttpClient,public modalCtrl: ModalController) {
     this.getProductos();
+    this.nombreCategoria=this.navParams.get('nombreCategoria')
    }
    async modalMasInfo(idProducto,nombreProducto,descripcionProducto,fotoProducto,precioProducto) {
     //const user= await this.inicia.getUser();

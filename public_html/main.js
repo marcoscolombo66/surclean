@@ -18,11 +18,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    //{path: 'home',loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+    { path: 'home', loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_modals_masinfo_masinfo_page_ts"), __webpack_require__.e("default-src_app_modals_resultados_resultados_page_ts"), __webpack_require__.e("src_app_home_home_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./home/home.module */ 3467)).then(m => m.HomePageModule) },
     //{path: '',redirectTo: 'home',pathMatch: 'full'},
     {
         path: '',
-        redirectTo: 'tab1',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
     { path: '', loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_tabs_tabs_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./tabs/tabs.module */ 5564)).then(m => m.TabsPageModule) },
@@ -47,17 +47,25 @@ const routes = [
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_olvido_olvido_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./olvido/olvido.module */ 7717)).then(m => m.OlvidoPageModule)
     },
     {
-        path: 'checkout',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_modals_comprobante_comprobante_page_ts"), __webpack_require__.e("default-src_app_modals_checkout_checkout_page_ts"), __webpack_require__.e("src_app_modals_checkout_checkout_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modals/checkout/checkout.module */ 558)).then(m => m.CheckoutPageModule)
-    },
-    {
         path: 'perfil',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_modals_perfil_perfil_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./modals/perfil/perfil.module */ 7701)).then(m => m.PerfilPageModule)
     },
     {
         path: 'orden',
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_modals_comprobante_comprobante_page_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modals_orden_orden_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modals/orden/orden.module */ 216)).then(m => m.OrdenPageModule)
-    }
+    },
+    {
+        path: 'checkout',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_modals_comprobante_comprobante_page_ts"), __webpack_require__.e("src_app_checkout_checkout_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./checkout/checkout.module */ 8400)).then(m => m.CheckoutPageModule)
+    },
+    {
+        path: 'menu-desplegable',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_menu-desplegable_menu-desplegable_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./menu-desplegable/menu-desplegable.module */ 3387)).then(m => m.MenuDesplegablePageModule)
+    },
+    {
+        path: 'resultados',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_modals_masinfo_masinfo_page_ts"), __webpack_require__.e("default-src_app_modals_resultados_resultados_page_ts"), __webpack_require__.e("src_app_modals_resultados_resultados_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modals/resultados/resultados.module */ 8444)).then(m => m.ResultadosPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -85,16 +93,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 2321);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 2321);
 /* harmony import */ var _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component.html?ngResource */ 3383);
 /* harmony import */ var _app_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss?ngResource */ 9259);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var swiper_element_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/element/bundle */ 5732);
 
 
 
 
 
+
+(0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_2__.register)();
 let AppComponent = class AppComponent {
     constructor(menuCtrl) {
         this.menuCtrl = menuCtrl;
@@ -104,10 +115,10 @@ let AppComponent = class AppComponent {
     }
 };
 AppComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.MenuController }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.MenuController }
 ];
-AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: 'app-root',
         template: _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_app_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -151,6 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let AppModule = class AppModule {
 };
 AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
@@ -164,6 +176,7 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
             }),],
         providers: [_iniciarusuario_service__WEBPACK_IMPORTED_MODULE_3__.IniciarusuarioService, { provide: _angular_router__WEBPACK_IMPORTED_MODULE_10__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.IonicRouteStrategy }],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
+        schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_5__.CUSTOM_ELEMENTS_SCHEMA]
     })
 ], AppModule);
 
@@ -184,7 +197,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 // config.ts
 const AppConfig = {
-    urlRoot: 'https://www.gestionst.com.ar/surclean/admin',
+    urlRoot: 'https://www.surclean.com.ar/admin',
     parametro2: 'valor2'
 };
 
@@ -256,10 +269,16 @@ let IniciarusuarioService = class IniciarusuarioService {
         this.productosSeleccionados = {}; // Vaciar la variable local
         this.storage.remove('productosSeleccionados'); // Eliminar la información del almacenamiento
     }
+    tieneDatosAlmacenados() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(this, void 0, void 0, function* () {
+            const datosUsuario = yield this.storage.get('datos_user');
+            return datosUsuario !== null && datosUsuario !== undefined;
+        });
+    }
     verificar() {
         this.storage.get('datos_user').then(data => {
             if (data) {
-                //console.log('Login','activo');
+                //console.log('Login','activo');      
             }
             else {
                 console.log('Login', 'Inactivo');

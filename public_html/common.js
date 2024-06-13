@@ -11,18 +11,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "OrdenPage": () => (/* binding */ OrdenPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 2321);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 2321);
 /* harmony import */ var _orden_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./orden.page.html?ngResource */ 9032);
 /* harmony import */ var _orden_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./orden.page.scss?ngResource */ 721);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _iniciarusuario_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../iniciarusuario.service */ 7574);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ 8784);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 587);
-/* harmony import */ var _capacitor_clipboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @capacitor/clipboard */ 4410);
-/* harmony import */ var _comprobante_comprobante_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../comprobante/comprobante.page */ 6893);
-/* harmony import */ var src_app_config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/config */ 9698);
-
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 8784);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ 587);
+/* harmony import */ var _comprobante_comprobante_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../comprobante/comprobante.page */ 6893);
+/* harmony import */ var src_app_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/config */ 9698);
 
 
 
@@ -35,10 +33,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let OrdenPage = class OrdenPage {
-    constructor(http, navParams, modalCtrl, inicia, formBuilder, toastController) {
+    constructor(http, navParams, modalCtrl, navCtrl, inicia, formBuilder, toastController) {
         this.http = http;
         this.navParams = navParams;
         this.modalCtrl = modalCtrl;
+        this.navCtrl = navCtrl;
         this.inicia = inicia;
         this.formBuilder = formBuilder;
         this.toastController = toastController;
@@ -51,23 +50,11 @@ let OrdenPage = class OrdenPage {
         this.metodoPago = this.navParams.get('metodoPago');
         this.dataProductos = [];
         this.isModalOpen = false;
-        this.urlRoot = src_app_config__WEBPACK_IMPORTED_MODULE_5__.AppConfig.urlRoot;
+        this.urlRoot = src_app_config__WEBPACK_IMPORTED_MODULE_4__.AppConfig.urlRoot;
         this.nomostrar = true;
     }
-    copiarCbu() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
-            //total final resto es total final menos el 23% que seria la comision.
-            const cbu = '898798798798798978978';
-            _capacitor_clipboard__WEBPACK_IMPORTED_MODULE_3__.Clipboard.write({
-                // eslint-disable-next-line id-blacklist
-                string: '' + cbu,
-            });
-            this.presentToast('Se copió el CBU:  ' + cbu);
-            //Va a ir Link personalizado.
-        });
-    }
     presentToast(mensaje) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastController.create({
                 //header: 'Toast header',
                 message: mensaje,
@@ -113,9 +100,9 @@ let OrdenPage = class OrdenPage {
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     subirComprobante() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const modal = yield this.modalCtrl.create({
-                component: _comprobante_comprobante_page__WEBPACK_IMPORTED_MODULE_4__.ComprobantePage,
+                component: _comprobante_comprobante_page__WEBPACK_IMPORTED_MODULE_3__.ComprobantePage,
                 // breakpoints: [0, 0.99],
                 //initialBreakpoint: 0.99,
                 handle: true,
@@ -132,15 +119,16 @@ let OrdenPage = class OrdenPage {
     }
 };
 OrdenPage.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpClient },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.NavParams },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.ModalController },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClient },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.NavParams },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.NavController },
     { type: _iniciarusuario_service__WEBPACK_IMPORTED_MODULE_2__.IniciarusuarioService },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormBuilder },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.ToastController }
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormBuilder },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ToastController }
 ];
-OrdenPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_10__.Component)({
+OrdenPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_9__.Component)({
         selector: 'app-orden',
         template: _orden_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_orden_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -368,7 +356,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "a": () => (/* binding */ attachComponent),
 /* harmony export */   "d": () => (/* binding */ detachComponent)
 /* harmony export */ });
-/* harmony import */ var C_Ionic_antiguo_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 3918);
+/* harmony import */ var C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 3918);
 /* harmony import */ var _helpers_3b390e48_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-3b390e48.js */ 9234);
 
 /*!
@@ -378,7 +366,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // TODO(FW-2832): types
 const attachComponent = /*#__PURE__*/function () {
-  var _ref = (0,C_Ionic_antiguo_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
+  var _ref = (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
     var _a;
     if (delegate) {
       return delegate.attachViewToDom(container, component, componentProps, cssClasses);
@@ -415,7 +403,7 @@ const CoreDelegate = () => {
   let BaseComponent;
   let Reference;
   const attachViewToDom = /*#__PURE__*/function () {
-    var _ref2 = (0,C_Ionic_antiguo_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
+    var _ref2 = (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
       var _a, _b;
       BaseComponent = parentElement;
       /**
@@ -737,7 +725,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "r": () => (/* binding */ resetContentScrollY),
 /* harmony export */   "s": () => (/* binding */ scrollToTop)
 /* harmony export */ });
-/* harmony import */ var C_Ionic_antiguo_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 3918);
+/* harmony import */ var C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 3918);
 /* harmony import */ var _helpers_3b390e48_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-3b390e48.js */ 9234);
 /* harmony import */ var _index_c4b11676_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-c4b11676.js */ 9273);
 
@@ -769,7 +757,7 @@ const isIonContent = el => el.tagName === ION_CONTENT_TAG_NAME;
  * or a selector within the host, if supplied through `scrollTarget`.
  */
 const getScrollElement = /*#__PURE__*/function () {
-  var _ref = (0,C_Ionic_antiguo_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
+  var _ref = (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
     if (isIonContent(el)) {
       yield new Promise(resolve => (0,_helpers_3b390e48_js__WEBPACK_IMPORTED_MODULE_1__.c)(el, resolve));
       return el.getScrollElement();

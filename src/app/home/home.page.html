@@ -24,7 +24,7 @@
                   <ion-label>OTROS PRODUCTOS</ion-label>
                 </ion-item>
                 <div *ngFor="let categoriaOtro of categoriasOtros" class="ion-padding" slot="content" 
-                (click)="modalResultados(categoria.idCategoria, categoria.nombreCategoria);">
+                (click)="modalResultados(categoriaOtro.idCategoria, categoriaOtro.nombreCategoria);" style="cursor: pointer;">
                   {{categoriaOtro.nombreCategoria}}
                 </div>                
               </ion-accordion>

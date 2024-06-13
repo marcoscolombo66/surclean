@@ -113,13 +113,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let Tab3Page = class Tab3Page {
-    constructor(location, inicia, http, modalCtrl) {
+    constructor(location, inicia, http, modalCtrl, navCtrl) {
         this.location = location;
         this.inicia = inicia;
         this.http = http;
         this.modalCtrl = modalCtrl;
+        this.navCtrl = navCtrl;
         this.canDismiss = false;
         this.urlRoot = src_app_config__WEBPACK_IMPORTED_MODULE_4__.AppConfig.urlRoot;
+        this.inicia.tieneDatosAlmacenados().then((result) => {
+            if (result === false) {
+                this.navCtrl.navigateRoot('login');
+            }
+        });
         this.nomostrar = true;
         const numbers = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.interval)(20000);
         numbers.subscribe(() => {
@@ -165,7 +171,7 @@ let Tab3Page = class Tab3Page {
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     myBackButton() {
-        this.location.back();
+        this.navCtrl.navigateRoot('tab1');
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     modalMasInfo(idOrden, fecha, totalCompra, respuesta, dataProductos, procesaPago, metodoPago) {
@@ -193,7 +199,8 @@ Tab3Page.ctorParameters = () => [
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_8__.Location },
     { type: _iniciarusuario_service__WEBPACK_IMPORTED_MODULE_2__.IniciarusuarioService },
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpClient },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ModalController }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ModalController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.NavController }
 ];
 Tab3Page = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_10__.Component)({
@@ -268,7 +275,7 @@ function dispatch(state) {
 
 /***/ }),
 
-/***/ 5353:
+/***/ 5211:
 /*!*****************************************************************!*\
   !*** ./node_modules/rxjs/_esm2015/internal/scheduler/Action.js ***!
   \*****************************************************************/
@@ -302,7 +309,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AsyncAction": () => (/* binding */ AsyncAction)
 /* harmony export */ });
-/* harmony import */ var _Action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Action */ 5353);
+/* harmony import */ var _Action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Action */ 5211);
 
 class AsyncAction extends _Action__WEBPACK_IMPORTED_MODULE_0__.Action {
     constructor(scheduler, work) {

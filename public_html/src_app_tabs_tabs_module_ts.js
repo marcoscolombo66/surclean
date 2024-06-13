@@ -74,7 +74,7 @@ const routes = [
                 children: [
                     {
                         path: '',
-                        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_modals_comprobante_comprobante_page_ts"), __webpack_require__.e("default-src_app_modals_masinfo_masinfo_page_ts"), __webpack_require__.e("default-src_app_modals_checkout_checkout_page_ts"), __webpack_require__.e("src_app_tab1_tab1_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../tab1/tab1.module */ 2168)).then(m => m.Tab1PageModule)
+                        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_modals_masinfo_masinfo_page_ts"), __webpack_require__.e("src_app_tab1_tab1_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../tab1/tab1.module */ 2168)).then(m => m.Tab1PageModule)
                     }
                 ]
             },
@@ -169,8 +169,17 @@ let TabsPage = class TabsPage {
                     {
                         text: 'Consulta',
                         role: 'destructive',
-                        icon: 'chatbubble-sharp',
-                        handler: () => { /*this.perfil()*/ this.whatsapp(); },
+                        icon: 'logo-whatsapp',
+                        handler: () => { this.whatsapp(); },
+                        data: {
+                            action: 'delete',
+                        },
+                    },
+                    {
+                        text: 'Mi perfil',
+                        role: 'destructive',
+                        icon: 'person-sharp',
+                        handler: () => { this.perfil(); },
                         data: {
                             action: 'delete',
                         },
@@ -179,11 +188,11 @@ let TabsPage = class TabsPage {
                         text: 'Salir',
                         role: 'destructive',
                         icon: 'log-out-sharp',
-                        handler: () => { },
+                        handler: () => { this.cerrar(); },
                         data: {
                             action: 'delete',
                         },
-                    },
+                    }
                 ],
             });
             yield actionSheet.present();
@@ -191,14 +200,14 @@ let TabsPage = class TabsPage {
     }
     whatsapp() {
         let mensaje = "Hola!%0AQuería%20consultarte%20por:%0A";
-        const urlWhataspp = `${"https://wa.me/542974235583?text="}${mensaje}`;
+        const urlWhataspp = `${"https://wa.me/542974235278?text="}${mensaje}`;
         window.open(urlWhataspp, '_system', 'location=yes');
     }
     cerrar() {
         console.log('cerrar');
         //this.storage.remove('token');
         this.storage.remove('datos_user');
-        //this.inicia.verificar();
+        this.navCtrl.navigateRoot('login');
     }
     perfil() {
         this.navCtrl.navigateRoot('perfil');
@@ -228,7 +237,7 @@ TabsPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "@charset \"UTF-8\";\n/* Estilo general para todos los tamaños de pantalla */\n.menu_inicio {\n  font-family: \"Helvetica\";\n  color: #115c2b;\n}\n/* DOES NOT WORK - not specific enough */\n.action-sheet-group {\n  background: #e5e5e5;\n}\n/* Works - pass \"my-custom-class\" in cssClass to increase specificity */\n.my-custom-class .action-sheet-group {\n  background: #e5e5e5;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYnMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQjtBQUFoQixzREFBQTtBQUNBO0VBQ0ksd0JBQUE7RUFDQSxjQUFBO0FBRUo7QUFJQyx3Q0FBQTtBQUNEO0VBQ0UsbUJBQUE7QUFERjtBQUlBLHVFQUFBO0FBQ0E7RUFDRSxtQkFBQTtBQURGIiwiZmlsZSI6InRhYnMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogRXN0aWxvIGdlbmVyYWwgcGFyYSB0b2RvcyBsb3MgdGFtYcOxb3MgZGUgcGFudGFsbGEgKi9cclxuLm1lbnVfaW5pY2lvIHtcclxuICAgIGZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhJztcclxuICAgIGNvbG9yOiAjMTE1YzJiO1xyXG4gIH1cclxuICAuaW9uVGFiQmFye1xyXG4gICAgIC8vcGFkZGluZy1yaWdodDoxMHB4O1xyXG4gIH1cclxuXHJcbiAvKiBET0VTIE5PVCBXT1JLIC0gbm90IHNwZWNpZmljIGVub3VnaCAqL1xyXG4uYWN0aW9uLXNoZWV0LWdyb3VwIHtcclxuICBiYWNrZ3JvdW5kOiAjZTVlNWU1O1xyXG59XHJcblxyXG4vKiBXb3JrcyAtIHBhc3MgXCJteS1jdXN0b20tY2xhc3NcIiBpbiBjc3NDbGFzcyB0byBpbmNyZWFzZSBzcGVjaWZpY2l0eSAqL1xyXG4ubXktY3VzdG9tLWNsYXNzIC5hY3Rpb24tc2hlZXQtZ3JvdXAge1xyXG4gIGJhY2tncm91bmQ6ICNlNWU1ZTU7XHJcbn1cclxuXHJcbiAgXHJcbiAgIl19 */";
+module.exports = "@charset \"UTF-8\";\n/* Estilo general para todos los tamaños de pantalla */\n.menu_inicio {\n  font-family: \"Helvetica\";\n  color: primary;\n}\n/* DOES NOT WORK - not specific enough */\n.action-sheet-group {\n  background: #e5e5e5;\n}\n/* Works - pass \"my-custom-class\" in cssClass to increase specificity */\n.my-custom-class .action-sheet-group {\n  background: #e5e5e5;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYnMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQjtBQUFoQixzREFBQTtBQUNBO0VBQ0ksd0JBQUE7RUFDQSxjQUFBO0FBRUo7QUFJQyx3Q0FBQTtBQUNEO0VBQ0UsbUJBQUE7QUFERjtBQUlBLHVFQUFBO0FBQ0E7RUFDRSxtQkFBQTtBQURGIiwiZmlsZSI6InRhYnMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogRXN0aWxvIGdlbmVyYWwgcGFyYSB0b2RvcyBsb3MgdGFtYcOxb3MgZGUgcGFudGFsbGEgKi9cclxuLm1lbnVfaW5pY2lvIHtcclxuICAgIGZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhJztcclxuICAgIGNvbG9yOiBwcmltYXJ5O1xyXG4gIH1cclxuICAuaW9uVGFiQmFye1xyXG4gICAgIC8vcGFkZGluZy1yaWdodDoxMHB4O1xyXG4gIH1cclxuXHJcbiAvKiBET0VTIE5PVCBXT1JLIC0gbm90IHNwZWNpZmljIGVub3VnaCAqL1xyXG4uYWN0aW9uLXNoZWV0LWdyb3VwIHtcclxuICBiYWNrZ3JvdW5kOiAjZTVlNWU1O1xyXG59XHJcblxyXG4vKiBXb3JrcyAtIHBhc3MgXCJteS1jdXN0b20tY2xhc3NcIiBpbiBjc3NDbGFzcyB0byBpbmNyZWFzZSBzcGVjaWZpY2l0eSAqL1xyXG4ubXktY3VzdG9tLWNsYXNzIC5hY3Rpb24tc2hlZXQtZ3JvdXAge1xyXG4gIGJhY2tncm91bmQ6ICNlNWU1ZTU7XHJcbn1cclxuXHJcbiAgXHJcbiAgIl19 */";
 
 /***/ }),
 
@@ -238,7 +247,7 @@ module.exports = "@charset \"UTF-8\";\n/* Estilo general para todos los tamaños
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "        <ion-tabs>\r\n          <ion-tab-bar translucent=\"true\" class=\"custom-tab-bar\">\r\n        \r\n           <!--\r\n            <ion-tab-button tab=\"tab3\" >\r\n              <ion-icon name=\"document-text-sharp\" style=\"font-family: 'Helvetica';color:#115c2b;\"></ion-icon>\r\n              <label style=\"font-family: 'Helvetica';color:#115c2b;\">Ordenes</label>\r\n            </ion-tab-button>\r\n\r\n           --> \r\n            \r\n             \r\n    \r\n            <ion-tab-button   tab=\"tab1\">\r\n              <ion-icon name=\"home-sharp\" style=\"font-family: 'Helvetica';color:#115c2b;\"></ion-icon>\r\n              <label style=\"font-family: 'Helvetica';color:#115c2b;\">Inicio</label>\r\n            </ion-tab-button>\r\n        \r\n            <ion-tab-button   (click)=\"presentActionSheet()\">\r\n              <ion-icon name=\"information-circle-sharp\" style=\"font-family: 'Helvetica';color:#115c2b;\"></ion-icon>\r\n              <label style=\"font-family: 'Helvetica';color:#115c2b;\">Info</label>\r\n            </ion-tab-button>\r\n          </ion-tab-bar>  \r\n        </ion-tabs>\r\n      \r\n ";
+module.exports = "        <ion-tabs>\r\n          <ion-tab-bar translucent=\"true\" class=\"custom-tab-bar\">\r\n        \r\n           \r\n            <ion-tab-button tab=\"tab3\" >\r\n              <ion-icon color=\"primary\" name=\"document-text-sharp\" style=\"font-family: 'Helvetica';\"></ion-icon>\r\n              <label style=\"font-family: 'Helvetica';\" color=\"primary\">Ordenes</label>\r\n            </ion-tab-button>\r\n\r\n           \r\n            \r\n             \r\n    \r\n            <ion-tab-button   tab=\"tab1\">\r\n              <ion-icon color=\"primary\" name=\"home-sharp\" style=\"font-family: 'Helvetica';\"></ion-icon>\r\n              <label style=\"font-family: 'Helvetica';\" color=\"primary\">Inicio</label>\r\n            </ion-tab-button>\r\n        \r\n            <ion-tab-button   (click)=\"presentActionSheet()\">\r\n              <ion-icon color=\"primary\" name=\"information-circle-sharp\" style=\"font-family: 'Helvetica';\"></ion-icon>\r\n              <label style=\"font-family: 'Helvetica';\" color=\"primary\">Info</label>\r\n            </ion-tab-button>\r\n\r\n            \r\n          </ion-tab-bar>  \r\n        </ion-tabs>\r\n      \r\n ";
 
 /***/ })
 

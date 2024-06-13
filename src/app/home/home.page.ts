@@ -126,14 +126,16 @@ export class HomePage implements OnInit {
         .filter((categoria: any) => categoria.otros == 1)
         .map((categoria: any) => ({
           ...categoria,
-          nombreCategoria: categoria.nombreCategoria.toUpperCase()
+          nombreCategoria: categoria.nombreCategoria.toUpperCase(),
+          idCategoria: categoria.idCategoria
         }));
         
         this.categorias = res
         .filter((categoria: any) => categoria.otros == 0)
         .map((categoria: any) => ({
           ...categoria,
-          nombreCategoria: categoria.nombreCategoria.toUpperCase()
+          nombreCategoria: categoria.nombreCategoria.toUpperCase(),
+          idCategoria: categoria.idCategoria
         })); 
                  
         },
@@ -143,6 +145,7 @@ export class HomePage implements OnInit {
       );
 }
 async modalResultados(idCategoria,nombreCategoria) {
+   
   //const user= await this.inicia.getUser();
   //const url_proyecto = user[0].url_proyecto
   const modal = await this.modalCtrl.create({
