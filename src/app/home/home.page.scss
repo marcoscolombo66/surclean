@@ -6,7 +6,7 @@ ion-header {
 }
 
 .foto {
-  width: 100%;
+  width: 50%;
 }
 
 .container {
@@ -215,11 +215,12 @@ span {
   /* Color de texto oscuro */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   /* Sombra sutil */
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   /* Espacio entre el título y la dirección */
-  text-align: left;
-  margin-left: 35px;
+  //text-align: center;
+  margin-left: 0px;
   width:100%;
+  justify-content: center;
 
 }
 
@@ -401,5 +402,46 @@ ion-col.size-auto {
   text-align: center;
 }
 
+
+
+//ICONOS REDES NO FOOTER
+.social-icons2 a {
+  margin: 0 10px;
+  /* Espacio entre los iconos */
+  display: inline-flex;
+  /* Para centrar el icono verticalmente */
+  align-items: center;
+}
+
+.social-icons2 ion-icon {
+  font-size: 40px;
+  /* Tamaño inicial del icono */
+  color: #5BA4C0;
+  /* Color negro por defecto */
+  transition: all 0.3s ease;
+  /* Transición suave para los cambios */
+}
+
+.social-icons2 a:hover ion-icon {
+  font-size: 28px;
+  /* Agrandar al pasar el mouse */
+  color:#5BA4C0;
+  /* Color aqua al pasar el mouse */
+  text-shadow: 0 2px 4px #5BA4C0;
+  /* Sombra #5BA4C0 */
+}
+
+.header-container2 {
+  display: flex;           /* Usamos flexbox para la distribución */
+  justify-content: space-around; /* Espacio entre logo e iconos */
+  align-items: center;    /* Alineación vertical al centro */
+  width: 100%;            /* Ocupa todo el ancho de la pantalla */
+  padding: 50px;          /* Espacio interno opcional */
+}
+
+.logo {
+  width: 150px;           /* Ajusta el ancho del logo según necesites */
+  
+}
 
 
