@@ -16,7 +16,7 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6" size-md="4" size-lg="3" 
+      <ion-col size="4" size-md="4" size-lg="3" 
         *ngFor="let consulta of productos" 
         (click)="modalMasInfo(consulta.idProducto, consulta.nombreProducto, consulta.descripcionProducto, consulta.fotoProducto, consulta.precioProducto)">
         <ion-card class="product-card">
@@ -28,11 +28,14 @@
           </ng-template>
 
           <ion-card-header class="centered-header">
-            <ion-card-title>{{consulta.nombreProducto | slice:0:23}}</ion-card-title>
+            <ion-card-title>{{consulta.nombreProducto}}</ion-card-title>
             <ion-card-subtitle style="color:#2a8b58;">En Stock</ion-card-subtitle>
           </ion-card-header>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
