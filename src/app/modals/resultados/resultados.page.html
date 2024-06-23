@@ -14,13 +14,11 @@
     <ion-label style="font-size: 22px;font-family: 'Montserrat', sans-serif;">{{nombreCategoria}}</ion-label>
   </div>
 
-  <ion-grid class="centered-title">
-    <ion-row >
-      <ion-col>
-        &nbsp;
-      </ion-col>
+  <ion-grid >
+    <ion-row *ngFor="let consulta of productos" class="centered-title">      
+      <ion-col></ion-col>
       <ion-col    
-        *ngFor="let consulta of productos" 
+         
         (click)="modalMasInfo(consulta.idProducto, consulta.nombreProducto, consulta.descripcionProducto, consulta.fotoProducto, consulta.precioProducto)">
         <ion-card class="product-card">
           <img *ngIf="consulta.fotoProducto; else sinFoto" 
@@ -36,6 +34,7 @@
           </ion-card-header>
         </ion-card>
       </ion-col>
+      <ion-col></ion-col>
     </ion-row>
   </ion-grid>
   <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
