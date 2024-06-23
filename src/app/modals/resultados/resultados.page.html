@@ -14,9 +14,12 @@
     <ion-label style="font-size: 22px;font-family: 'Montserrat', sans-serif;">{{nombreCategoria}}</ion-label>
   </div>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col size="4" size-md="4" size-lg="3" 
+  <ion-grid class="centered-title">
+    <ion-row >
+      <ion-col>
+        &nbsp;
+      </ion-col>
+      <ion-col    
         *ngFor="let consulta of productos" 
         (click)="modalMasInfo(consulta.idProducto, consulta.nombreProducto, consulta.descripcionProducto, consulta.fotoProducto, consulta.precioProducto)">
         <ion-card class="product-card">

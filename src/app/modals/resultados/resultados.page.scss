@@ -16,7 +16,8 @@
   .centered-header{
       text-align: center;
   }
-  
+ 
+
   /* Estilos opcionales para las imágenes */
   .product-card img {
     max-width: 100%; /* Para que las imágenes no se salgan de la tarjeta */
@@ -72,4 +73,19 @@ ion-grid {
     display: block; /* Mostrar al pasar el ratón */
   }
   
-  
+  @media (max-width: 768px) {
+    .product-card {
+      width: 300px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+
+
+    }
+  }
+
+  @media (max-width: 1024px) and (max-height: 600px) {
+    .contenedor ion-buttons {
+      gap: 5px;
+    }
+  }

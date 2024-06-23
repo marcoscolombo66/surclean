@@ -282,14 +282,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ClipboardWeb": () => (/* binding */ ClipboardWeb)
 /* harmony export */ });
-/* harmony import */ var C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 3918);
+/* harmony import */ var D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 3918);
 /* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @capacitor/core */ 5099);
 
 
 class ClipboardWeb extends _capacitor_core__WEBPACK_IMPORTED_MODULE_1__.WebPlugin {
   write(options) {
     var _this = this;
-    return (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (typeof navigator === 'undefined' || !navigator.clipboard) {
         throw _this.unavailable('Clipboard API not available in this browser');
       }
@@ -318,7 +318,7 @@ class ClipboardWeb extends _capacitor_core__WEBPACK_IMPORTED_MODULE_1__.WebPlugi
   }
   read() {
     var _this2 = this;
-    return (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (typeof navigator === 'undefined' || !navigator.clipboard) {
         throw _this2.unavailable('Clipboard API not available in this browser');
       }
@@ -342,7 +342,7 @@ class ClipboardWeb extends _capacitor_core__WEBPACK_IMPORTED_MODULE_1__.WebPlugi
   }
   readText() {
     var _this3 = this;
-    return (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (typeof navigator === 'undefined' || !navigator.clipboard || !navigator.clipboard.readText) {
         throw _this3.unavailable('Reading from clipboard not supported in this browser');
       }
@@ -355,7 +355,7 @@ class ClipboardWeb extends _capacitor_core__WEBPACK_IMPORTED_MODULE_1__.WebPlugi
   }
   writeText(text) {
     var _this4 = this;
-    return (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (typeof navigator === 'undefined' || !navigator.clipboard || !navigator.clipboard.writeText) {
         throw _this4.unavailable('Writting to clipboard not supported in this browser');
       }
@@ -403,7 +403,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "registerWebPlugin": () => (/* binding */ registerWebPlugin),
 /* harmony export */   "setPlatform": () => (/* binding */ setPlatform)
 /* harmony export */ });
-/* harmony import */ var C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 3918);
+/* harmony import */ var D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 3918);
 
 /*! Capacitor: https://capacitorjs.com/ - MIT License */
 const createCapacitorPlatforms = win => {
@@ -546,7 +546,7 @@ const createCapacitor = win => {
     const pluginHeader = getPluginHeader(pluginName);
     let jsImplementation;
     const loadPluginImplementation = /*#__PURE__*/function () {
-      var _ref = (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      var _ref = (0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
         if (!jsImplementation && platform in jsImplementations) {
           jsImplementation = typeof jsImplementations[platform] === 'function' ? jsImplementation = yield jsImplementations[platform]() : jsImplementation = jsImplementations[platform];
         } else if (capCustomPlatform !== null && !jsImplementation && 'web' in jsImplementations) {
@@ -591,7 +591,7 @@ const createCapacitor = win => {
           }
         });
         if (prop === 'addListener') {
-          p.remove = /*#__PURE__*/(0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+          p.remove = /*#__PURE__*/(0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
             return remove();
           });
         }
@@ -613,7 +613,7 @@ const createCapacitor = win => {
         eventName
       }, callback);
       const remove = /*#__PURE__*/function () {
-        var _ref3 = (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        var _ref3 = (0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
           const callbackId = yield call;
           removeListener({
             eventName,
@@ -627,7 +627,7 @@ const createCapacitor = win => {
       const p = new Promise(resolve => call.then(() => resolve({
         remove
       })));
-      p.remove = /*#__PURE__*/(0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      p.remove = /*#__PURE__*/(0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
         console.warn(`Using addListener() without 'await' is deprecated.`);
         yield remove();
       });
@@ -726,7 +726,7 @@ class WebPlugin {
       this.addWindowListener(windowListener);
     }
     const remove = /*#__PURE__*/function () {
-      var _ref5 = (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      var _ref5 = (0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
         return _this.removeListener(eventName, listenerFunc);
       });
       return function remove() {
@@ -738,7 +738,7 @@ class WebPlugin {
     });
     Object.defineProperty(p, 'remove', {
       value: function () {
-        var _ref6 = (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        var _ref6 = (0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
           console.warn(`Using addListener() without 'await' is deprecated.`);
           yield remove();
         });
@@ -751,7 +751,7 @@ class WebPlugin {
   }
   removeAllListeners() {
     var _this2 = this;
-    return (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this2.listeners = {};
       for (const listener in _this2.windowListeners) {
         _this2.removeWindowListener(_this2.windowListeners[listener]);
@@ -786,7 +786,7 @@ class WebPlugin {
   }
   removeListener(eventName, listenerFunc) {
     var _this3 = this;
-    return (0,C_Ionic_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,D_Proyectos_Clientes_surclean_surclean_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const listeners = _this3.listeners[eventName];
       if (!listeners) {
         return;
