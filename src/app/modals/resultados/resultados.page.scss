@@ -1,7 +1,7 @@
 /* Estilos para centrar títulos */
 .centered-title {
     text-align: center;
-    margin-bottom: 0px; /* Agrega espacio entre el título y los productos */
+    margin-bottom: 16px; /* Agrega espacio entre el título y los productos */
   }
   
   /* Estilos para centrar contenido de las tarjetas */
@@ -11,7 +11,7 @@
     align-items: center; 
     width: 300xpx;
     height: 250px;
-    margin-bottom: 0px;
+
   }
   .centered-header{
       text-align: center;
@@ -22,7 +22,7 @@
   .product-card img {
     max-width: 100%; /* Para que las imágenes no se salgan de la tarjeta */
     height: auto;     /* Para mantener la proporción de aspecto */
-    margin-bottom: 0px; /* Espacio entre la imagen y el título */
+    margin-bottom: 8px; /* Espacio entre la imagen y el título */
   }
   
 /* En tu archivo de estilos */
@@ -49,7 +49,7 @@ ion-grid {
   
   .product-card img {
     width: 100px;
-    height: 110px; /* Ajusta este valor según el tamaño que desees */
+    height: 10s0px; /* Ajusta este valor según el tamaño que desees */
     object-fit: cover;
     transition: transform 0.3s ease; /* Transición solo para transform */
   }
@@ -79,10 +79,13 @@ ion-grid {
       height: 200px;
       display: flex;
       align-items: center;
-      margin-bottom: 0px;
 
 
     }
   }
 
- 
+  @media (max-width: 1024px) and (max-height: 600px) {
+    .contenedor ion-buttons {
+      gap: 5px;
+    }
+  }

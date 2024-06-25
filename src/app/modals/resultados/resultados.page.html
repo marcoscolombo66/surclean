@@ -15,18 +15,23 @@
   </div>
 
   <ion-grid >
-    <ion-row *ngFor="let consulta of productos" class="centered-title">      
-      <ion-col></ion-col>
-      <ion-col    
+     <ion-row>
+      <ion-col  *ngFor="let consulta of productos"  size="12" size-sm="3">
+        <ion-card class="product-card"
+        (click)="modalMasInfo(consulta.idProducto, consulta.nombreProducto, consulta.descripcionProducto, consulta.fotoProducto, consulta.precioProducto)"
+        >
+        <ion-card-header>
+          <ion-card-title>
+            <img *ngIf="consulta.fotoProducto; else sinFoto" 
+            [src]="urlRoot + '/images/' + consulta.fotoProducto" 
+            alt="{{ consulta.nombreProducto }}" />
+            <ng-template #sinFoto>
+              <img src="{{urlRoot}}/images/sinfoto.png" alt="Sin foto" />
+            </ng-template>
+          </ion-card-title>
          
-        (click)="modalMasInfo(consulta.idProducto, consulta.nombreProducto, consulta.descripcionProducto, consulta.fotoProducto, consulta.precioProducto)">
-        <ion-card class="product-card">
-          <img *ngIf="consulta.fotoProducto; else sinFoto" 
-              [src]="urlRoot + '/images/' + consulta.fotoProducto" 
-              alt="{{ consulta.nombreProducto }}" />
-          <ng-template #sinFoto>
-            <img src="{{urlRoot}}/images/sinfoto.png" alt="Sin foto" />
-          </ng-template>
+        </ion-card-header>
+         
 
           <ion-card-header class="centered-header">
             <ion-card-title>{{consulta.nombreProducto}}</ion-card-title>
@@ -34,8 +39,10 @@
           </ion-card-header>
         </ion-card>
       </ion-col>
-      <ion-col></ion-col>
-    </ion-row>
+     </ion-row>
+        
+      
+    
   </ion-grid>
   <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
