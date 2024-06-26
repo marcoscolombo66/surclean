@@ -150,9 +150,9 @@ async modalResultados(idCategoria,nombreCategoria) {
   //const url_proyecto = user[0].url_proyecto
   const modal = await this.modalCtrl.create({
     component: ResultadosPage,
-    //breakpoints: [0, 0.99],
-    //initialBreakpoint: 0.99,
-    //handle: true,
+    breakpoints: [0, 0.99],
+    initialBreakpoint: 0.99,
+    handle: false,
     componentProps: {
       idCategoria: idCategoria,
       nombreCategoria:nombreCategoria              
