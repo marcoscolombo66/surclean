@@ -221,9 +221,9 @@ let HomePage = class HomePage {
             //const url_proyecto = user[0].url_proyecto
             const modal = yield this.modalCtrl.create({
                 component: _modals_resultados_resultados_page__WEBPACK_IMPORTED_MODULE_4__.ResultadosPage,
-                //breakpoints: [0, 0.99],
-                //initialBreakpoint: 0.99,
-                //handle: true,
+                breakpoints: [0, 0.99],
+                initialBreakpoint: 0.99,
+                handle: false,
                 componentProps: {
                     idCategoria: idCategoria,
                     nombreCategoria: nombreCategoria
