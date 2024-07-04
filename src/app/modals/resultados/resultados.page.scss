@@ -132,7 +132,7 @@ ion-grid {
     }
   }
 
-   //Manejo de pantallas 1280 x 800
+   
    @media (min-width: 1025px)  { 
     /* Estilos específicos para pantallas de 1280px a 1366px de ancho */
     .product-card {
@@ -148,3 +148,4 @@ ion-grid {
       font-size: 0.9em; /* Ejemplo: Ajusta el tamaño de fuente de la descripción */
     }
   }
+
