@@ -116,7 +116,7 @@ ion-grid {
 
 
   //Manejo de pantallas 1280 x 800
-  @media (min-width: 1280px) and (max-width: 1366px) { 
+  @media (min-width: 1280px)  { 
     /* Estilos específicos para pantallas de 1280px a 1366px de ancho */
     .product-card {
       width: 100%; /* Ejemplo: Tres tarjetas por fila */
